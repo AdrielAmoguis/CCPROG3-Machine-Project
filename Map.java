@@ -17,7 +17,9 @@ public class Map
 
         // Create paths
         createCareerPath(startSpace, endSpace, 95);
-        createCollegePath(startSpace, FILL THIS UP, 12);
+        createCollegePath(startSpace, paths.get(0).spaces.get(3), 14);
+        createChangeCareerPath(paths.get(0).spaces.get(26), paths.get(0).spaces.get(33), 11);
+        createStartFamPath(paths.get(0).spaces.get(46), paths.get(0).spaces.get(54), 12);
     }
 
     private void createCareerPath(Space startSpace, Space endSpace, int len)
@@ -27,16 +29,16 @@ public class Map
 
     private void createCollegePath(Space startSpace, Space dest, int len)
     {
-        paths.add("College Path", startSpace, dest, len)
+        paths.add(new CollegePath(startSpace, dest, len));
     }
 
     private void createStartFamPath(Space origin, Space dest, int len)
     {
-        paths.add("Start a Family Path", origin, dest, len);
+        paths.add(new StartFamilyPath(origin, dest, len));
     }
 
     private void createChangeCareerPath(Space origin, Space dest, int len)
     {
-        paths.add("Change Career Path", origin ,dest, len);
+        paths.add(new ChangeCareerPath(origin, dest, len));
     }
 }

@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Space 
+public abstract class Space 
 {
     protected static int count = 0;
     private Path path;
@@ -35,8 +35,8 @@ public class Space
         this.players.remove(player);
     }
 
-    protected void event(Player player)
-    {  /* ABSTRACT METHOD */  }
+    // ABSTRACT METHOD
+    protected abstract void event(Player player);
 
     @Override
     public String toString()

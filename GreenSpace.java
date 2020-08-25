@@ -26,7 +26,7 @@ public class GreenSpace extends Space
 
     private void payDay(Player player)
     {
-        player.credit()
+        player.credit();
     }
 
 }

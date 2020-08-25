@@ -4,4 +4,9 @@ public class EndSpace extends Space
     {
         super(null);
     }
+
+    public void event(Player player)
+    {
+        System.out.println("Congratulations on your retirement, " + player.getName() + "!");
+    }
 }

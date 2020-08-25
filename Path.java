@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Path 
+public abstract class Path 
 {
     protected ArrayList<Space> spaces;
     protected Space originSpace;
@@ -11,6 +11,8 @@ public class Path
         this.originSpace = origin;
         this.destinationSpace = dest;
         this.spaces = new ArrayList<Space>(len);
+        this.spaces.set(0, origin);
+        this.spaces.set(spaces.size()-1, destinationSpace);
     }
 
     public int getPathLen()
@@ -39,6 +41,8 @@ public class Path
     {
         return this.destinationSpace;
     }
+
+    protected abstract void generateSpaces();
 
     @Override
     public boolean equals(Object obj)

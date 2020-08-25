@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 /**
  * Main game class of the game. It contains the main MAP instance of the entire game as well as the instances of the players,
  * and the instances of all decks of cards.

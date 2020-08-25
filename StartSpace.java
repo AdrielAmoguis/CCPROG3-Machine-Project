@@ -4,4 +4,9 @@ public class StartSpace extends Space
     {
         super(null);
     }
+
+    public void event(Player player)
+    {
+        System.out.println("Welcome to the game, " + player.getName() + "!");
+    }
 }
