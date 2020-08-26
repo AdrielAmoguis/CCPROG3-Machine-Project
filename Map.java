@@ -12,14 +12,15 @@ public class Map
     public Map()
     {
         paths = new ArrayList<Path>();
-        startSpace = new StartSpace();
-        endSpace = new EndSpace();
 
         // Create paths
         createCareerPath(startSpace, endSpace, 95);
         createCollegePath(startSpace, paths.get(0).spaces.get(3), 14);
         createChangeCareerPath(paths.get(0).spaces.get(26), paths.get(0).spaces.get(33), 11);
         createStartFamPath(paths.get(0).spaces.get(46), paths.get(0).spaces.get(54), 12);
+
+        startSpace = new StartSpace(paths.get(0).spaces.get(1), paths.get(1).spaces.get(1));
+        endSpace = new EndSpace();
     }
 
     private void createCareerPath(Space startSpace, Space endSpace, int len)

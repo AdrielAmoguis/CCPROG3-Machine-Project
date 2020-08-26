@@ -50,6 +50,11 @@ public abstract class Space
         return this.nextSpace;
     }
 
+    public Path getPath()
+    {
+        return this.path;
+    }
+
     @Override
     public String toString()
     {

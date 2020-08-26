@@ -8,7 +8,7 @@ public class OrangeSpace extends Space
     protected void event(Player player)
     {
         // Draw action card
-        ActionCard card = ThatsLife.DECKS[3].drawCard();
+        ActionCard card = (ActionCard) ThatsLife.DECKS[3].drawCard();
 
         // Do stuff with the card
     }

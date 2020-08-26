@@ -14,43 +14,39 @@ public class Player
 
     private Space space;
 
-    public Player(String name)
+    public Player(String name, StartSpace start)
     {
         this.playerName = new String(name);
+        career = null;
+        salary = null;
         balance = 200000;
         house = null;
         spouse = false;
-        children = new ArrayList<Child>();
-        space = null;
+        children = 0;
+        space = start;
+        space.event(this);
+        turn();
     }
 
+    public void turn()
+    {
+        // Roll Number
+        int nMove = ThatsLife.rollNumber();
+        // Move n steps
+        this.move(nMove);
+        // Execute playerLand
+        this.space.playerLand(this);
+    }
+
+    // GETTERS
     public String getName()
     {
-        return new String(this.playerName);
+        return this.playerName;
     }
 
     public double getBalance()
     {
-        return balance;
-    }
-
-    public void credit(double amount)
-    {
-        this.balance += amount;
-    }
-
-    public boolean debit(double amount)
-    {
-        if(this.balance < amount)
-            return false;
-        
-        this.balance -= amount;
-        return true;
-    }
-
-    public void setCareer(CareerCard career)
-    {
-        this.career = career;
+        return this.balance;
     }
 
     public String getCareer()
@@ -58,22 +54,96 @@ public class Player
         return this.career.NAME;
     }
 
-    public void setHouse(House house)
+    public SalaryCard getSalary()
+    {
+        return this.salary;
+    }
+
+    public Space getSpace()
+    {
+        return this.space;
+    }
+
+    // Balance operations
+    public void credit(double amount)
+    {
+        this.balance += amount;
+    }
+
+    public boolean debit(double amount)
+    {
+        if (this.balance < amount)
+            return false;
+        
+        this.balance -= amount;
+        return true;
+    }
+
+    // SETTERS
+    public void setSalary(SalaryCard salary) 
+    {
+        this.salary = salary;
+    }
+
+    public void setCareer(CareerCard career) 
+    {
+        this.career = career;
+    }
+
+    public void setHouse(HouseCard house) 
     {
         this.house = house;
     }
 
-    public void setSpouse(boolean hasSpouse)
+    public void setSpouse(boolean spouse)
     {
-        this.spouse = hasSpouse;
+        this.spouse = spouse;
     }
 
-    public void addChild(Child child)
+    public void addChild()
     {
-        this.children.add(child);
+        this.children++;
     }
 
-    // MOVE
+    // Movement Methods
+    public void setSpace(Space space)
+    {
+        this.space = space;
+    }
+
+    public int move(int steps)
+    {
+        Space bufferSpace = this.space;
+        int moved = 0;
+        for (int i = 0; i < steps; i++)
+        {
+            if(!(bufferSpace instanceof MagentaSpace))
+            {
+                bufferSpace = bufferSpace.getNextSpace();
+                moved = i;
+            }
+            else break;
+        }
+        this.space = bufferSpace;
+        return moved;
+    }
+
+    public int decision(String[] options)
+    {
+        System.out.println("Choose from the following options:");
+        for (int i = 0; i < options.length; i++) 
+        {
+            System.out.printf("[%d] %s\n", i+1, options[i]);
+        }
+        Scanner keyStream = new Scanner(System.in);
+        int choice = Integer.parseInt(keyStream.nextLine());
+        keyStream.close();
+
+        if(choice < 0 || choice > options.length)
+            return -1;
+
+        return choice-1;
+    }
 
     @Override
     public String toString()
@@ -88,6 +158,6 @@ public class Player
     {
         if(obj == null)
             return false;
-        return this.playerName.equals(((Player) obj).getName());
+        return this.playerName.equals(((Player) obj).getName()) && this.space.equals(((Player)obj).getSpace());
     }
 }
