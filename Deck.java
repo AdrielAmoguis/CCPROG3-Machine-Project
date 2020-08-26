@@ -5,9 +5,10 @@ public abstract class Deck
     protected String deckName;
     protected ArrayList<Card> cards;
 
-    public Deck()
+    public Deck(String deckName)
     {
         cards = new ArrayList<Card>();
+        generateCards();
     }
 
     public String getDeckName()
@@ -29,8 +30,10 @@ public abstract class Deck
 
     public void returnCard(Card card)
     {
-        cards.insert(0, card);
+        cards.add(0, card);
     }
+
+    protected abstract void generateCards();
 
     @Override
     public String toString()
@@ -53,6 +56,9 @@ public abstract class Deck
             return false;
         
         Deck compare = (Deck) obj;
-
+        return (
+            this.deckName.equals(compare.getDeckName()) &&
+            this.getDeckSize() == compare.getDeckSize()
+        );
     }
 }

@@ -53,6 +53,11 @@ public class Player
         this.career = career;
     }
 
+    public String getCareer()
+    {
+        return this.career.NAME;
+    }
+
     public void setHouse(House house)
     {
         this.house = house;

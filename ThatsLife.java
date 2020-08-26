@@ -38,7 +38,7 @@ public class ThatsLife
         // Create all decks
         DECKS = new Deck[4];
         DECKS[0] = new CareerDeck();
-        DECKS[1] = new SalaryDeck();
+        DECKS[1] = new SalaryDeck((new Random()).nextInt(25));
         DECKS[2] = new BlueDeck();
         DECKS[3] = new ActionDeck();
     }
@@ -51,7 +51,7 @@ public class ThatsLife
     public static int rollNumber()
     {
         Random rand = new Random();
-        return rand.nextInt(10);
+        return rand.nextInt(10) + 1;
     }
 
     
