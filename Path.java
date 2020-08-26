@@ -13,6 +13,21 @@ public abstract class Path
         this.spaces = new ArrayList<Space>(len);
         this.spaces.set(0, origin);
         this.spaces.set(spaces.size()-1, destinationSpace);
+        generateSpaces();
+        initSpaces();
+    }
+
+    private void initSpaces()
+    {
+        for (int i = 0; i < spaces.size(); i++) 
+        {
+            if(!(spaces.get(i) instanceof EndSpace))
+            {
+                spaces.get(i).setNextSpace(spaces.get(i+1));
+            }
+            else
+                spaces.get(i).setNextSpace(null);
+        }
     }
 
     public int getPathLen()

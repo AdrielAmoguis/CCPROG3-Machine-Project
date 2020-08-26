@@ -5,7 +5,6 @@ public class CareerPath extends Path
     public CareerPath(Space origin, Space dest, int len)
     {
         super(origin, dest, len);
-        generateSpaces();
     }
 
     protected void generateSpaces()

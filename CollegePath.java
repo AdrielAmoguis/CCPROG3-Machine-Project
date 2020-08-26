@@ -5,7 +5,6 @@ public class CollegePath extends Path
     public CollegePath(Space origin, Space dest, int len)
     {
         super(origin, dest, len);
-        generateSpaces();
     }
 
     protected void generateSpaces()

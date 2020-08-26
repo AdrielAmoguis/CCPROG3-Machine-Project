@@ -5,7 +5,6 @@ public class StartFamilyPath extends Path
     public StartFamilyPath(Space origin, Space dest, int len)
     {
         super(origin, dest, len);
-        generateSpaces();
     }
 
     protected void generateSpaces()

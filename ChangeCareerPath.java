@@ -5,7 +5,6 @@ public class ChangeCareerPath extends Path
     public ChangeCareerPath(Space origin, Space dest, int len)
     {
         super(origin, dest, len);
-        generateSpaces();
     }
 
     protected void generateSpaces()

@@ -8,6 +8,8 @@ public abstract class Space
     public final int ID;
     private ArrayList<Player> players;
 
+    private Space nextSpace;
+
     public Space(Path path)
     {  
         Space.count++;
@@ -37,6 +39,16 @@ public abstract class Space
 
     // ABSTRACT METHOD
     protected abstract void event(Player player);
+
+    public void setNextSpace(Space space)
+    {
+        this.nextSpace = space;
+    }
+
+    public Space getNextSpace()
+    {
+        return this.nextSpace;
+    }
 
     @Override
     public String toString()

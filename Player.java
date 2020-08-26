@@ -8,9 +8,9 @@ public class Player
     private SalaryCard salary;
     private double balance;
 
-    private House house;
+    private HouseCard house;
     private boolean spouse;
-    private ArrayList<Child> children;
+    private int children;
 
     private Space space;
 
