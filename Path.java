@@ -11,8 +11,6 @@ public abstract class Path
         this.originSpace = origin;
         this.destinationSpace = dest;
         this.spaces = new ArrayList<Space>(len);
-        this.spaces.set(0, origin);
-        this.spaces.set(spaces.size()-1, destinationSpace);
         generateSpaces();
         initSpaces();
     }
@@ -21,7 +19,7 @@ public abstract class Path
     {
         for (int i = 0; i < spaces.size(); i++) 
         {
-            if(!(spaces.get(i) instanceof EndSpace))
+            if(i < spaces.size()-1)
             {
                 spaces.get(i).setNextSpace(spaces.get(i+1));
             }
@@ -35,16 +33,9 @@ public abstract class Path
         return spaces.size();
     }
 
-    public Space getSpace(int id)
+    public Space getSpace(int index)
     {
-        Space result = null;
-        for (Space keySpace : spaces) 
-        {
-            if(keySpace.ID == id)
-                result = keySpace;
-        }
-
-        return result;
+        return this.spaces.get(index);
     }
 
     public Space getOriginSpace()
@@ -55,6 +46,11 @@ public abstract class Path
     public Space getDestSpace()
     {
         return this.destinationSpace;
+    }
+
+    public void setStartSpace(Space space)
+    {
+        this.originSpace = space;
     }
 
     protected abstract void generateSpaces();

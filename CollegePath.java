@@ -15,18 +15,14 @@ public class CollegePath extends Path
             2. College Career Choice along the way
             3. The rest are orange spaces
         */
-        for(int i = 1; i < getPathLen(); i++)
-        {
-            if(spaces.get(i) == null)
-            {
-                if(i == getPathLen()-2)
-                    spaces.set(i, new MagentaSpace(this, 6));
-                else if(i == getPathLen()/2)
-                    spaces.set(i, new MagentaSpace(this, 0));
-                else
-                    spaces.set(i, new OrangeSpace(this));
-            }
-        }
+        spaces.add(this.originSpace);
+        for(int i = 0; i < 4; i++)
+            spaces.add(new OrangeSpace(this));
+        spaces.add(new MagentaSpace(this, 6));
+        for(int i = 0; i < 3; i++)
+            spaces.add(new OrangeSpace(this));
+        spaces.add(new MagentaSpace(this, 0));
+        spaces.add(this.destinationSpace);
     }
 
     @Override

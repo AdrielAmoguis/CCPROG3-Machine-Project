@@ -16,22 +16,22 @@ public class ChangeCareerPath extends Path
             3. One blue Space
             4. The rest are orange spaces
         */
-        for(int i = 1; i < getPathLen(); i++)
-        {
-            if(spaces.get(i) == null)
-            {
-                if(i == 2)
-                    spaces.set(i, new GreenSpace(this, 1));
-                else if(i == 4)
-                    spaces.set(i, new GreenSpace(this, 9));
-                else if(i == getPathLen()/2)
-                    spaces.set(i, new MagentaSpace(this, 7));
-                else if(i == getPathLen()/4 + getPathLen()/2)
-                    spaces.set(i, new BlueSpace(this));
-                else
-                    spaces.set(i, new OrangeSpace(this));
-            }
-        }
+        // SET JUNCTION
+        Space space = new MagentaSpace(this, 7);
+        ((JunctionSpace) this.originSpace).setRightSpace(space);
+        spaces.add(this.originSpace);
+        spaces.add(space);
+        //
+        for(int i = 0; i < 2; i++)
+            spaces.add(new OrangeSpace(this));
+        spaces.add(new GreenSpace(this, 0));
+        for(int i = 0; i < 2; i++)
+            spaces.add(new OrangeSpace(this));
+        spaces.add(new GreenSpace(this, 1));
+        spaces.add(new OrangeSpace(this));
+        spaces.add(new GreenSpace(this, 0));
+        spaces.add(new BlueSpace(this));
+        spaces.add(this.destinationSpace);
     }
 
     @Override

@@ -3,11 +3,19 @@ public class StartSpace extends Space
     private Space collegeStart;
     private Space careerStart;
 
-    public StartSpace(Space career, Space college)
+    public StartSpace()
     {
         super(null);
-        this.collegeStart = college;
-        this.careerStart = career;
+    }
+
+    public void setCollegeStart(Space space)
+    {
+        this.collegeStart = space;
+    }
+
+    public void setCareerStart(Space space)
+    {
+        this.careerStart = space;
     }
 
     public void event(Player player)
@@ -20,5 +28,13 @@ public class StartSpace extends Space
             player.setSpace(careerStart);
         else
             player.setSpace(collegeStart);
+    }
+
+    @Override
+    public String toString()
+    {
+        return new String(
+            "[StartSpace " + String.valueOf(this.ID) + "] Players = " + players.toString()
+        );
     }
 }

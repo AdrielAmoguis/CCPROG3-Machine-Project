@@ -6,7 +6,7 @@ public abstract class Space
     private Path path;
 
     public final int ID;
-    private ArrayList<Player> players;
+    protected ArrayList<Player> players;
 
     private Space nextSpace;
 

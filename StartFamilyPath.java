@@ -17,23 +17,22 @@ public class StartFamilyPath extends Path
             4. Blue Space
             5. Orange Space
         */
-
-        for(int i = 1; i < getPathLen(); i++)
-        {
-            if(spaces.get(i) == null)
-            {
-                if(i == 1)
-                    spaces.set(i, new MagentaSpace(this, 3));
-                else if(i == getPathLen()/2)
-                    spaces.set(i, new MagentaSpace(this, 2));
-                else if(i == getPathLen()/2 + getPathLen()/4)
-                    spaces.set(i, new MagentaSpace(this, 4 + (ThatsLife.rollNumber()%2)));
-                else if(i == getPathLen()-2)
-                    spaces.set(i, new BlueSpace(this));
-                else
-                    spaces.set(i, new OrangeSpace(this));
-            }
-        }
+        // SET JUNCTION
+        Space space = new MagentaSpace(this, 3);
+        ((JunctionSpace) this.originSpace).setRightSpace(space);
+        spaces.add(this.originSpace);
+        spaces.add(space);
+        //
+        for(int i = 0; i < 2; i++)
+            spaces.add(new OrangeSpace(this));
+        spaces.add(new MagentaSpace(this, 2));
+        for(int i = 0; i < 2; i++)
+            spaces.add(new OrangeSpace(this));
+        spaces.add(new MagentaSpace(this, 4));
+        spaces.add(new OrangeSpace(this));
+        spaces.add(new MagentaSpace(this, 5));
+        spaces.add(new BlueSpace(this));
+        spaces.add(this.destinationSpace);
     }
 
     @Override

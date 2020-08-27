@@ -6,21 +6,27 @@ import java.util.*;
 public class Map 
 {
     private ArrayList<Path> paths;
-    private Space startSpace;
-    private Space endSpace;
+    private StartSpace startSpace;
+    private EndSpace endSpace;
 
     public Map()
     {
         paths = new ArrayList<Path>();
 
-        // Create paths
-        createCareerPath(startSpace, endSpace, 95);
-        createCollegePath(startSpace, paths.get(0).spaces.get(3), 14);
-        createChangeCareerPath(paths.get(0).spaces.get(26), paths.get(0).spaces.get(33), 11);
-        createStartFamPath(paths.get(0).spaces.get(46), paths.get(0).spaces.get(54), 12);
-
-        startSpace = new StartSpace(paths.get(0).spaces.get(1), paths.get(1).spaces.get(1));
+        // Create the EndSpace
         endSpace = new EndSpace();
+        startSpace = new StartSpace();
+
+        // Create Career & College paths
+        createCareerPath(startSpace, endSpace, 112);
+        createCollegePath(startSpace, paths.get(0).getSpace(6), 12);
+        // Initialize startSpace
+        startSpace.setCareerStart(paths.get(0).getSpace(1));
+        startSpace.setCollegeStart(paths.get(1).getSpace(1));
+        // Create the StartFamilyPath
+        createStartFamPath(paths.get(0).getSpace(54), paths.get(0).getSpace(73), 11);
+        // Create Change Career Path
+        createChangeCareerPath(paths.get(0).getSpace(21), paths.get(0).getSpace(40), 11);
     }
 
     private void createCareerPath(Space startSpace, Space endSpace, int len)
@@ -41,5 +47,10 @@ public class Map
     private void createChangeCareerPath(Space origin, Space dest, int len)
     {
         paths.add(new ChangeCareerPath(origin, dest, len));
+    }
+
+    public Path getPath(int index)
+    {
+        return this.paths.get(index);
     }
 }

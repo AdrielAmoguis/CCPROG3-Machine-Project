@@ -9,7 +9,7 @@ public class ThatsLife
     /**
      * This static final variable contains the main map instance of the entire game.
      */
-    public static final Map MAP;
+    private Map map;
 
     /**
      * This static array contains all the instances for all deck types.
@@ -18,7 +18,7 @@ public class ThatsLife
      * Index 2 - DECK
      * Index 3 - DECK
      */
-    public static final Deck[] DECKS;
+    private static Deck[] decks;
 
     // List of players
     private ArrayList<Player> players;
@@ -33,14 +33,14 @@ public class ThatsLife
         this.players = new ArrayList<Player>();
 
         // Create the MAP
-        MAP = new Map();
+        map = new Map();
 
         // Create all decks
-        DECKS = new Deck[4];
-        DECKS[0] = new CareerDeck();
-        DECKS[1] = new SalaryDeck((new Random()).nextInt(25));
-        DECKS[2] = new BlueDeck();
-        DECKS[3] = new ActionDeck();
+        decks = new Deck[4];
+        decks[0] = new CareerDeck();
+        decks[1] = new SalaryDeck((new Random()).nextInt(25));
+        decks[2] = new BlueDeck();
+        decks[3] = new ActionDeck();
     }
 
 
@@ -54,5 +54,14 @@ public class ThatsLife
         return rand.nextInt(10) + 1;
     }
 
+    public Map getMap()
+    {
+        return map;
+    }
+
+    public static Deck getDeck(int index)
+    {
+        return decks[index];
+    }
     
 }

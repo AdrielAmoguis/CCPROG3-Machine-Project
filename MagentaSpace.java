@@ -18,9 +18,8 @@ public class MagentaSpace extends Space
             case 3: return "Get Married";
             case 4: return "Have Baby";
             case 5: return "Have Twins";
-            case 6: return "Junction";
-            case 7: return "Graduation";
-            case 8: return "Career Choice";
+            case 6: return "Graduation";
+            case 7: return "Career Choice";
         }
 
         return "INVALID";
@@ -36,9 +35,8 @@ public class MagentaSpace extends Space
             case 3: getMarried(player); break;
             case 4: haveBaby(player); break;
             case 5: haveTwins(player); break;
-            case 6: junction(player); break;
-            case 7: graduate(player); break;
-            case 8: careerChoice(player); break;
+            case 6: graduate(player); break;
+            case 7: careerChoice(player); break;
         }
     }
 
@@ -86,5 +84,13 @@ public class MagentaSpace extends Space
     private void careerChoice(Player player)
     {
 
+    }
+
+    @Override
+    public String toString()
+    {
+        return new String(
+            "[MagentaSpace (" + this.getType() + ") " + String.valueOf(this.ID) + "] Players = " + players.toString()
+        );
     }
 }
