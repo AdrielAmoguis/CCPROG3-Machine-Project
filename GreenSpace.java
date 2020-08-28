@@ -16,9 +16,17 @@ public class GreenSpace extends Space
         return TYPE == 0 ? "Pay Day" : "Pay Raise";
     }
 
-    @Override
     protected void event(Player player)
     {
+        // Pay day
+        if(this.TYPE == 0)
+        {
+            player.credit(player.getSalary().getSalary());
+        }
+        else // Pay Raise
+        {
+            player.getSalary().payRaise();
+        }
     }
 
     @Override

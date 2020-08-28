@@ -28,8 +28,29 @@ public class BlueCard extends Card
 
     public void event(Player player)
     {
-        if (!isMatch(player))
-            return;
+        boolean paid = false;
+        if (isMatch(player))
+        {
+            player.credit(15000);
+            paid = true;
+        }
+        if(!paid && !isMatch(player))
+        {
+            for (Player otherPlayer : players) 
+            {
+                if(otherPlayer.getCareer().NAME.equals(player.getCareer().NAME))
+                {
+                    paid = true;
+                    player.debit(15000);
+                    otherPlayer.credit(15000);
+                }    
+            }
+        }
+        if(!paid)
+        {
+            player.debit(15000);
+        }
+
 
         switch(this.matchingCareer)
         {

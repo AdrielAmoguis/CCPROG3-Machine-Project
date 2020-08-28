@@ -8,8 +8,10 @@ public class OrangeSpace extends Space
     protected void event(Player player)
     {
         // Draw action card
+        ActionCard card = (ActionCard) ThatsLife.getDeck(3).drawCard();
 
-        // Do stuff with the card
+        // Call card event
+        card.event(player);
     }
 
     @Override

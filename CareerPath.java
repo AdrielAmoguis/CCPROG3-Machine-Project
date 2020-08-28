@@ -2,11 +2,9 @@ import java.util.*;
 
 public class CareerPath extends Path
 {
-    public final String NAME = new String("Career Path");
-
     public CareerPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len, players);
+        super("Career Path", origin, dest, len, players);
     }
 
     protected void generateSpaces(ArrayList<Player> players)
@@ -127,7 +125,7 @@ public class CareerPath extends Path
     public boolean equals(Object obj)
     {
         CareerPath compare = (CareerPath) obj;
-        if(compare.NAME.equals(this.NAME))
+        if(compare.getName().equals(this.getName()))
             return true;
         return false;
     }

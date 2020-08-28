@@ -2,11 +2,9 @@ import java.util.*;
 
 public class CollegePath extends Path
 {
-    public final String NAME = "College Path";
-    
     public CollegePath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len, players);
+        super("College Path", origin, dest, len, players);
     }
 
     protected void generateSpaces(ArrayList<Player> players)

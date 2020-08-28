@@ -35,7 +35,28 @@ public class JunctionSpace extends MagentaSpace
 
     private void setPlayerPath(Player player)
     {
-        
+        String options = new String();
+        options += "You have hit a junction. Choose a path:\n";
+        options += "[1] " + leftSpace.getPath().getName() + "\n";
+        options += "[2] " + rightSpace.getPath().getName() + "\n";
+        options += "Your Choice: ";
+        int choice = player.decision(options);
+        if(choice == 1)
+        {
+            // Left path
+            // Roll again
+            int spin = ThatsLife.rollNumber(player.spin());
+            this.setNextSpace(leftSpace);
+            player.move(spin);
+        }
+        else
+        {
+            // Right path
+            // Roll again
+            int spin = ThatsLife.rollNumber(player.spin());
+            this.setNextSpace(rightSpace);
+            player.move(spin);
+        }
     }
 
     @Override

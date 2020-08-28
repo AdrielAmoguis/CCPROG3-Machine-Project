@@ -2,11 +2,9 @@ import java.util.*;
 
 public class StartFamilyPath extends Path
 {
-    public final String NAME = "Start a Family Path";    
-
     public StartFamilyPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len, players);
+        super("Start a Family Path", origin, dest, len, players);
     }
 
     protected void generateSpaces(ArrayList<Player> players)
@@ -46,7 +44,7 @@ public class StartFamilyPath extends Path
         
         StartFamilyPath compare = (StartFamilyPath) obj;
         return (
-            compare.NAME.equals(this.NAME)
+            compare.getName().equals(this.getName())
         );
     }
 }

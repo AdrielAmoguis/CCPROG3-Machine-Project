@@ -8,8 +8,10 @@ public class BlueSpace extends Space
     protected void event(Player player)
     {
         // Draw blue card
+        BlueCard card = (BlueCard) ThatsLife.getDeck(2).drawCard();
 
-        // Do stuff with the card
+        // Call the card event
+        card.event(player);
     }
 
     @Override

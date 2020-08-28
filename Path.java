@@ -5,9 +5,11 @@ public abstract class Path
     protected ArrayList<Space> spaces;
     protected Space originSpace;
     protected Space destinationSpace;
+    private String name;
     
-    public Path(Space origin, Space dest, int len, ArrayList<Player> players)
+    public Path(String name, Space origin, Space dest, int len, ArrayList<Player> players)
     {
+        this.name = name;
         this.originSpace = origin;
         this.destinationSpace = dest;
         this.spaces = new ArrayList<Space>(len);
@@ -46,6 +48,11 @@ public abstract class Path
     public Space getDestSpace()
     {
         return this.destinationSpace;
+    }
+
+    public String getName()
+    {
+        return this.name;
     }
 
     public void setStartSpace(Space space)
