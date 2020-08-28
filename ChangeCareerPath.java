@@ -1,13 +1,15 @@
+import java.util.*;
+
 public class ChangeCareerPath extends Path
 {
     public final String NAME = "Change Career Path";
 
-    public ChangeCareerPath(Space origin, Space dest, int len)
+    public ChangeCareerPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len);
+        super(origin, dest, len, players);
     }
 
-    protected void generateSpaces()
+    protected void generateSpaces(ArrayList<Player> players)
     {
         /*
             Generation Rules:
@@ -17,7 +19,7 @@ public class ChangeCareerPath extends Path
             4. The rest are orange spaces
         */
         // SET JUNCTION
-        Space space = new MagentaSpace(this, 7);
+        Space space = new MagentaSpace(this, 7, players);
         ((JunctionSpace) this.originSpace).setRightSpace(space);
         spaces.add(this.originSpace);
         spaces.add(space);

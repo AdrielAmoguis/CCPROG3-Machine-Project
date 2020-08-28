@@ -1,8 +1,8 @@
-public class testDriver 
+public class mapTestDriver 
 {
     public static void main(String[] args)
     {
-        ThatsLife game = new ThatsLife();
+        ThatsLife game = new ThatsLife(1);
         // Test the Career Path
         System.out.println("================================ CAREER PATH ================================");
         testCareerPath(game);
@@ -12,6 +12,8 @@ public class testDriver
         testChangeCareerPath(game);
         System.out.println("================================ START FAMILY PATH ================================");
         testStartFamilyPath(game);
+
+        ThatsLife.kb.close();
     }
 
     public static void testCareerPath(ThatsLife game)

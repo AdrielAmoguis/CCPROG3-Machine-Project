@@ -20,14 +20,28 @@ public class StartSpace extends Space
 
     public void event(Player player)
     {
-        String options[] = new String[2];
-        options[0] = new String("Take the Career Path");
-        options[1] = new String("Take the College Path");
-        int choice = player.decision(options);
-        if(choice == 0)
-            player.setSpace(careerStart);
-        else
-            player.setSpace(collegeStart);
+        while(true)
+        {
+            String options = new String("");
+            options += "Pick your initial path:\n";
+            options += "[1] Take the Career Path\n";
+            options += "[2] Take the College Path\n";
+            options += "Your Choice: ";
+            int choice = player.decision(options) - 1;
+            if(choice == 0)
+            {
+                player.setSpace(careerStart);
+                players.remove(player);
+                break;
+            }
+            else if(choice == 1)
+            {
+                player.setSpace(collegeStart);
+                players.remove(player);
+                break;
+            }
+        }
+        
     }
 
     @Override

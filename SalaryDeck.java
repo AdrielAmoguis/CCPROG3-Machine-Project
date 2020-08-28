@@ -22,7 +22,7 @@ public class SalaryDeck extends Deck
         Random rand = new Random(ThatsLife.rollNumber());
         for(int i = 0; i < numCards; i++)
         {
-            cards.add(new SalaryCard((double)(1 + rand.nextInt() % 20) * 10000, (double) (1 + rand.nextInt() % 50) * 1000));
+            cards.add(new SalaryCard((double)(1 + rand.nextInt() % 20) * 10000));
         }
         Collections.shuffle(cards);
     }

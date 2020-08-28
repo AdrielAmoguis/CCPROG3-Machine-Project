@@ -1,13 +1,15 @@
+import java.util.*;
+
 public class StartFamilyPath extends Path
 {
     public final String NAME = "Start a Family Path";    
 
-    public StartFamilyPath(Space origin, Space dest, int len)
+    public StartFamilyPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len);
+        super(origin, dest, len, players);
     }
 
-    protected void generateSpaces()
+    protected void generateSpaces(ArrayList<Player> players)
     {
         /*
             Generation Rules:
@@ -17,20 +19,21 @@ public class StartFamilyPath extends Path
             4. Blue Space
             5. Orange Space
         */
+        
         // SET JUNCTION
-        Space space = new MagentaSpace(this, 3);
+        Space space = new MagentaSpace(this, 3, players);
         ((JunctionSpace) this.originSpace).setRightSpace(space);
         spaces.add(this.originSpace);
         spaces.add(space);
         //
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 2));
+        spaces.add(new MagentaSpace(this, 2, players));
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 4));
+        spaces.add(new MagentaSpace(this, 4, players));
         spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 5));
+        spaces.add(new MagentaSpace(this, 5, players));
         spaces.add(new BlueSpace(this));
         spaces.add(this.destinationSpace);
     }

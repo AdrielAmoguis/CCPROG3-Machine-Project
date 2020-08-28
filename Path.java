@@ -6,12 +6,12 @@ public abstract class Path
     protected Space originSpace;
     protected Space destinationSpace;
     
-    public Path(Space origin, Space dest, int len)
+    public Path(Space origin, Space dest, int len, ArrayList<Player> players)
     {
         this.originSpace = origin;
         this.destinationSpace = dest;
         this.spaces = new ArrayList<Space>(len);
-        generateSpaces();
+        generateSpaces(players);
         initSpaces();
     }
 
@@ -53,7 +53,7 @@ public abstract class Path
         this.originSpace = space;
     }
 
-    protected abstract void generateSpaces();
+    protected abstract void generateSpaces(ArrayList<Player> players);
 
     @Override
     public boolean equals(Object obj)

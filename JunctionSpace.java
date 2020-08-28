@@ -5,7 +5,7 @@ public class JunctionSpace extends MagentaSpace
 
     public JunctionSpace(Path path)
     {
-        super(path, -1);
+        super(path, -1, null);
     }
 
     public Space getLeftSpace()

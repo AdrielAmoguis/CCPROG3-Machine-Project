@@ -6,6 +6,7 @@ import java.util.*;
  */
 public class ThatsLife 
 {
+    public static Scanner kb;
     /**
      * This static final variable contains the main map instance of the entire game.
      */
@@ -24,25 +25,49 @@ public class ThatsLife
     private ArrayList<Player> players;
 
     /**
-     * The default constructor initializes the main MAP and card decks. Sets players to empty ArrayList.
-     * @param players Accepts an instance of ArrayList<Player> - this will be the main reference instance to be used.
+     * A game is instantiated given the number of players for the game. The constructor initializes all the players, the map, and all card decks.
+     * @param numPlayers An integer value of the number of players for the new instance of the game.
      */
-    public ThatsLife()
-    {
+    public ThatsLife(int numPlayers)
+    {    
+        kb = new Scanner(System.in);
+
         // Declare Players ArrayList instance
         this.players = new ArrayList<Player>();
 
+        // Create players
+        for(int i = 0; i < numPlayers; i++)
+            createPlayer();
+
         // Create the MAP
-        map = new Map();
+        map = new Map(this.players);
+
+        // Set the players to the starting space
+        for (Player player : this.players)
+        {
+            player.setSpace(map.getStartSpace());    
+        }
 
         // Create all decks
         decks = new Deck[4];
         decks[0] = new CareerDeck();
         decks[1] = new SalaryDeck((new Random()).nextInt(25));
-        decks[2] = new BlueDeck();
-        decks[3] = new ActionDeck();
+        decks[2] = new BlueDeck(players);
+        decks[3] = new ActionDeck(players);
     }
 
+    private void createPlayer()
+    {
+        // Get player name
+        System.out.printf("Enter new player name: ");
+        Player player = new Player(ThatsLife.kb.nextLine());
+        this.players.add(player);
+    }
+
+    public Map getMap()
+    {
+        return map;
+    }
 
     /**
      * This is the main random number generator for the game. It "spins" and generates a number from [1,10].
@@ -54,9 +79,10 @@ public class ThatsLife
         return rand.nextInt(10) + 1;
     }
 
-    public Map getMap()
+    public static int rollNumber(long seed)
     {
-        return map;
+        Random rand = new Random(seed);
+        return rand.nextInt(10) + 1;
     }
 
     public static Deck getDeck(int index)

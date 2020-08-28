@@ -1,26 +1,26 @@
-import java.util.Collections;
+import java.util.*;
 
 public class BlueDeck extends Deck
 {
-    public BlueDeck()
+    public BlueDeck(ArrayList<Player> players)
     {
         super("Blue Deck");
-        generateCards();
-    }   
+        generateCards(players);
+    }
     
-    protected void generateCards()
+    protected void generateCards(ArrayList<Player> players)
     {
         /*
             Generation Rules:
             1. Preset generation
         */
-        cards.add(new BlueCard("Lawsuit", "Lawyer"));
-        cards.add(new BlueCard("Salary Tax Due", "Accountant"));
-        cards.add(new BlueCard("Tip the Server", "Server"));
-        cards.add(new BlueCard("Ski Accident", "Doctor"));
-        cards.add(new BlueCard("Computer Repair", "Computer Consultant"));
-        cards.add(new BlueCard("World Cup", "Athlete"));
-        cards.add(new BlueCard("F1 Race", "Racecar Driver"));
+        cards.add(new BlueCard("Lawsuit", "Lawyer", players));
+        cards.add(new BlueCard("Salary Tax Due", "Accountant", players));
+        cards.add(new BlueCard("Tip the Server", "Server", players));
+        cards.add(new BlueCard("Ski Accident", "Doctor", players));
+        cards.add(new BlueCard("Computer Repair", "Computer Consultant", players));
+        cards.add(new BlueCard("World Cup", "Athlete", players));
+        cards.add(new BlueCard("F1 Race", "Racecar Driver", players));
         Collections.shuffle(cards);
     }
 }

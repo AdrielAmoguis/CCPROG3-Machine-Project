@@ -8,7 +8,6 @@ public abstract class Deck
     public Deck(String deckName)
     {
         cards = new ArrayList<Card>();
-        generateCards();
     }
 
     public String getDeckName()
@@ -23,17 +22,13 @@ public abstract class Deck
 
     public Card drawCard()
     {
-        Card drawn = cards.get(cards.size()-1);
-        cards.remove(cards.size()-1);
-        return drawn;
+        return cards.remove(0);
     }
 
     public void returnCard(Card card)
     {
-        cards.add(0, card);
+        cards.add(card);
     }
-
-    protected abstract void generateCards();
 
     @Override
     public String toString()

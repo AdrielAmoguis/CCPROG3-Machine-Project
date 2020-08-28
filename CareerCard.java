@@ -13,7 +13,19 @@ public class CareerCard extends Card
     }
 
     public void event(Player player)
+    {}
+
+    public int getMaxRaise()
     {
-        
+        return this.maxRaise;
+    }
+
+    @Override
+    public String toString()
+    {
+        return (
+            "[Career] " + this.NAME + " | " + (this.DEGREE ? "Degree Required" : "Degree Not Required") + 
+            " | MaxRaise = " + String.valueOf(maxRaise)
+        );
     }
 }

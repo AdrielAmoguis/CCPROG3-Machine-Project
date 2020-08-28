@@ -1,13 +1,15 @@
+import java.util.*;
+
 public class CareerPath extends Path
 {
     public final String NAME = new String("Career Path");
 
-    public CareerPath(Space origin, Space dest, int len)
+    public CareerPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len);
+        super(origin, dest, len, players);
     }
 
-    protected void generateSpaces()
+    protected void generateSpaces(ArrayList<Player> players)
     {
         /*
             Generation Rules:
@@ -16,7 +18,7 @@ public class CareerPath extends Path
         spaces.add(this.originSpace);
         for(int i = 0; i < 3; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 3));
+        spaces.add(new MagentaSpace(this, 3, players));
         for(int i = 0; i < 4; i++)
             spaces.add(new OrangeSpace(this));
         spaces.add(new GreenSpace(this, 0));
@@ -48,7 +50,7 @@ public class CareerPath extends Path
         spaces.add(new BlueSpace(this));
         for(int i = 0; i < 3; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 1));
+        spaces.add(new MagentaSpace(this, 1, players));
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
         spaces.add(new GreenSpace(this, 0));
@@ -82,7 +84,7 @@ public class CareerPath extends Path
         spaces.add(new BlueSpace(this));
         for(int i = 0; i < 3; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 2));
+        spaces.add(new MagentaSpace(this, 2, players));
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
         spaces.add(new GreenSpace(this, 0));
@@ -91,7 +93,7 @@ public class CareerPath extends Path
         spaces.add(new GreenSpace(this, 0));
         for(int i = 0; i < 3; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 3));
+        spaces.add(new MagentaSpace(this, 3, players));
         for(int i = 0; i < 3; i++)
             spaces.add(new OrangeSpace(this));
         spaces.add(new GreenSpace(this, 1));
@@ -102,13 +104,13 @@ public class CareerPath extends Path
         spaces.add(new BlueSpace(this));
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 5));
+        spaces.add(new MagentaSpace(this, 5, players));
         spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 6));
+        spaces.add(new MagentaSpace(this, 6, players));
         spaces.add(new GreenSpace(this, 0));
         for(int i = 0; i < 5; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 2));
+        spaces.add(new MagentaSpace(this, 2, players));
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
         spaces.add(new GreenSpace(this, 0));

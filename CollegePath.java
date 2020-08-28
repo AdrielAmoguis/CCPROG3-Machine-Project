@@ -1,13 +1,15 @@
+import java.util.*;
+
 public class CollegePath extends Path
 {
     public final String NAME = "College Path";
     
-    public CollegePath(Space origin, Space dest, int len)
+    public CollegePath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        super(origin, dest, len);
+        super(origin, dest, len, players);
     }
 
-    protected void generateSpaces()
+    protected void generateSpaces(ArrayList<Player> players)
     {
         /*
             Generation Rules:
@@ -18,10 +20,10 @@ public class CollegePath extends Path
         spaces.add(this.originSpace);
         for(int i = 0; i < 4; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 6));
+        spaces.add(new MagentaSpace(this, 6, players));
         for(int i = 0; i < 3; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 0));
+        spaces.add(new MagentaSpace(this, 0, players));
         spaces.add(this.destinationSpace);
     }
 

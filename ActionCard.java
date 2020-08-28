@@ -1,12 +1,22 @@
+import java.util.*;
+
 public class ActionCard extends Card
 {
     public final String NAME;
     public final int TYPE;
+    public final double AMOUNT;
+
+    private ArrayList<Player> players;
     
-    public ActionCard(int type)
+    public ActionCard(int type, ArrayList<Player> players)
     {
         TYPE = type;
         NAME = generateName();
+        this.players = players;
+
+        // Generate for the amount
+        Random rand = new Random(ThatsLife.rollNumber());
+        AMOUNT = 10000*(1 + rand.nextInt(13));
     }
 
     private String generateName()
@@ -52,38 +62,60 @@ public class ActionCard extends Card
     {
         switch(TYPE)
         {
-            case 1: collectFromBank(); break;
-            case 2: payTheBank(); break;
-            case 3: payThePlayer(); break;
-            case 4: collectFromPlayer(); break;
+            case 1: collectFromBank(player); break;
+            case 2: payTheBank(player); break;
+            case 3: payThePlayer(player); break;
+            case 4: collectFromPlayer(player); break;
         }
     }
 
-    private void collectFromBank()
+    private Player choosePlayer(Player exclude)
     {
+        Scanner kb = new Scanner(System.in);
+        System.out.println("Choose player: ");
+        int index = Integer.parseInt(kb.nextLine());
+        kb.close();
 
+        if(index < 0 || index > this.players.size())
+            return null;
+        if(exclude.equals(this.players.get(index)))
+            return null;
+
+        
+        return this.players.get(index);
     }
 
-    private void payTheBank()
+    private void collectFromBank(Player player)
     {
-
+        player.credit(this.AMOUNT);
     }
 
-    private void payThePlayer()
+    private void payTheBank(Player player)
     {
-
+        player.debit(this.AMOUNT);
     }
 
-    private void collectFromPlayer()
+    private void payThePlayer(Player player)
     {
+        Player chosen = choosePlayer(player);
+        
+        player.debit(this.AMOUNT);
+        chosen.credit(this.AMOUNT);
+    }
 
+    private void collectFromPlayer(Player player)
+    {
+        Player chosen = choosePlayer(player);
+        
+        player.credit(this.AMOUNT);
+        chosen.debit(this.AMOUNT);
     }
 
     @Override
     public String toString()
     {
         return (
-            "[ActionCard] " + this.NAME + ""
+            "[ActionCard] " + this.NAME + " | Amount = " + String.valueOf(this.AMOUNT)
         );
     }
 }

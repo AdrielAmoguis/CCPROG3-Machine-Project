@@ -9,7 +9,7 @@ public class Map
     private StartSpace startSpace;
     private EndSpace endSpace;
 
-    public Map()
+    public Map(ArrayList<Player> players)
     {
         paths = new ArrayList<Path>();
 
@@ -18,39 +18,44 @@ public class Map
         startSpace = new StartSpace();
 
         // Create Career & College paths
-        createCareerPath(startSpace, endSpace, 112);
-        createCollegePath(startSpace, paths.get(0).getSpace(6), 12);
+        createCareerPath(startSpace, endSpace, 112, players);
+        createCollegePath(startSpace, paths.get(0).getSpace(6), 12, players);
         // Initialize startSpace
         startSpace.setCareerStart(paths.get(0).getSpace(1));
         startSpace.setCollegeStart(paths.get(1).getSpace(1));
         // Create the StartFamilyPath
-        createStartFamPath(paths.get(0).getSpace(54), paths.get(0).getSpace(73), 11);
+        createStartFamPath(paths.get(0).getSpace(54), paths.get(0).getSpace(73), 11, players);
         // Create Change Career Path
-        createChangeCareerPath(paths.get(0).getSpace(21), paths.get(0).getSpace(40), 11);
+        createChangeCareerPath(paths.get(0).getSpace(21), paths.get(0).getSpace(40), 11, players);
     }
 
-    private void createCareerPath(Space startSpace, Space endSpace, int len)
+    private void createCareerPath(Space startSpace, Space endSpace, int len, ArrayList<Player> players)
     {
-        paths.add(new CareerPath(startSpace, endSpace, len));
+        paths.add(new CareerPath(startSpace, endSpace, len, players));
     }
 
-    private void createCollegePath(Space startSpace, Space dest, int len)
+    private void createCollegePath(Space startSpace, Space dest, int len, ArrayList<Player> players)
     {
-        paths.add(new CollegePath(startSpace, dest, len));
+        paths.add(new CollegePath(startSpace, dest, len, players));
     }
 
-    private void createStartFamPath(Space origin, Space dest, int len)
+    private void createStartFamPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        paths.add(new StartFamilyPath(origin, dest, len));
+        paths.add(new StartFamilyPath(origin, dest, len, players));
     }
 
-    private void createChangeCareerPath(Space origin, Space dest, int len)
+    private void createChangeCareerPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
-        paths.add(new ChangeCareerPath(origin, dest, len));
+        paths.add(new ChangeCareerPath(origin, dest, len, players));
     }
 
     public Path getPath(int index)
     {
         return this.paths.get(index);
+    }
+
+    public StartSpace getStartSpace()
+    {
+        return this.startSpace;
     }
 }

@@ -1,11 +1,15 @@
+import java.util.*;
+
 public class MagentaSpace extends Space
 {
     public final int TYPE;
+    private ArrayList<Player> allPlayers;
     
-    public MagentaSpace(Path path, int type)
+    public MagentaSpace(Path path, int type, ArrayList<Player> players)
     {
         super(path);
         TYPE = type;
+        this.allPlayers = players;
     }
 
     public String getType()
@@ -38,12 +42,16 @@ public class MagentaSpace extends Space
             case 6: graduate(player); break;
             case 7: careerChoice(player); break;
         }
+
+        // Roll Again
+        int spin = ThatsLife.rollNumber(player.spin());
+        player.move(spin);
     }
 
     // EVENT FUNCTIONS
     private void collegeCareerChoice(Player player)
     {
-
+        
     }
 
     private void jobSearch(Player player)
@@ -58,32 +66,65 @@ public class MagentaSpace extends Space
 
     private void getMarried(Player player)
     {
-
+        if(!(player.isMarried()))
+        {
+            player.setSpouse(true);
+            int spin = ThatsLife.rollNumber(player.spin());
+            if (spin % 2 == 1)
+            {
+                player.credit(5000*(allPlayers.size()-1));
+                for (Player otherPlayer : allPlayers) 
+                {
+                    if(!(player.equals(otherPlayer)))
+                        otherPlayer.debit(5000);    
+                }
+            }
+            else
+            {
+                player.credit(10000*(allPlayers.size()-1));
+                for (Player otherPlayer : allPlayers) 
+                {
+                    if(!(player.equals(otherPlayer)))
+                        otherPlayer.debit(10000);    
+                }
+            }
+        }
     }
     
     private void haveBaby(Player player)
     {
-
+        if(player.isMarried())
+        {
+            player.credit(5000*(allPlayers.size()-1));
+            for (Player otherPlayer : allPlayers) 
+            {
+                if(!(player.equals(otherPlayer)))
+                    otherPlayer.debit(5000);    
+            }
+        }
     }
 
     private void haveTwins(Player player)
     {
-
-    }
-
-    private void junction(Player player)
-    {
-        
+        if(player.isMarried())
+        {
+            player.credit(10000*(allPlayers.size()-1));
+            for (Player otherPlayer : allPlayers) 
+            {
+                if(!(player.equals(otherPlayer)))
+                    otherPlayer.debit(10000);    
+            }
+        }
     }
 
     private void graduate(Player player)
     {
-        
+        System.out.println("Contratulations on your graduation, " + player.getName() + "!");
     }
 
     private void careerChoice(Player player)
     {
-
+        
     }
 
     @Override

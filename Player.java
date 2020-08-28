@@ -14,7 +14,7 @@ public class Player
 
     private Space space;
 
-    public Player(String name, StartSpace start)
+    public Player(String name)
     {
         this.playerName = new String(name);
         career = null;
@@ -23,9 +23,6 @@ public class Player
         house = null;
         spouse = false;
         children = 0;
-        space = start;
-        space.event(this);
-        turn();
     }
 
     public void turn()
@@ -49,9 +46,9 @@ public class Player
         return this.balance;
     }
 
-    public String getCareer()
+    public CareerCard getCareer()
     {
-        return this.career.NAME;
+        return this.career;
     }
 
     public SalaryCard getSalary()
@@ -62,6 +59,11 @@ public class Player
     public Space getSpace()
     {
         return this.space;
+    }
+
+    public boolean isMarried()
+    {
+        return this.spouse;
     }
 
     // Balance operations
@@ -109,11 +111,14 @@ public class Player
     public void setSpace(Space space)
     {
         this.space = space;
+        // Calls the space event
+        space.playerLand(this);
     }
 
     public int move(int steps)
     {
         Space bufferSpace = this.space;
+        this.space.playerLeave(this);
         int moved = 0;
         for (int i = 0; i < steps; i++)
         {
@@ -125,24 +130,25 @@ public class Player
             else break;
         }
         this.space = bufferSpace;
+        this.space.playerLand(this);
         return moved;
     }
 
-    public int decision(String[] options)
+    public int decision(String options)
     {
-        System.out.println("Choose from the following options:");
-        for (int i = 0; i < options.length; i++) 
-        {
-            System.out.printf("[%d] %s\n", i+1, options[i]);
-        }
-        Scanner keyStream = new Scanner(System.in);
-        int choice = Integer.parseInt(keyStream.nextLine());
-        keyStream.close();
+        System.out.print(options);
+        int choice = Integer.parseInt(ThatsLife.kb.nextLine());
 
-        if(choice < 0 || choice > options.length)
-            return -1;
+        return choice;
+    }
 
-        return choice-1;
+    public int spin()
+    {
+        System.out.print("Input any number: ");
+        Scanner kb = new Scanner(System.in);
+        int n = Integer.parseInt(kb.nextLine());
+        kb.close();
+        return n;
     }
 
     @Override
