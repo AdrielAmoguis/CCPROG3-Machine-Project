@@ -181,8 +181,9 @@ public class MagentaSpace extends Space
                 break;
         }
 
-        // Remove from the arraylist player's decision
+        // Remove from the arraylist player's decision and charge the player
         HouseCard use = houseCards.remove(choice-1);
+        player.debit(use.BUY);
 
         // Push to the player
         if(use != null)
@@ -226,6 +227,7 @@ public class MagentaSpace extends Space
     {
         if(player.isMarried())
         {
+            player.addChild();
             player.credit(5000*(allPlayers.size()-1));
             for (Player otherPlayer : allPlayers) 
             {
@@ -239,6 +241,7 @@ public class MagentaSpace extends Space
     {
         if(player.isMarried())
         {
+            player.addChild(); player.addChild();
             player.credit(10000*(allPlayers.size()-1));
             for (Player otherPlayer : allPlayers) 
             {

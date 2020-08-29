@@ -7,6 +7,7 @@ public class Player
     private CareerCard career;
     private SalaryCard salary;
     private double balance;
+    private double loan;
 
     private HouseCard house;
     private boolean spouse;
@@ -23,6 +24,7 @@ public class Player
         house = null;
         spouse = false;
         children = 0;
+        loan = 0;
     }
 
     public void turn()
@@ -59,6 +61,21 @@ public class Player
     public Space getSpace()
     {
         return this.space;
+    }
+
+    public HouseCard getHouse()
+    {
+        return this.house;
+    }
+
+    public int getChildren()
+    {
+        return this.children;
+    }
+
+    public double getLoan()
+    {
+        return this.loan;
     }
 
     public boolean isMarried()
@@ -149,6 +166,12 @@ public class Player
         int n = Integer.parseInt(kb.nextLine());
         kb.close();
         return n;
+    }
+
+    private void loan()
+    {
+        this.loan += 25000;
+        this.balance += 25000;
     }
 
     @Override
