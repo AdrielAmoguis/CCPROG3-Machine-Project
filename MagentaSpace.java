@@ -51,17 +51,148 @@ public class MagentaSpace extends Space
     // EVENT FUNCTIONS
     private void collegeCareerChoice(Player player)
     {
-        
+        // Draw top two cards from Career Deck and Salary Deck
+        CareerCard[] cCards = new CareerCard[2];
+        int i = 0;
+        do
+        {   
+            cCards[i] = (CareerCard) ThatsLife.getDeck(0).drawCard();
+            if(cCards[i].DEGREE)
+                i++;
+            else
+                ThatsLife.getDeck(0).returnCard(cCards[i]);
+        } while(i < 2);
+
+        SalaryCard[] sCards = new SalaryCard[2];
+        sCards[0] = (SalaryCard) ThatsLife.getDeck(1).drawCard();
+        sCards[1] = (SalaryCard) ThatsLife.getDeck(1).drawCard();
+
+        // Have the player choose
+        String options = new String();
+        options += "Select from the two Career Cards:\n";
+        options += "[1] " + cCards[0].toString() + "\n";
+        options += "[2] " + cCards[1].toString() + "\n";
+        options += "Your Choice: ";
+        int choice;
+        while (true)
+        {
+            choice = player.decision(options);
+            if(choice > 0 && choice < 3)
+                break;
+        }
+        // Lock the career and return the other one
+        player.setCareer(cCards[choice-1]);
+        if(choice == 1)
+            ThatsLife.getDeck(0).returnCard(cCards[0]);
+        else
+            ThatsLife.getDeck(0).returnCard(cCards[1]);
+
+        // Repeat for Salary
+
+        // Have the player choose
+        options = new String();
+        options += "Select from the two Salary Cards:\n";
+        options += "[1] " + sCards[0].toString() + "\n";
+        options += "[2] " + sCards[1].toString() + "\n";
+        options += "Your Choice: ";
+        while (true)
+        {
+            choice = player.decision(options);
+            if(choice > 0 && choice < 3)
+                break;
+        }
+        // Lock the career and return the other one
+        player.setSalary(sCards[choice-1]);
+        if(choice == 1)
+            ThatsLife.getDeck(1).returnCard(sCards[0]);
+        else
+            ThatsLife.getDeck(1).returnCard(sCards[1]);
     }
 
     private void jobSearch(Player player)
     {
+        // Draw from Career and Salary
+        CareerCard cCard = (CareerCard) ThatsLife.getDeck(0).drawCard();
+        SalaryCard sCard = (SalaryCard) ThatsLife.getDeck(1).drawCard();
 
+        // Display the Cards to the player
+        String options = new String();
+        options += "[JOB SEARCH] Accept new Career?\n";
+        options += cCard.toString() + "\n";
+        options += sCard.toString() + "\n";
+        options += "[1] Yes | [2] No\n";
+        options += "Your Choice: ";
+        int choice;
+        while (true)
+        {
+            choice = player.decision(options);
+            if(choice > 0 && choice < 3)
+                break;
+        }
+
+        // Lock the cards
+        if(choice == 2)
+        {
+            // Return cards
+            ThatsLife.getDeck(0).returnCard(cCard);
+            ThatsLife.getDeck(1).returnCard(sCard);
+        }
+        else
+        {
+            // Switch Career
+            CareerCard activeCareer = player.getCareer();
+            SalaryCard activeSalary = player.getSalary();
+
+            // Overwrite
+            player.setCareer(cCard);
+            player.setSalary(sCard);
+
+            // Return the two cards
+            ThatsLife.getDeck(0).returnCard(activeCareer);
+            ThatsLife.getDeck(1).returnCard(activeSalary);
+        }
     }
 
     private void buyHouse(Player player)
     {
+        String options = new String();
+        
+        // Allow the Player to Select from the House Cards
+        ArrayList<HouseCard> houseCards = new ArrayList<HouseCard>();
+        for(int i = 0; i < ThatsLife.getDeck(4).getDeckSize(); i++)
+            houseCards.add((HouseCard)ThatsLife.getDeck(4).drawCard());
 
+        options += "Select a house to purchase:\n";
+
+        int endIndex = 0;
+        for(int i = 0; i < houseCards.size(); i++)
+        {
+            options += "[" + i+1 + "] " + houseCards.get(i).toString() + "\n";
+            endIndex = i;
+        }
+        options += "\n[" + endIndex + 1 + "] Do not purchase a house\n";
+        options += "Your Choice: ";
+
+        int choice;
+        while (true)
+        {
+            choice = player.decision(options);
+            if(choice > 0 && choice <= houseCards.size())
+                break;
+        }
+
+        // Remove from the arraylist player's decision
+        HouseCard use = houseCards.remove(choice-1);
+
+        // Push to the player
+        if(use != null)
+            player.setHouse(use);
+
+        // Return all unused cards to the deck
+        for(HouseCard card : houseCards)
+        {
+            ThatsLife.getDeck(4).returnCard(card);
+        }
     }
 
     private void getMarried(Player player)
@@ -124,7 +255,29 @@ public class MagentaSpace extends Space
 
     private void careerChoice(Player player)
     {
-        
+        CareerCard card;
+        SalaryCard sCard;
+        // Draw a Career Card. Return if it requires a degree.
+        boolean valid = false;
+        do
+        {
+            card = (CareerCard) ThatsLife.getDeck(0).drawCard();
+            if(!card.DEGREE)
+                valid = true;
+            else
+                ThatsLife.getDeck(0).returnCard(card);
+        } while (!valid);
+
+        // Draw a Salary Card
+        sCard = (SalaryCard) ThatsLife.getDeck(1).drawCard();
+
+        // Show the cards
+        System.out.println("Career Chosen: " + card.toString());
+        System.out.println("Salary Chosen: " + sCard.toString());
+
+        // Store the Cards
+        player.setCareer(card);
+        player.setSalary(sCard);
     }
 
     @Override

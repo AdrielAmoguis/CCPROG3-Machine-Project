@@ -49,11 +49,12 @@ public class ThatsLife
         }
 
         // Create all decks
-        decks = new Deck[4];
+        decks = new Deck[5];
         decks[0] = new CareerDeck();
         decks[1] = new SalaryDeck((new Random()).nextInt(25));
         decks[2] = new BlueDeck(players);
         decks[3] = new ActionDeck(players);
+        decks[4] = new HouseDeck();
     }
 
     private void createPlayer()

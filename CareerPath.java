@@ -14,7 +14,8 @@ public class CareerPath extends Path
                 Follow the predetermined map
         */
         spaces.add(this.originSpace);
-        for(int i = 0; i < 3; i++)
+        spaces.add(new MagentaSpace(this, 7, players));
+        for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
         spaces.add(new MagentaSpace(this, 3, players));
         for(int i = 0; i < 4; i++)
