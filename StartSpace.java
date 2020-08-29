@@ -22,7 +22,7 @@ public class StartSpace extends Space
     {
         while(true)
         {
-            String options = new String("");
+            String options = new String("\n[" + player.getName() + "]\n\n");
             options += "Pick your initial path:\n";
             options += "[1] Take the Career Path\n";
             options += "[2] Take the College Path\n";
@@ -31,12 +31,14 @@ public class StartSpace extends Space
             if(choice == 0)
             {
                 player.setSpace(careerStart);
+                player.getSpace().playerLand(player);
                 players.remove(player);
                 break;
             }
             else if(choice == 1)
             {
                 player.setSpace(collegeStart);
+                player.getSpace().playerLand(player);
                 players.remove(player);
                 break;
             }

@@ -26,6 +26,7 @@ public class ActionCard extends Card
             case 0:
                 switch(ThatsLife.rollNumber() % 6)
                 {
+                    case 0:
                     case 1: return "Tax Refund";
                     case 2: return "Sell an Item";
                     case 3: return "Bonus Payday";
@@ -35,6 +36,7 @@ public class ActionCard extends Card
             case 1:
                 switch(ThatsLife.rollNumber() % 7)
                 {
+                    case 0:
                     case 1: return "Buy an Item";
                     case 2: return "Visit a Place";
                     case 3: return "Hiking";
@@ -45,12 +47,14 @@ public class ActionCard extends Card
             case 2:
                 switch(ThatsLife.rollNumber() % 3)
                 {
+                    case 0:
                     case 1: return "Lawsuit";
                     case 2: return "Christmas Bonus";
                 } break;
             case 3:
                 switch(ThatsLife.rollNumber() % 3)
                 {
+                    case 0:
                     case 1: return "File a Lawsuit";
                     case 2: return "It's your Birthday";
                 } break;
@@ -87,17 +91,24 @@ public class ActionCard extends Card
 
     private void collectFromBank(Player player)
     {
+        System.out.println("You drew an ActionCard! " + this.toString());
+        System.out.printf("You have credited $%.2f from the bank.\n", this.AMOUNT);
         player.credit(this.AMOUNT);
     }
 
     private void payTheBank(Player player)
     {
+        System.out.println("You drew an ActionCard! " + this.toString());
+        System.out.printf("You paid $%.2lf to the bank.\n", this.AMOUNT);
         player.debit(this.AMOUNT);
     }
 
     private void payThePlayer(Player player)
     {
+        System.out.println("You drew an ActionCard! " + this.toString());
+
         Player chosen = choosePlayer(player);
+        System.out.printf("You have paid $%.2lf to %s.\n", this.AMOUNT, chosen.getName());
         
         player.debit(this.AMOUNT);
         chosen.credit(this.AMOUNT);
@@ -105,7 +116,10 @@ public class ActionCard extends Card
 
     private void collectFromPlayer(Player player)
     {
+        System.out.println("You drew an ActionCard! " + this.toString());
+
         Player chosen = choosePlayer(player);
+        System.out.printf("You have received $%.2lf from %s.\n", this.AMOUNT, chosen.getName());
         
         player.credit(this.AMOUNT);
         chosen.debit(this.AMOUNT);

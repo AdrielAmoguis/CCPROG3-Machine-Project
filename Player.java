@@ -27,16 +27,6 @@ public class Player
         loan = 0;
     }
 
-    public void turn()
-    {
-        // Roll Number
-        int nMove = ThatsLife.rollNumber();
-        // Move n steps
-        this.move(nMove);
-        // Execute playerLand
-        this.space.playerLand(this);
-    }
-
     // GETTERS
     public String getName()
     {
@@ -83,13 +73,21 @@ public class Player
         return this.spouse;
     }
 
-    // Balance operations
-    public void credit(double amount)
+    public boolean isActive()
     {
+        if(this.space instanceof EndSpace)
+            return false;
+        return true;
+    }
+
+    // Balance operations
+    public void credit(double amount, String desc)
+    {
+        System.out.printf("You were credited $%f : %s\n", amount, desc);
         this.balance += amount;
     }
 
-    public boolean debit(double amount)
+    public boolean debit(double amount, String desc)
     {
         if (this.balance < amount)
             return false;
@@ -128,26 +126,25 @@ public class Player
     public void setSpace(Space space)
     {
         this.space = space;
-        // Calls the space event
-        space.playerLand(this);
     }
 
     public int move(int steps)
     {
+        System.out.printf("Moving %d spaces!\n", steps);
         Space bufferSpace = this.space;
         this.space.playerLeave(this);
         int moved = 0;
         for (int i = 0; i < steps; i++)
         {
-            if(!(bufferSpace instanceof MagentaSpace))
-            {
-                bufferSpace = bufferSpace.getNextSpace();
-                moved = i;
-            }
-            else break;
+            if(bufferSpace instanceof MagentaSpace && i != 0)
+                break;
+            bufferSpace = bufferSpace.getNextSpace();
+            moved = i;
         }
         this.space = bufferSpace;
+        System.out.printf("Moved %d spaces!\n", moved);
         this.space.playerLand(this);
+        System.out.printf("Current Space: %s\n", this.space.toString());
         return moved;
     }
 
@@ -161,10 +158,8 @@ public class Player
 
     public int spin()
     {
-        System.out.print("Input any number: ");
-        Scanner kb = new Scanner(System.in);
-        int n = Integer.parseInt(kb.nextLine());
-        kb.close();
+        System.out.print("[Spin Again] Input any number: ");
+        int n = Integer.parseInt(ThatsLife.kb.nextLine());
         return n;
     }
 
@@ -178,7 +173,13 @@ public class Player
     public String toString()
     {
         return (
-            "[" + this.playerName + "] Balance = " + String.valueOf(this.balance)
+            "[" + this.playerName + "] \nBalance = $" + String.valueOf(this.balance) + "\n" +
+            "Career: " + (this.career != null ? this.career.toString() : "No Career Set") + "\n" +
+            "Salary: " + (this.salary != null ? this.salary.toString() : "No Salary Set") + "\n" +
+            "Married : " + String.valueOf(this.spouse) + "\n" +
+            "House : " + (this.house != null ? this.house.toString() : "No House") + "\n" +
+            "Children : "  + String.valueOf(this.children) + "\n" +
+            "Current Space : " + this.space.toString()
         );
     }
 

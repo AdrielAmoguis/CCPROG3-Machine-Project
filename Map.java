@@ -58,4 +58,9 @@ public class Map
     {
         return this.startSpace;
     }
+
+    public EndSpace getEndSpace()
+    {
+        return this.endSpace;
+    }
 }

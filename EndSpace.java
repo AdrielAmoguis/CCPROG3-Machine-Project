@@ -33,6 +33,18 @@ public class EndSpace extends Space
         
     }   
 
+    public Player[] getPlayers()
+    {
+        Player[] finPlayers = new Player[this.players.size()];
+        int i = 0;
+        for(Player player : this.players)
+        {
+            finPlayers[i++] = player;
+        }
+
+        return finPlayers;
+    }
+
     @Override
     public String toString()
     {

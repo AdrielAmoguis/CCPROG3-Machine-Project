@@ -5,6 +5,7 @@ public class CareerDeck extends Deck
     public CareerDeck()
     {
         super("Career Deck");
+        generateCards();
     }
 
     protected void generateCards()

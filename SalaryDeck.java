@@ -8,6 +8,7 @@ public class SalaryDeck extends Deck
     {
         super("Salary Deck");
         this.numCards = n;
+        generateCards();
     }    
 
     protected void generateCards()

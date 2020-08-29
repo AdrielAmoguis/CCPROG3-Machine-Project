@@ -44,6 +44,7 @@ public class MagentaSpace extends Space
         }
 
         // Roll Again
+        System.out.println("Move Again!");
         int spin = ThatsLife.rollNumber(player.spin());
         player.move(spin);
     }
@@ -201,6 +202,7 @@ public class MagentaSpace extends Space
         if(!(player.isMarried()))
         {
             player.setSpouse(true);
+            System.out.println("\n\nSpin to determine your wedding gift!\nOdd Number : Collect $5000 from each player\nEven Number : Collect $10000 from each player\n\n");
             int spin = ThatsLife.rollNumber(player.spin());
             if (spin % 2 == 1)
             {

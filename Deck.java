@@ -20,6 +20,16 @@ public abstract class Deck
         return cards.size();
     }
 
+    public Card[] getDeck()
+    {
+        Card[] deck = new Card[cards.size()];
+        for(int i = 0; i < cards.size(); i++)
+        {
+            deck[i] = cards.get(i);
+        }
+        return deck;
+    }
+
     public Card drawCard()
     {
         return cards.remove(0);

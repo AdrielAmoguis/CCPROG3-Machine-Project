@@ -50,6 +50,11 @@ public abstract class Space
         return this.nextSpace;
     }
 
+    public int getNoOfPlayers()
+    {
+        return this.players.size();
+    }
+
     public Path getPath()
     {
         return this.path;
