@@ -83,14 +83,19 @@ public class Player
     // Balance operations
     public void credit(double amount, String desc)
     {
-        System.out.printf("You were credited $%f : %s\n", amount, desc);
+        System.out.printf("[%s] You were credited $%f : %s\n", this.playerName, amount, desc);
         this.balance += amount;
     }
 
     public boolean debit(double amount, String desc)
     {
+        System.out.printf("[%s] You were debited $%f : %s\n", this.playerName, amount, desc);
         if (this.balance < amount)
-            return false;
+        {
+            // Do a loan
+            System.out.printf("[%s] You do not have enough funds for this transaction. You loaned $20000 from the bank.\n", this.playerName);
+            loan();
+        }
         
         this.balance -= amount;
         return true;
@@ -158,7 +163,7 @@ public class Player
 
     public int spin()
     {
-        System.out.print("[Spin Again] Input any number: ");
+        System.out.printf("[%s][Spin for a Random Number] Input any number: ", this.playerName);
         int n = Integer.parseInt(ThatsLife.kb.nextLine());
         return n;
     }

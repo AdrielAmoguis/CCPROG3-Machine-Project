@@ -21,7 +21,7 @@ public class GreenSpace extends Space
         // Pay day
         if(this.TYPE == 0)
         {
-            player.credit(player.getSalary().getSalary());
+            player.credit(player.getSalary().getSalary(), "What day is it? It's Pay Day!");
         }
         else // Pay Raise
         {

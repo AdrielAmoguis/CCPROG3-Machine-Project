@@ -31,7 +31,7 @@ public class BlueCard extends Card
         boolean paid = false;
         if (isMatch(player))
         {
-            player.credit(15000);
+            player.credit(15000, "Your career matches this card!");
             paid = true;
         }
         if(!paid && !isMatch(player))
@@ -41,14 +41,14 @@ public class BlueCard extends Card
                 if(otherPlayer.getCareer().NAME.equals(player.getCareer().NAME))
                 {
                     paid = true;
-                    player.debit(15000);
-                    otherPlayer.credit(15000);
+                    player.debit(15000, "Your career does not match this card. You give funds to the player with this career.");
+                    otherPlayer.credit(15000, "Another player has picked up your matching blue card for your career.");
                 }    
             }
         }
         if(!paid)
         {
-            player.debit(15000);
+            player.debit(15000, "No one has the career on this card. You paid the bank.");
         }
 
 
@@ -73,42 +73,42 @@ public class BlueCard extends Card
 
     private void lawsuit(Player player)
     {
-        player.debit(this.amount);
+        player.debit(this.amount, "You get into a nasty lawsuit!");
     }
 
     private void salaryTaxDue(Player player)
     {
-        player.debit(player.getSalary().getTaxDue());
+        player.debit(player.getSalary().getTaxDue(), "You paid your tax dues.");
     }
 
     private void tipTheServer(Player player)
     {
-        int randNum = ThatsLife.rollNumber();
-        player.debit(randNum*10000);
+        int randNum = ThatsLife.rollNumber(player.spin());
+        player.debit(randNum*10000, "You tipped the server.");
     }
 
     private void skiAccident(Player player)
     {
-        player.debit(10000);
+        player.debit(10000, "You got into a ski accident and paid for hospital bills!");
     }
 
     private void computerRepair(Player player)
     {
-        int randNum = ThatsLife.rollNumber();
+        int randNum = ThatsLife.rollNumber(player.spin());
         if(randNum % 2 == 0)
-            player.debit(5000);
+            player.debit(5000, "Computer damages aren't as bad. Your paid for its repair.");
         else
-            player.debit(10000);
+            player.debit(10000, "Your computer has been badly damaged. You paid for its repair.");
     }
 
     private void worldCup(Player player)
     {
-        player.debit(this.players.size() * 5000);
+        player.debit(this.players.size() * 5000, "You watch the world cup!");
     }
 
     private void f1Race(Player player)
     {
-        player.debit(player.getSalary().getSalary());
+        player.debit(player.getSalary().getSalary()*0.1, "You watch the Formula One race.");
     }
 
     @Override

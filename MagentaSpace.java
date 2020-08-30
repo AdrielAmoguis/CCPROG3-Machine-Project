@@ -184,7 +184,7 @@ public class MagentaSpace extends Space
 
         // Remove from the arraylist player's decision and charge the player
         HouseCard use = houseCards.remove(choice-1);
-        player.debit(use.BUY);
+        player.debit(use.BUY, "You bought a house!");
 
         // Push to the player
         if(use != null)
@@ -206,20 +206,20 @@ public class MagentaSpace extends Space
             int spin = ThatsLife.rollNumber(player.spin());
             if (spin % 2 == 1)
             {
-                player.credit(5000*(allPlayers.size()-1));
+                player.credit(5000*(allPlayers.size()-1), "You got married! Here's $5000 from each other player for your wedding gift.");
                 for (Player otherPlayer : allPlayers) 
                 {
                     if(!(player.equals(otherPlayer)))
-                        otherPlayer.debit(5000);    
+                        otherPlayer.debit(5000, "Someone got married! You paid them $5000 as a wedding gift.");    
                 }
             }
             else
             {
-                player.credit(10000*(allPlayers.size()-1));
+                player.credit(10000*(allPlayers.size()-1), "You got married! Here's $10000 from each other player for your wedding gift.");
                 for (Player otherPlayer : allPlayers) 
                 {
                     if(!(player.equals(otherPlayer)))
-                        otherPlayer.debit(10000);    
+                        otherPlayer.debit(10000, "Someone got married! You paid them $10000 as a wedding gift.");    
                 }
             }
         }
@@ -230,11 +230,11 @@ public class MagentaSpace extends Space
         if(player.isMarried())
         {
             player.addChild();
-            player.credit(5000*(allPlayers.size()-1));
+            player.credit(5000*(allPlayers.size()-1), "Your child was born! Everyone gives you $5000 as a gift.");
             for (Player otherPlayer : allPlayers) 
             {
                 if(!(player.equals(otherPlayer)))
-                    otherPlayer.debit(5000);    
+                    otherPlayer.debit(5000, "Someone just had a child! You pay $5000 as a gift.");    
             }
         }
     }
@@ -244,11 +244,11 @@ public class MagentaSpace extends Space
         if(player.isMarried())
         {
             player.addChild(); player.addChild();
-            player.credit(10000*(allPlayers.size()-1));
+            player.credit(10000*(allPlayers.size()-1), "Your child was born! Everyone gives you $10000 as a gift.");
             for (Player otherPlayer : allPlayers) 
             {
                 if(!(player.equals(otherPlayer)))
-                    otherPlayer.debit(10000);    
+                    otherPlayer.debit(10000, "Someone just had a child! You pay $10000 as a gift.");    
             }
         }
     }

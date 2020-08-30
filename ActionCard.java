@@ -91,38 +91,33 @@ public class ActionCard extends Card
 
     private void collectFromBank(Player player)
     {
-        System.out.println("You drew an ActionCard! " + this.toString());
-        System.out.printf("You have credited $%.2f from the bank.\n", this.AMOUNT);
-        player.credit(this.AMOUNT);
+        player.credit(this.AMOUNT, "You drew an ActionCard! " + this.toString());
     }
 
     private void payTheBank(Player player)
     {
-        System.out.println("You drew an ActionCard! " + this.toString());
-        System.out.printf("You paid $%.2lf to the bank.\n", this.AMOUNT);
-        player.debit(this.AMOUNT);
+        player.debit(this.AMOUNT, "You drew an ActionCard! " + this.toString());
     }
 
     private void payThePlayer(Player player)
     {
-        System.out.println("You drew an ActionCard! " + this.toString());
+        System.out.println();
 
         Player chosen = choosePlayer(player);
-        System.out.printf("You have paid $%.2lf to %s.\n", this.AMOUNT, chosen.getName());
         
-        player.debit(this.AMOUNT);
-        chosen.credit(this.AMOUNT);
+        player.debit(this.AMOUNT, "You drew an ActionCard! " + this.toString());
+        chosen.credit(this.AMOUNT, player.getName() + " has paid you.");
     }
 
     private void collectFromPlayer(Player player)
     {
-        System.out.println("You drew an ActionCard! " + this.toString());
+        System.out.println();
 
         Player chosen = choosePlayer(player);
         System.out.printf("You have received $%.2lf from %s.\n", this.AMOUNT, chosen.getName());
         
-        player.credit(this.AMOUNT);
-        chosen.debit(this.AMOUNT);
+        player.credit(this.AMOUNT, "You drew an ActionCard! " + this.toString());
+        chosen.debit(this.AMOUNT, player.getName() + " has collected funds from you.");
     }
 
     @Override
