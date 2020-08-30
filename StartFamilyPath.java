@@ -2,9 +2,9 @@ import java.util.*;
 
 public class StartFamilyPath extends Path
 {
-    public StartFamilyPath(Space origin, Space dest, int len, ArrayList<Player> players)
+    public StartFamilyPath(Space origin, Space dest, ArrayList<Player> players)
     {
-        super("Start a Family Path", origin, dest, len, players);
+        super("Start a Family Path", origin, dest, players);
     }
 
     protected void generateSpaces(ArrayList<Player> players)

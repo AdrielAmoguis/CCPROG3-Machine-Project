@@ -11,9 +11,9 @@ public class CareerPath extends Path
     /**
      * This constructor calls the super constructor and initializes the instance attributes in the superclass.
      */
-    public CareerPath(Space origin, Space dest, int len, ArrayList<Player> players)
+    public CareerPath(Space origin, Space dest, ArrayList<Player> players)
     {
-        super("Career Path", origin, dest, len, players);
+        super("Career Path", origin, dest, players);
     }
 
     /**

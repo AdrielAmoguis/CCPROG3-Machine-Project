@@ -1,9 +1,21 @@
 import java.util.*;
 
+/**
+ * This class defines the container for the SalaryCards.
+ * This class inherits from the Deck class.
+ */
 public class SalaryDeck extends Deck
 {
+    /**
+     * This attribute holds the initial number of cards that this deck should have.
+     */
     private int numCards;
 
+    /**
+     * This constructor calls the superclass constructor.
+     * It also instantiates the numCards attribute then generates all cards.
+     * @param n
+     */
     public SalaryDeck(int n)
     {
         super("Salary Deck");
@@ -11,6 +23,9 @@ public class SalaryDeck extends Deck
         generateCards();
     }    
 
+    /**
+     * This method instantiates and stores SalaryCards to the superclass' cards ArrayList.
+     */
     protected void generateCards()
     {
         /*

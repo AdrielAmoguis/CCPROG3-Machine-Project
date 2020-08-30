@@ -1,5 +1,22 @@
+/**
+ * This class instantiates the master/main game class and drives it.
+ * This class needs command-line startup arguments to run. Refer to the Javadoc for the main method.
+ */
 public class Main 
 {
+    /**
+     * This method drives the game to run, using a Command-Line Interface (CLI).
+     * This driver method needs startup arguments to run. Refer to those below:
+     * REQUIRED ARGS (must be the first argument):
+     *  - Number of players (int): Example execution: "java Main 2" <- 2 players
+     * OPTIONAL ARGS:
+     *  - "showactioncards" -> Shows the action cards upon generation
+     *  - "showcareercards" -> Shows the career cards upon generation
+     *  - "showsalarycards" -> Shows the salary cards upon generation
+     *  - (unimplemented) "norng" -> Runs the game without the use of RNG. The user inputs a value every time.
+     * Multiple arguments may be used at the same time.
+     * @param args
+     */
     public static void main(String[] args)
     {
         // Instantiate Game

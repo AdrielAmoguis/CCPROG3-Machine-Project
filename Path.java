@@ -1,22 +1,53 @@
 import java.util.*;
 
+/**
+ * This class defines the structure blocks of the game, the paths.
+ * Paths are made up of spaces.
+ */
 public abstract class Path 
 {
+    /**
+     * This attribute holds all of the spaces that belong to this path.
+     */
     protected ArrayList<Space> spaces;
+
+    /**
+     * This attribute stores the first space of the path.
+     */
     protected Space originSpace;
+
+    /**
+     * This attribute stores the last space of the path.
+     */
     protected Space destinationSpace;
+
+    /**
+     * This attribute stores the path name.
+     */
     private String name;
     
-    public Path(String name, Space origin, Space dest, int len, ArrayList<Player> players)
+    /**
+     * This constructor instantiates all attributes of this class, given the parameters.
+     * The players ArrayList is not stored within this instance but used to initialize the MagentaSpaces.
+     * @param name
+     * @param origin
+     * @param dest
+     * @param players
+     */
+    public Path(String name, Space origin, Space dest, ArrayList<Player> players)
     {
         this.name = name;
         this.originSpace = origin;
         this.destinationSpace = dest;
-        this.spaces = new ArrayList<Space>(len);
+        this.spaces = new ArrayList<Space>();
         generateSpaces(players);
         initSpaces();
     }
 
+    /**
+     * This is the method that brings all the spaces together.
+     * It links all the spaces to their next space on the path, except for the path's destination space.
+     */
     private void initSpaces()
     {
         for (int i = 0; i < spaces.size(); i++) 
@@ -28,36 +59,67 @@ public abstract class Path
         }
     }
 
+    /**
+     * This getter method returns the size of this path.
+     * @return size : int
+     */
     public int getPathLen()
     {
         return spaces.size();
     }
 
+    /**
+     * This getter method returns the instance of the space with the given index in the spaces ArrayList
+     * @param index
+     * @return space : Space
+     */
     public Space getSpace(int index)
     {
         return this.spaces.get(index);
     }
 
+    /**
+     * This getter method returns the instance of this path's origin space.
+     * @return space : Space
+     */
     public Space getOriginSpace()
     {
         return this.originSpace;
     }
 
+    /**
+     * This getter method returns the instance of this path's end space.
+     * @return space : Space
+     */
     public Space getDestSpace()
     {
         return this.destinationSpace;
     }
 
+    /**
+     * This getter method returns the name of this path instance.
+     * @return name : String
+     */
     public String getName()
     {
         return this.name;
     }
 
+    /**
+     * This setter method sets this path instance's starting space.
+     * @param space
+     */
     public void setStartSpace(Space space)
     {
         this.originSpace = space;
     }
 
+    /**
+     * This abstract method is left unimplemented for the child classes to implement.
+     * This method should contain the generation method for the child classes to follow.
+     * The players ArrayList parameter is to instantiate the MagentaSpaces.
+     * @param players
+     */
     protected abstract void generateSpaces(ArrayList<Player> players);
 
     @Override

@@ -1,10 +1,36 @@
 import java.util.*;
 
+/**
+ * This class defines MagentaSpace, a type of space that requires the player to stop moving and execute its events.
+ * This class inherits from the abstract Space class.
+ */
 public class MagentaSpace extends Space
 {
+    /**
+     * This attribute stores the type of MagentaSpace this instance is. Types are:
+     * 0 - College Career Choice
+     * 1 - Job Search
+     * 2 - Buy House
+     * 3 - Get Married
+     * 4 - Have Baby
+     * 5 - Have Twins
+     * 6 - Graduation
+     * 7 - Career Choice
+     */
     public final int TYPE;
+
+    /**
+     * This attritute holds the main instance for the players ArrayList.
+     */
     private ArrayList<Player> allPlayers;
     
+    /**
+     * This constructor calls the superclass constructor to initialize superclass attributes.
+     * It initializes the type and players as given as parameters.
+     * @param path - the path this space belongs to
+     * @param type - the classification of this space
+     * @param players - the main players ArrayList
+     */
     public MagentaSpace(Path path, int type, ArrayList<Player> players)
     {
         super(path);
@@ -12,6 +38,10 @@ public class MagentaSpace extends Space
         this.allPlayers = players;
     }
 
+    /**
+     * This getter method returns the space's name, depending on the type.
+     * @return String
+     */
     public String getType()
     {
         switch(TYPE)
@@ -29,6 +59,12 @@ public class MagentaSpace extends Space
         return "INVALID";
     }
 
+    /**
+     * This method implements the abstract event() method in the superclass.
+     * This method gets called when the player lands on this space.
+     * For this class, this method calls the appropriate event method depending on the type.
+     * @param player
+     */
     protected void event(Player player)
     {
         switch(TYPE)

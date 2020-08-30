@@ -1,10 +1,24 @@
+/**
+ * This class defines the most common space in the game, the OrangeSpace.
+ * This class inherits from the Space class.
+ */
 public class OrangeSpace extends Space
 {
+    /**
+     * This constructor calls sthe superclass constructor, passing the path parameter.
+     * @param path
+     */
     public OrangeSpace(Path path)
     {
         super(path);
     }
 
+    /**
+     * This method implements the event() method in the superclass.
+     * This method gets called when a player lands on this space.
+     * Draws a card from the ActionCard deck and executes its event.
+     * @param player
+     */
     protected void event(Player player)
     {
         // Draw action card
