@@ -113,8 +113,15 @@ public class MagentaSpace extends Space
     private void jobSearch(Player player)
     {
         // Draw from Career and Salary
-        CareerCard cCard = (CareerCard) ThatsLife.getDeck(0).drawCard();
+        CareerCard cCard;
         SalaryCard sCard = (SalaryCard) ThatsLife.getDeck(1).drawCard();
+
+        while(true)
+        {
+            cCard = (CareerCard) ThatsLife.getDeck(0).drawCard();
+            if(cCard.DEGREE == player.getGraduate())
+                break;
+        }
 
         // Display the Cards to the player
         String options = new String();
@@ -156,44 +163,50 @@ public class MagentaSpace extends Space
 
     private void buyHouse(Player player)
     {
-        String options = new String();
+        if(player.getHouse() == null)
+        {
+            String options = new String();
         
-        // Allow the Player to Select from the House Cards
-        ArrayList<HouseCard> houseCards = new ArrayList<HouseCard>();
-        for(int i = 0; i < ThatsLife.getDeck(4).getDeckSize(); i++)
-            houseCards.add((HouseCard)ThatsLife.getDeck(4).drawCard());
+            // Allow the Player to Select from the House Cards
+            ArrayList<HouseCard> houseCards = new ArrayList<HouseCard>();
+            for(int i = 0; i < ThatsLife.getDeck(4).getDeckSize(); i++)
+                houseCards.add((HouseCard)ThatsLife.getDeck(4).drawCard());
 
-        options += "Select a house to purchase:\n";
+            options += "Select a house to purchase:\n";
 
-        int endIndex = 0;
-        for(int i = 0; i < houseCards.size(); i++)
-        {
-            options += "[" + i+1 + "] " + houseCards.get(i).toString() + "\n";
-            endIndex = i;
-        }
-        options += "\n[" + endIndex + 1 + "] Do not purchase a house\n";
-        options += "Your Choice: ";
+            int endIndex = 0;
+            for(int i = 0; i < houseCards.size(); i++)
+            {
+                options += "[" + String.valueOf(i+1) + "] " + houseCards.get(i).toString() + "\n";
+                endIndex = i + 1;
+            }
+            options += "\n[" + String.valueOf(endIndex + 1) + "] Do not purchase a house\n";
+            options += "Your Choice: ";
 
-        int choice;
-        while (true)
-        {
-            choice = player.decision(options);
-            if(choice > 0 && choice <= houseCards.size())
-                break;
-        }
+            int choice;
+            while (true)
+            {
+                choice = player.decision(options);
+                if(choice > 0 && choice <= houseCards.size() + 1)
+                    break;
+            }
 
-        // Remove from the arraylist player's decision and charge the player
-        HouseCard use = houseCards.remove(choice-1);
-        player.debit(use.BUY, "You bought a house!");
+            if(choice != houseCards.size()+1)
+            {
+                // Remove from the arraylist player's decision and charge the player
+                HouseCard use = houseCards.remove(choice-1);
+                player.debit(use.BUY, "You bought a house!");
 
-        // Push to the player
-        if(use != null)
-            player.setHouse(use);
+                // Push to the player
+                if(use != null)
+                    player.setHouse(use);
+            }
 
-        // Return all unused cards to the deck
-        for(HouseCard card : houseCards)
-        {
-            ThatsLife.getDeck(4).returnCard(card);
+            // Return all unused cards to the deck
+            for(HouseCard card : houseCards)
+            {
+                ThatsLife.getDeck(4).returnCard(card);
+            }
         }
     }
 
@@ -223,6 +236,8 @@ public class MagentaSpace extends Space
                 }
             }
         }
+        else
+            System.out.println("You're already married!");
     }
     
     private void haveBaby(Player player)
@@ -244,11 +259,11 @@ public class MagentaSpace extends Space
         if(player.isMarried())
         {
             player.addChild(); player.addChild();
-            player.credit(10000*(allPlayers.size()-1), "Your child was born! Everyone gives you $10000 as a gift.");
+            player.credit(10000*(allPlayers.size()-1), "Your twins were born! Everyone gives you $10000 as a gift.");
             for (Player otherPlayer : allPlayers) 
             {
                 if(!(player.equals(otherPlayer)))
-                    otherPlayer.debit(10000, "Someone just had a child! You pay $10000 as a gift.");    
+                    otherPlayer.debit(10000, "Someone just had twins! You pay $10000 as a gift.");    
             }
         }
     }
@@ -256,6 +271,7 @@ public class MagentaSpace extends Space
     private void graduate(Player player)
     {
         System.out.println("Contratulations on your graduation, " + player.getName() + "!");
+        player.setGraduate(true);
     }
 
     private void careerChoice(Player player)

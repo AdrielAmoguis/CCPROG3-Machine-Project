@@ -63,4 +63,21 @@ public class Map
     {
         return this.endSpace;
     }
+
+    public String getMapDisplayString()
+    {
+        String mainString = new String("----=====| MAP |=====----\n");
+
+        for(Path path : paths)
+        {
+            mainString += path.getName() + "\n\n";
+            for(int i = 0; i < path.getPathLen(); i++)
+            {
+                mainString += "[" + String.valueOf(i) + "] " + path.getSpace(i).toString() + "\n"; 
+            }
+            mainString += "---------------------------\n\n";
+        }
+
+        return mainString;
+    }
 }

@@ -103,9 +103,9 @@ public class CareerPath extends Path
         spaces.add(new BlueSpace(this));
         for(int i = 0; i < 2; i++)
             spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 5, players));
+        spaces.add(new MagentaSpace(this, 4, players));
         spaces.add(new OrangeSpace(this));
-        spaces.add(new MagentaSpace(this, 6, players));
+        spaces.add(new MagentaSpace(this, 5, players));
         spaces.add(new GreenSpace(this, 0));
         for(int i = 0; i < 5; i++)
             spaces.add(new OrangeSpace(this));
@@ -120,6 +120,9 @@ public class CareerPath extends Path
             spaces.add(new OrangeSpace(this));
         // MAKE SURE TO ADD THE LAST SPACE
         spaces.add(this.destinationSpace);
+
+        // Initialize second to the last space
+        spaces.get(spaces.size()-2).setNextSpace(spaces.get(spaces.size()-1));
     }
 
     @Override

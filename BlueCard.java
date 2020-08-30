@@ -12,13 +12,7 @@ public class BlueCard extends Card
         this.NAME = name;
         this.matchingCareer = matchingCareer;
         this.players = players;
-        this.amount = 0;
-
-        if(matchingCareer.equalsIgnoreCase("lawsuit"))
-        {
-            Random rand = new Random(ThatsLife.rollNumber());
-            this.amount = 10000*(5 + rand.nextInt(11));
-        }
+        this.amount = 10000*(5 + (new Random()).nextInt(11));
     }
 
     public String getCareer()
@@ -34,11 +28,11 @@ public class BlueCard extends Card
             player.credit(15000, "Your career matches this card!");
             paid = true;
         }
-        if(!paid && !isMatch(player))
+        else if(!paid && !isMatch(player))
         {
             for (Player otherPlayer : players) 
             {
-                if(otherPlayer.getCareer().NAME.equals(player.getCareer().NAME))
+                if(isMatch(otherPlayer) && !otherPlayer.equals(player))
                 {
                     paid = true;
                     player.debit(15000, "Your career does not match this card. You give funds to the player with this career.");
@@ -46,7 +40,7 @@ public class BlueCard extends Card
                 }    
             }
         }
-        if(!paid)
+        else if(!paid)
         {
             player.debit(15000, "No one has the career on this card. You paid the bank.");
         }

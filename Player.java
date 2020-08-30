@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Player 
 {
     private String playerName;
@@ -8,6 +6,7 @@ public class Player
     private SalaryCard salary;
     private double balance;
     private double loan;
+    private boolean graduate;
 
     private HouseCard house;
     private boolean spouse;
@@ -66,6 +65,11 @@ public class Player
     public double getLoan()
     {
         return this.loan;
+    }  
+
+    public boolean getGraduate()
+    {
+        return this.graduate;
     }
 
     public boolean isMarried()
@@ -87,10 +91,10 @@ public class Player
         this.balance += amount;
     }
 
-    public boolean debit(double amount, String desc)
+    public void debit(double amount, String desc)
     {
         System.out.printf("[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
-        if (this.balance < amount)
+        while (this.balance < amount)
         {
             // Do a loan
             System.out.printf("[%s] You do not have enough funds for this transaction. You loaned $20000 from the bank.\n", this.playerName);
@@ -98,7 +102,12 @@ public class Player
         }
         
         this.balance -= amount;
-        return true;
+    }
+
+    public void rawDebit(double amount, String desc)
+    {
+        System.out.printf("[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
+        this.balance -= amount;
     }
 
     // SETTERS
@@ -121,6 +130,11 @@ public class Player
     public void setSpouse(boolean spouse)
     {
         this.spouse = spouse;
+    }
+
+    public void setGraduate(boolean g)
+    {
+        this.graduate = g;
     }
 
     public void addChild()
@@ -151,7 +165,6 @@ public class Player
         }
         System.out.printf("Moved %d spaces!\n", moved);
         this.space.playerLand(this);
-        System.out.printf("Current Space: %s\n", this.space.toString());
         return moved;
     }
 

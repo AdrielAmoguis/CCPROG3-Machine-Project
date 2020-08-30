@@ -61,12 +61,18 @@ public class Main
                         System.out.println(((SalaryCard)card).toString());
                     }
                     break;
+                case "norng":
+                    // IMPLEMENT THIS
+                    break;
             }
         }
 
         // Start Playing
         while(game.isOngoing())
         {
+            // Print the Map
+            System.out.println(game.getMap().getMapDisplayString());
+
             System.out.println("\nStart Turn!\n");
 
             System.out.println(game.getPlayerString(game.getTurn()));

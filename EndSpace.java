@@ -30,7 +30,7 @@ public class EndSpace extends Space
         }
 
         // Repay all loans
-        
+        player.rawDebit(player.getLoan(), "Your loans were paid off.");
     }   
 
     public Player[] getPlayers()
