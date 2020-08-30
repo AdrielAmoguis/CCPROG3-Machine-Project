@@ -83,13 +83,13 @@ public class Player
     // Balance operations
     public void credit(double amount, String desc)
     {
-        System.out.printf("[%s] You were credited $%f : %s\n", this.playerName, amount, desc);
+        System.out.printf("[%s] You were credited $%.2f : %s\n", this.playerName, amount, desc);
         this.balance += amount;
     }
 
     public boolean debit(double amount, String desc)
     {
-        System.out.printf("[%s] You were debited $%f : %s\n", this.playerName, amount, desc);
+        System.out.printf("[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
         if (this.balance < amount)
         {
             // Do a loan
@@ -105,6 +105,7 @@ public class Player
     public void setSalary(SalaryCard salary) 
     {
         this.salary = salary;
+        this.salary.event(this);
     }
 
     public void setCareer(CareerCard career) 
@@ -136,17 +137,18 @@ public class Player
     public int move(int steps)
     {
         System.out.printf("Moving %d spaces!\n", steps);
-        Space bufferSpace = this.space;
         this.space.playerLeave(this);
         int moved = 0;
         for (int i = 0; i < steps; i++)
         {
-            if(bufferSpace instanceof MagentaSpace && i != 0)
+            if(this.space instanceof MagentaSpace && i != 0)
+            {
+                System.out.println("You landed on a Magenta Space! You stopped moving.");
                 break;
-            bufferSpace = bufferSpace.getNextSpace();
-            moved = i;
+            }
+            this.space = this.space.getNextSpace();
+            moved = i + 1;
         }
-        this.space = bufferSpace;
         System.out.printf("Moved %d spaces!\n", moved);
         this.space.playerLand(this);
         System.out.printf("Current Space: %s\n", this.space.toString());
@@ -163,8 +165,10 @@ public class Player
 
     public int spin()
     {
-        System.out.printf("[%s][Spin for a Random Number] Input any number: ", this.playerName);
-        int n = Integer.parseInt(ThatsLife.kb.nextLine());
+        System.out.printf("[%s][Spin for a Random Number] Press [ENTER] to Spin and Continue", this.playerName);
+        ThatsLife.kb.nextLine();
+        int n = ThatsLife.rollNumber();
+        System.out.printf("You got [%d]!\n", n);
         return n;
     }
 

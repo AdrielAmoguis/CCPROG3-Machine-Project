@@ -40,12 +40,19 @@ public class JunctionSpace extends MagentaSpace
         options += "[1] " + leftSpace.getPath().getName() + "\n";
         options += "[2] " + rightSpace.getPath().getName() + "\n";
         options += "Your Choice: ";
-        int choice = player.decision(options);
+        int choice = 0;
+        while(true)
+        {
+            choice = player.decision(options);
+            if(choice > 0 && choice <= 2)
+                break;
+        }
+        
         if(choice == 1)
         {
             // Left path
             // Roll again
-            int spin = ThatsLife.rollNumber(player.spin());
+            int spin = player.spin();
             this.setNextSpace(leftSpace);
             player.move(spin);
         }
@@ -53,7 +60,7 @@ public class JunctionSpace extends MagentaSpace
         {
             // Right path
             // Roll again
-            int spin = ThatsLife.rollNumber(player.spin());
+            int spin = player.spin();
             this.setNextSpace(rightSpace);
             player.move(spin);
         }
@@ -63,7 +70,7 @@ public class JunctionSpace extends MagentaSpace
     public String toString()
     {
         return new String(
-            "[JunctionSpace (" + this.leftSpace.toString() + ";" + this.rightSpace.toString() + ")" + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[JunctionSpace (" + this.leftSpace.toString() + ";" + this.rightSpace.toString() + ")" + String.valueOf(this.ID) + "]"
         );
     }
 }

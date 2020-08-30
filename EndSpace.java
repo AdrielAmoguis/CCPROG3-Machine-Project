@@ -49,7 +49,7 @@ public class EndSpace extends Space
     public String toString()
     {
         return new String(
-            "[EndSpace " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[EndSpace " + String.valueOf(this.ID) + "]"
         );
     }
 }

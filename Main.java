@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Main 
 {
     public static void main(String[] args)
@@ -54,16 +52,30 @@ public class Main
                     {
                         System.out.println(((CareerCard)card).toString());
                     }
+                    break;
+                case "showsalarycards":
+                    Card[] salaryDeck = ThatsLife.getDeck(1).getDeck();
+                    System.out.println("Salary Cards:");
+                    for(Card card : salaryDeck)
+                    {
+                        System.out.println(((SalaryCard)card).toString());
+                    }
+                    break;
             }
         }
 
         // Start Playing
         while(game.isOngoing())
         {
+            System.out.println("\nStart Turn!\n");
+
             System.out.println(game.getPlayerString(game.getTurn()));
-            System.out.print("Enter number to move:");
-            long rand = Long.parseLong(ThatsLife.kb.nextLine());
-            game.startTurn(rand);
+            System.out.print("\n[Spin to Move] Press [ENTER] to spin for a number and move. ");
+            ThatsLife.kb.nextLine();
+            game.startTurn();
+
+            System.out.println("Your turn is over! Next player, press enter to continue. ");
+            ThatsLife.kb.nextLine();
         }
 
         ThatsLife.kb.close();

@@ -20,6 +20,7 @@ public class StartSpace extends Space
 
     public void event(Player player)
     {
+        System.out.println("Welcome to the game!");
         while(true)
         {
             String options = new String("\n[" + player.getName() + "]\n\n");
@@ -30,16 +31,16 @@ public class StartSpace extends Space
             int choice = player.decision(options) - 1;
             if(choice == 0)
             {
-                player.setSpace(careerStart);
-                player.getSpace().playerLand(player);
+                this.setNextSpace(careerStart);
                 players.remove(player);
+                player.move(player.spin());
                 break;
             }
             else if(choice == 1)
             {
-                player.setSpace(collegeStart);
-                player.getSpace().playerLand(player);
+                this.setNextSpace(collegeStart);
                 players.remove(player);
+                player.move(player.spin());
                 break;
             }
         }
@@ -50,7 +51,7 @@ public class StartSpace extends Space
     public String toString()
     {
         return new String(
-            "[StartSpace " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[StartSpace " + String.valueOf(this.ID) + "]"
         );
     }
 }

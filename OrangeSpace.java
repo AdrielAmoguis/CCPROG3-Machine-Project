@@ -18,7 +18,7 @@ public class OrangeSpace extends Space
     public String toString()
     {
         return new String(
-            "[OrangeSpace " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[OrangeSpace " + String.valueOf(this.ID) + "]"
         );
     }
 }

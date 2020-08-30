@@ -25,8 +25,6 @@ public abstract class Path
             {
                 spaces.get(i).setNextSpace(spaces.get(i+1));
             }
-            else
-                spaces.get(i).setNextSpace(null);
         }
     }
 

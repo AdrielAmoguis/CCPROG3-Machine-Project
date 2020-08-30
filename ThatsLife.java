@@ -1,4 +1,5 @@
 import java.util.*;
+import java.time.*;
 
 /**
  * Main game class of the game. It contains the main MAP instance of the entire game as well as the instances of the players,
@@ -7,6 +8,7 @@ import java.util.*;
 public class ThatsLife 
 {
     public static final Scanner kb = new Scanner(System.in);
+    private static Random rand = new Random(LocalTime.now().toNanoOfDay());
 
     /**
      * This static final variable contains the main map instance of the entire game.
@@ -28,6 +30,7 @@ public class ThatsLife
 
     // Turn
     private int turn;
+    private int firstMove;
 
     /**
      * A game is instantiated given the number of players for the game. The constructor initializes all the players, the map, and all card decks.
@@ -57,16 +60,13 @@ public class ThatsLife
         // Create all decks
         decks = new Deck[5];
         decks[0] = new CareerDeck();
-        decks[1] = new SalaryDeck((new Random()).nextInt(25));
+        decks[1] = new SalaryDeck(10 + (new Random()).nextInt(25));
         decks[2] = new BlueDeck(players);
         decks[3] = new ActionDeck(players);
         decks[4] = new HouseDeck();
 
         // Initialize Player StartSpace
-        for(Player player : players)
-        {
-            player.getSpace().playerLand(player);
-        }
+        firstMove = 0;
     }
 
     private void createPlayer()
@@ -92,16 +92,26 @@ public class ThatsLife
         return this.players.get(index).toString();
     }
 
-    public int startTurn(long randomSeed)
+    public int startTurn()
     {
         // Get the player instance
         Player player = players.get(turn);
 
-        // Player Spins for a Move
-        int moveSteps = rollNumber(randomSeed);
+        // Check if first move
+        if(firstMove++ < players.size())
+            player.getSpace().playerLand(player);
 
-        // Move the player
-        player.move(moveSteps);
+        // Check if player finished
+        if(!(player.getSpace() instanceof EndSpace))
+        {
+            // Player Spins for a Move
+            int moveSteps = rollNumber();
+
+            // Move the player
+            player.move(moveSteps);
+        }
+        else
+            System.out.printf("[%s] You have already retired!\n", player.getName());
 
         // Update turn
         this.turn = (this.turn + 1) % players.size();
@@ -134,13 +144,6 @@ public class ThatsLife
      */
     public static int rollNumber()
     {
-        Random rand = new Random();
-        return rand.nextInt(10) + 1;
-    }
-
-    public static int rollNumber(long seed)
-    {
-        Random rand = new Random(seed);
         return rand.nextInt(10) + 1;
     }
 

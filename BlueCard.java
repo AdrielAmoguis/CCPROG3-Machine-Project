@@ -83,7 +83,7 @@ public class BlueCard extends Card
 
     private void tipTheServer(Player player)
     {
-        int randNum = ThatsLife.rollNumber(player.spin());
+        int randNum = player.spin();
         player.debit(randNum*10000, "You tipped the server.");
     }
 
@@ -94,7 +94,7 @@ public class BlueCard extends Card
 
     private void computerRepair(Player player)
     {
-        int randNum = ThatsLife.rollNumber(player.spin());
+        int randNum = player.spin();;
         if(randNum % 2 == 0)
             player.debit(5000, "Computer damages aren't as bad. Your paid for its repair.");
         else

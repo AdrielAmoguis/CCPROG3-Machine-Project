@@ -64,7 +64,7 @@ public abstract class Space
     public String toString()
     {
         return new String(
-            "[Space " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[Space " + String.valueOf(this.ID) + "]"
         );
     }
 

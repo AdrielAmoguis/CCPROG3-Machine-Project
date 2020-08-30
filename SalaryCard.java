@@ -36,10 +36,12 @@ public class SalaryCard extends Card
 
     public boolean payRaise()
     {
-        if(this.raised < player.getCareer().getMaxRaise())
+        if(this.raised <= player.getCareer().getMaxRaise())
         {
+            System.out.println("You got a Pay Raise!");
             this.raised++;
             this.salary += this.payRaise;
+            this.taxDue += 2000;
 
             return true;
         }
@@ -56,7 +58,7 @@ public class SalaryCard extends Card
     public String toString()
     {
         return (
-            "[SalaryCard] " + String.valueOf(this.salary) + " | TaxDue : " + String.valueOf(this.taxDue)
+            "[SalaryCard] " + String.valueOf(this.salary) + " | TaxDue : " + String.valueOf(this.taxDue) + " | Pay Raise = " + String.valueOf(this.payRaise)
         );
     }
 }

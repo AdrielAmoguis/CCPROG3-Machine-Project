@@ -45,7 +45,7 @@ public class MagentaSpace extends Space
 
         // Roll Again
         System.out.println("Move Again!");
-        int spin = ThatsLife.rollNumber(player.spin());
+        int spin = player.spin();
         player.move(spin);
     }
 
@@ -203,7 +203,7 @@ public class MagentaSpace extends Space
         {
             player.setSpouse(true);
             System.out.println("\n\nSpin to determine your wedding gift!\nOdd Number : Collect $5000 from each player\nEven Number : Collect $10000 from each player\n\n");
-            int spin = ThatsLife.rollNumber(player.spin());
+            int spin = player.spin();
             if (spin % 2 == 1)
             {
                 player.credit(5000*(allPlayers.size()-1), "You got married! Here's $5000 from each other player for your wedding gift.");
@@ -289,7 +289,7 @@ public class MagentaSpace extends Space
     public String toString()
     {
         return new String(
-            "[MagentaSpace (" + this.getType() + ") " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[MagentaSpace (" + this.getType() + ") " + String.valueOf(this.ID) + "]"
         );
     }
 }

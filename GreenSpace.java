@@ -33,7 +33,7 @@ public class GreenSpace extends Space
     public String toString()
     {
         return new String(
-            "[GreenSpace " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[GreenSpace " + String.valueOf(this.ID) + "]"
         );
     }
 }

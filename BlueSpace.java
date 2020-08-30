@@ -18,7 +18,7 @@ public class BlueSpace extends Space
     public String toString()
     {
         return new String(
-            "[BlueSpace " + String.valueOf(this.ID) + "] Players = " + players.toString()
+            "[BlueSpace " + String.valueOf(this.ID) + "]"
         );
     }
 }
