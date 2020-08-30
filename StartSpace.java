@@ -38,6 +38,8 @@ public class StartSpace extends Space
             }
             else if(choice == 1)
             {
+                player.doLoan(2);
+                System.out.println("You chose college! You loaned $40000 from the bank.");
                 this.setNextSpace(collegeStart);
                 players.remove(player);
                 player.move(player.spin());

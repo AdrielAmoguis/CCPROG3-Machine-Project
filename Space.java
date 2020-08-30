@@ -18,14 +18,6 @@ public abstract class Space
         players = new ArrayList<Player>();
     }
 
-    public Space(Player[] players, Path path)
-    {
-        this(path);
-        for (Player player : players) {
-            this.players.add(player);
-        }
-    }
-
     public void playerLand(Player player)
     {
         this.players.add(player);   

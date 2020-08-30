@@ -1,10 +1,25 @@
+/**
+ * This class defines the final space that players will land on, which is the retirement space.
+ * This class inherits from the Space class.
+ */
 public class EndSpace extends Space
 {
+    /**
+     * This constructor calls the super constructor to initialize the superclass attributes.
+     * Unlike the other children of the abstract Space class, this class does not belong to a path,
+     * and hence calls the superclass constructor with a null value for path.
+     */
     public EndSpace()
     {
         super(null);
     }
 
+    /**
+     * This method implements the abstract method event() from the super class.
+     * This method gets called when a player lands on this Space.
+     * This method processes the player's retirement event.
+     * @param player
+     */
     public void event(Player player)
     {
         System.out.println("Congratulations on your retirement, " + player.getName() + "!");
@@ -33,6 +48,11 @@ public class EndSpace extends Space
         player.rawDebit(player.getLoan(), "Your loans were paid off.");
     }   
 
+    /**
+     * This getter method returns the array of players that are in this space.
+     * This method is used when obtaining the final ranking after the game finishes.
+     * @return Player[]
+     */
     public Player[] getPlayers()
     {
         Player[] finPlayers = new Player[this.players.size()];

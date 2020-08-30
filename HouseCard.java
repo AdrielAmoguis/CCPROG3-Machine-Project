@@ -1,9 +1,30 @@
+/**
+ * This class holds the data for the houses in the game.
+ * This class inherits from the Card class.
+ */
 public class HouseCard extends Card
 {
+    /**
+     * This attribute stores the name of the house.
+     */
     public final String NAME;
+
+    /**
+     * This attribute stores the buy price of the house.
+     */
     public final double BUY;
+
+    /**
+     * This attribute stores the sell price of the house.
+     */
     public final double SELL;
 
+    /**
+     * This constructor initializes this instance's attributes as given by the constructor parameters.
+     * @param name
+     * @param buyPrice
+     * @param sellPrice
+     */
     public HouseCard(String name, double buyPrice, double sellPrice)
     {
         this.NAME = name;
@@ -11,6 +32,9 @@ public class HouseCard extends Card
         this.SELL = sellPrice;
     }
 
+    /**
+     * This method is unimplemented since there is no event to be done when the player draws this card.
+     */
     public void event(Player player) {}
 
     @Override

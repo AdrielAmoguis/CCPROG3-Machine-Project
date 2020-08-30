@@ -1,13 +1,24 @@
 import java.util.*;
 
+/**
+ * This class is the container that initializes and holds all ActionCards.
+ */
 public class BlueDeck extends Deck
 {
+    /**
+     * This constructor initializes all Blue Cards and defines the deck's name.
+     * @param players
+     */
     public BlueDeck(ArrayList<Player> players)
     {
         super("Blue Deck");
         generateCards(players);
     }
     
+    /**
+     * This method generates the cards in this deck.
+     * @param players
+     */
     protected void generateCards(ArrayList<Player> players)
     {
         /*

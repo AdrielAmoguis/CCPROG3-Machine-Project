@@ -1,13 +1,24 @@
 import java.util.Collections;
 
+/**
+ * This class defines the container for all house cards.
+ * This class inhertis from the Deck class.
+ */
 public class HouseDeck extends Deck
 {
+    /**
+     * This constructor calls the superclass constructor to initialize superclass attributes.
+     * This constructor then calls the generateCards() method to populate the deck.
+     */
     public HouseDeck()
     {
         super("House Deck");
         generateCards();
     }    
 
+    /**
+     * This method instantiates and stores all house cards based on the given Machine Project specifications.
+     */
     protected void generateCards()
     {
         /*

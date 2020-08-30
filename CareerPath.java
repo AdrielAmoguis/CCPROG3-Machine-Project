@@ -1,12 +1,27 @@
 import java.util.*;
 
+/**
+ * This class is a container for all spaces that belong to the career path.
+ * This path is responsible for generating the sequence of spaces that constitute the career path,
+ * as defined in the Machine Project specifications and as designed by the program author.
+ * This class inherits from the Path class.
+ */
 public class CareerPath extends Path
 {
+    /**
+     * This constructor calls the super constructor and initializes the instance attributes in the superclass.
+     */
     public CareerPath(Space origin, Space dest, int len, ArrayList<Player> players)
     {
         super("Career Path", origin, dest, len, players);
     }
 
+    /**
+     * This method implements the abstract method generateSpaces() found in the Path class.
+     * It generates a predetermined sequence of spaces on the path as designed by the program author
+     * based on the Machine Project specifications.
+     * @param players - ArrayList of players to be passed on to the MagentaSpaces.
+     */
     protected void generateSpaces(ArrayList<Player> players)
     {
         /*

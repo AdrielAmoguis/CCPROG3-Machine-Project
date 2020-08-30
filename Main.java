@@ -84,6 +84,13 @@ public class Main
             ThatsLife.kb.nextLine();
         }
 
+        // Get Winners
+        String ranking = game.declareRanking();
+
+        System.out.println("--------==========| GAME OVER |==========--------");
+        System.out.println("Final Rankings:");
+        System.out.println(ranking);
+
         ThatsLife.kb.close();
     }
 }

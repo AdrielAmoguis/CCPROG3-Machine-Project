@@ -1,9 +1,19 @@
 import java.util.*;
 
+/**
+ * This class is the container that initializes and holds all ActionCards.
+ */
 public class ActionDeck extends Deck
 {
+    /**
+     * This attribute holds all the ActionCards
+     */
     public ActionCard[] beforeShuffle;
 
+    /**
+     * This constructor initializes the ActionCards
+     * @param players : ArrayList<Player> - this list is not stored on this deck, but is just used to initialize the cards.
+     */
     public ActionDeck(ArrayList<Player> players)
     {
         super("Action Deck");
@@ -11,6 +21,11 @@ public class ActionDeck extends Deck
         generateCards(players);
     }
 
+    /**
+     * This is an implementation of the abstract method from the Deck class that generates all the cards, based on the
+     * specifications described in the Machine Project specifications.
+     * @param players : ArrayList<Player> - to be passed onto the cards.
+     */
     protected void generateCards(ArrayList<Player> players)
     {
         /*
@@ -37,6 +52,12 @@ public class ActionDeck extends Deck
         Collections.shuffle(cards);
     }
 
+    /**
+     * This method generates a String array that contains all the string representations of all the cards.
+     * This method is only for use as indicated in the Machine Project specifications just to display card
+     * generation and does not impact the operation of the game.
+     * @return cardsData : String[]
+     */
     public String[] getStrCards()
     {
         String[] master = new String[this.cards.size()];

@@ -1,13 +1,25 @@
 import java.util.*;
 
+/**
+ * This class is the container of the CareerCards.
+ * It is responsible for career card storage and generation.
+ * This class inherits from the Deck class.
+ */
 public class CareerDeck extends Deck
 {
+    /**
+     * This constructor calls the super constructor to initialize the name of the deck
+     * and calls the method generateCards() to generate all career cards.
+     */
     public CareerDeck()
     {
         super("Career Deck");
         generateCards();
     }
 
+    /**
+     * This method generates the career cards with respect to Machine Project specifications.
+     */
     protected void generateCards()
     {
         /*

@@ -1,12 +1,35 @@
 import java.util.*;
 
+/**
+ * This class defines the BlueCard object.
+ * The BlueCard object simulates the player to experience a "life event".
+ */
 public class BlueCard extends Card
 {
+    /**
+     * This attribute contains the card's name, which is defined outside of this class.
+     */
     public final String NAME;
+
+    /**
+     * This attribute contains the card's monetary value, which is generated according to the "lawsuit" specification in the 
+     * Machine Project specifications.
+     */
     private double amount;
+
+    /**
+     * This attribute contains the ArrayList of the players.
+     */
     private ArrayList<Player> players;
+
+    /**
+     * This attribute contains a string of the career name that this card matches with.
+     */
     private String matchingCareer;
 
+    /**
+     * This constructor initializes the attributes of this class.
+     */
     public BlueCard(String name, String matchingCareer, ArrayList<Player> players)
     {
         this.NAME = name;
@@ -15,11 +38,20 @@ public class BlueCard extends Card
         this.amount = 10000*(5 + (new Random()).nextInt(11));
     }
 
+    /**
+     * This getter method returns the card's assigned matchingCareer.
+     * @return matchingCareer : String
+     */
     public String getCareer()
     {
         return matchingCareer;
     }
 
+    /**
+     * This method implements the event() abstract method from the Card class that will automatically be called
+     * when the card is drawn.
+     * @param player : Player - the player to be performed the event to
+     */
     public void event(Player player)
     {
         boolean paid = false;
@@ -58,6 +90,11 @@ public class BlueCard extends Card
         }
     }
 
+    /**
+     * This method determines if the player's career matches this card's assigned career.
+     * @param player - the player to check
+     * @return isMatch : boolean
+     */
     private boolean isMatch(Player player)
     {
         if(this.matchingCareer.equals(player.getCareer().NAME))
@@ -65,27 +102,47 @@ public class BlueCard extends Card
         return false;
     }
 
+    /**
+     * This method gets called when the card's matching career is lawyer.
+     * @param player
+     */
     private void lawsuit(Player player)
     {
         player.debit(this.amount, "You get into a nasty lawsuit!");
     }
 
+    /**
+     * This method gets called when the card's matching career is accountant.
+     * @param player
+     */
     private void salaryTaxDue(Player player)
     {
         player.debit(player.getSalary().getTaxDue(), "You paid your tax dues.");
     }
 
+    /**
+     * This method gets called when the card's matching career is server.
+     * @param player
+     */
     private void tipTheServer(Player player)
     {
         int randNum = player.spin();
         player.debit(randNum*10000, "You tipped the server.");
     }
 
+    /**
+     * This method gets called when the card's matching career is doctor.
+     * @param player
+     */
     private void skiAccident(Player player)
     {
         player.debit(10000, "You got into a ski accident and paid for hospital bills!");
     }
 
+    /**
+     * This method gets called when the card's matching career is computer consultant.
+     * @param player
+     */
     private void computerRepair(Player player)
     {
         int randNum = player.spin();;
@@ -95,16 +152,28 @@ public class BlueCard extends Card
             player.debit(10000, "Your computer has been badly damaged. You paid for its repair.");
     }
 
+    /**
+     * This method gets called when the card's matching career is athlete.
+     * @param player
+     */
     private void worldCup(Player player)
     {
         player.debit(this.players.size() * 5000, "You watch the world cup!");
     }
 
+    /**
+     * This method gets called when the card's matching career is racecar driver.
+     * @param player
+     */
     private void f1Race(Player player)
     {
         player.debit(player.getSalary().getSalary()*0.1, "You watch the Formula One race.");
     }
 
+    /**
+     * This method converts this instance's data into its string representation.
+     * @return String
+     */
     @Override
     public String toString()
     {
@@ -113,6 +182,10 @@ public class BlueCard extends Card
         );
     }
 
+    /**
+     * This method checks if an object is equal to this instance.
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj)
     {
