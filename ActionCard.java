@@ -33,7 +33,7 @@ public class ActionCard extends Card
      * This constructor initializes and randomly assigns this card its name and amount.
      * The list of players is needed when the active player needs to choose another player to do an action.
      * @param type : int
-     * @param players : ArrayList<Player>
+     * @param players : ArrayList of Player
      */
     public ActionCard(int type, ArrayList<Player> players)
     {

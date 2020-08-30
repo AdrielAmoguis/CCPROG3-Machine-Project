@@ -12,7 +12,7 @@ public class ActionDeck extends Deck
 
     /**
      * This constructor initializes the ActionCards
-     * @param players : ArrayList<Player> - this list is not stored on this deck, but is just used to initialize the cards.
+     * @param players : ArrayList of Player - this list is not stored on this deck, but is just used to initialize the cards.
      */
     public ActionDeck(ArrayList<Player> players)
     {
@@ -24,7 +24,7 @@ public class ActionDeck extends Deck
     /**
      * This is an implementation of the abstract method from the Deck class that generates all the cards, based on the
      * specifications described in the Machine Project specifications.
-     * @param players : ArrayList<Player> - to be passed onto the cards.
+     * @param players : ArrayList of Player - to be passed onto the cards.
      */
     protected void generateCards(ArrayList<Player> players)
     {

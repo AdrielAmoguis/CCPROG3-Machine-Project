@@ -25,7 +25,7 @@ public class Map
     /**
      * This constructor instantiates all of the paths by calling other private methods within this class.
      * This constructor also instantiates both the start and end spaces.
-     * It takes the players parameter of ArrayList<Player> and uses it to initialize the paths and is not stored within this instance.
+     * It takes the players parameter of ArrayList of Player and uses it to initialize the paths and is not stored within this instance.
      * @param players
      */
     public Map(ArrayList<Player> players)

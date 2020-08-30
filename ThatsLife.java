@@ -2,7 +2,7 @@ import java.util.*;
 import java.time.*;
 
 /**
- * <h1>That's Life (inspired by the board game "The Game of Life")</h1>
+ * That's Life (inspired by the board game "The Game of Life")
  * This class is the master That's Life game class. It holds all the life cycles of all the classes.
  */
 public class ThatsLife 
