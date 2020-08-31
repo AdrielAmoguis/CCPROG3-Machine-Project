@@ -201,7 +201,7 @@ public class Player
      */
     public void credit(double amount, String desc)
     {
-        System.out.printf("[%s] You were credited $%.2f : %s\n", this.playerName, amount, desc);
+        System.out.printf("\n[%s] You were credited $%.2f : %s\n", this.playerName, amount, desc);
         this.balance += amount;
     }
 
@@ -214,7 +214,7 @@ public class Player
      */
     public void debit(double amount, String desc)
     {
-        System.out.printf("[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
+        System.out.printf("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
         while (this.balance < amount)
         {
             // Do a loan
@@ -233,7 +233,7 @@ public class Player
      */
     public void rawDebit(double amount, String desc)
     {
-        System.out.printf("[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
+        System.out.printf("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
         this.balance -= amount;
     }
 
@@ -255,6 +255,7 @@ public class Player
     public void setCareer(CareerCard career) 
     {
         this.career = career;
+        this.career.event(this);
     }
 
     /**
@@ -437,7 +438,7 @@ public class Player
     {
         return (
             "[" + this.playerName + "] \nBalance = $" + String.valueOf(this.balance) + "\n" +
-            "Loan: " + String.valueOf(this.loan) + "\n" +
+            "Loan: $" + String.valueOf(this.loan) + "\n" +
             "Career: " + (this.career != null ? this.career.toString() : "No Career Set") + "\n" +
             "Salary: " + (this.salary != null ? this.salary.toString() : "No Salary Set") + "\n" +
             "Married : " + String.valueOf(this.spouse) + "\n" +

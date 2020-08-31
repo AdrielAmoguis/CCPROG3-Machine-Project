@@ -40,6 +40,10 @@ public class Main
                 System.exit(0);
             }
         }
+
+        System.out.println("\nThat's Life | CCPROG3 Machine Project");
+        System.out.println("Program Author: Adriel Isaiah V. Amoguis (CCPROG3 - S13B)");
+        System.out.println("Professor: Ms. Shirley Chu\n");
         
         ThatsLife game = new ThatsLife(nPlayers);
 
@@ -121,5 +125,8 @@ public class Main
         System.out.println(ranking);
 
         ThatsLife.kb.close();
+        System.out.println("Thank you for playing That's Life!");
+        System.out.println("Program Author: Adriel Isaiah V. Amoguis (CCPROG3 - S13B)");
+        System.out.println("Professor: Ms. Shirley Chu");
     }
 }
