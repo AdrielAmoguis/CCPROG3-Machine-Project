@@ -235,7 +235,7 @@ public class ThatsLife
             /* Move elements of arr[0..i-1], that are 
                greater than key, to one position ahead 
                of their current position */
-            while (j >= 0 && finalRank[j].getBalance() > key.getBalance()) 
+            while (j >= 0 && finalRank[j].getBalance() < key.getBalance()) 
             { 
                 finalRank[j + 1] = finalRank[j]; 
                 j = j - 1; 
@@ -246,7 +246,7 @@ public class ThatsLife
         String rank = new String();
         for(int i = 0; i < finalRank.length; i++)
         {
-            rank += "[" + String.valueOf(i+1) + "] " + finalRank[i].toString() + "\n";
+            rank += "[" + String.valueOf(i+1) + "] " + finalRank[i].toString() + "\n\n";
         }
         return rank;
     }
