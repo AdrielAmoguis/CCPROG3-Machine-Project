@@ -157,6 +157,34 @@ public class ThatsLife
         // Check if player finished
         if(!(player.getSpace() instanceof EndSpace) && !moved)
         {
+            // Check if player has loans
+            if(player.getLoan() > 0)
+            {
+                System.out.printf("\n\nYou have an outstanding loan balance of %.2f.\n", player.getLoan());
+                if(player.getBalance() >= player.getLoan())
+                {
+                    int choice = 0;
+                    while(true)
+                    {
+                        String options  = new String("You have enough money to pay off your loans. Would you like to do it?\n");
+                        options += "[1] Yes | [2] No\n";
+                        options += "Your Choice: ";
+                        choice = player.decision(options);  
+                        if(choice >= 1 && choice <= 2)
+                            break;
+                    }
+                    if(choice == 1)
+                        player.payLoan();
+                }
+            }
+
+            // Prompt the player
+            if(!ThatsLife.args.contains("norng"))
+                System.out.print("\n[Spin to Move] Press [ENTER] to spin for a number and move. ");
+            else
+                System.out.print("\n[NORNG] Random Number Generator Inhibited. Input custom spin number: ");
+            ThatsLife.kb.nextLine();
+
             // Player Spins for a Move
             int moveSteps = rollNumber();
 

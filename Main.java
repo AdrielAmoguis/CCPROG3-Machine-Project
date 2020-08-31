@@ -117,11 +117,7 @@ public class Main
             System.out.println("\nStart Turn!\n");
 
             System.out.println(game.getPlayerString(game.getTurn()));
-            if(!ThatsLife.args.contains("norng"))
-                System.out.print("\n[Spin to Move] Press [ENTER] to spin for a number and move. ");
-            else
-                System.out.print("\n[NORNG] Random Number Generator Inhibited. Input custom spin number: ");
-            ThatsLife.kb.nextLine();
+            
             game.startTurn();
 
             System.out.println("Your turn is over! Next player, press enter to continue. ");
