@@ -348,7 +348,7 @@ public class Player
         while(true)
         {
             boolean valid = true;
-            System.out.print(options);
+            System.out.print("\n\n" + options);
             try
             {   
                 choice = Integer.parseInt(ThatsLife.kb.nextLine());
@@ -437,6 +437,7 @@ public class Player
     {
         return (
             "[" + this.playerName + "] \nBalance = $" + String.valueOf(this.balance) + "\n" +
+            "Loan: " + String.valueOf(this.loan) + "\n" +
             "Career: " + (this.career != null ? this.career.toString() : "No Career Set") + "\n" +
             "Salary: " + (this.salary != null ? this.salary.toString() : "No Salary Set") + "\n" +
             "Married : " + String.valueOf(this.spouse) + "\n" +

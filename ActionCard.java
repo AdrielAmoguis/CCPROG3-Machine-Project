@@ -117,20 +117,32 @@ public class ActionCard extends Card
      */
     private Player choosePlayer(Player exclude)
     {
-        int index;
+        int index = -1;
         while(true)
         {
-            System.out.println("Choose player:");
+            boolean valid = true;
+            System.out.println("\n\nChoose player:");
             for(int i = 0; i < allPlayers.size(); i++)
             {
                 System.out.printf("[%d] %s\n", i+1, allPlayers.get(i).getName());
             }
             System.out.print("Your Choice: ");
-            index = Integer.parseInt(ThatsLife.kb.nextLine()) - 1;
-
-            if(!(index < 0 || index >= allPlayers.size()))
-                if(!allPlayers.get(index).equals(exclude))
-                    break;
+            try
+            {
+                index = Integer.parseInt(ThatsLife.kb.nextLine()) - 1;
+            }
+            catch(Exception e)
+            {
+                System.out.printf("You may have entered an invalid string (%s). Please try again.\n", e.toString());
+                valid = false;
+            }
+            finally
+            {
+                if(!(index < 0 || index >= allPlayers.size()))
+                    if(!allPlayers.get(index).equals(exclude))
+                        if(valid)
+                            break;
+            }
         }
         return this.allPlayers.get(index);
     }
