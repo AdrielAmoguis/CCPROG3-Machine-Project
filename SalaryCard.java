@@ -72,7 +72,7 @@ public class SalaryCard extends Card
 
     /**
      * This setter method sets the player's tax due value, given the parameter
-     * @param taxDue
+     * @param taxDue : double - the new tax due
      */
     public void setTaxDue(double taxDue)
     {
@@ -102,7 +102,7 @@ public class SalaryCard extends Card
     /**
      * This method implements the superclass method event().
      * This method gets called when a player draws this instance.
-     * @param player
+     * @param player - the player to perform this event on
      */
     public void event(Player player) 
     {

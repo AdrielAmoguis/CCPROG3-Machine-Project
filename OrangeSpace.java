@@ -6,7 +6,7 @@ public class OrangeSpace extends Space
 {
     /**
      * This constructor calls sthe superclass constructor, passing the path parameter.
-     * @param path
+     * @param path : Path - the path that this space belongs to
      */
     public OrangeSpace(Path path)
     {
@@ -17,7 +17,7 @@ public class OrangeSpace extends Space
      * This method implements the event() method in the superclass.
      * This method gets called when a player lands on this space.
      * Draws a card from the ActionCard deck and executes its event.
-     * @param player
+     * @param player : Player - the player to execute the event on
      */
     protected void event(Player player)
     {

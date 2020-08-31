@@ -14,7 +14,7 @@ public class SalaryDeck extends Deck
     /**
      * This constructor calls the superclass constructor.
      * It also instantiates the numCards attribute then generates all cards.
-     * @param n
+     * @param n : int - the number of cards to generate in this deck.
      */
     public SalaryDeck(int n)
     {

@@ -57,7 +57,7 @@ public abstract class Space
     /**
      * This setter method sets this space's next space.
      * This is called by the initSpaces() method in the Path class.
-     * @param space
+     * @param space : Space - sets the next space in the path
      */
     public void setNextSpace(Space space)
     {

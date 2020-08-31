@@ -6,7 +6,7 @@ public abstract class Card
 {
     /**
      * This method is called when the card is drawn.
-     * @param player
+     * @param player : Player
      */
     public abstract void event(Player player);
 }

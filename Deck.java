@@ -72,7 +72,7 @@ public abstract class Deck
 
     /**
      * This method returns the given card to the last part of the deck.
-     * @param card
+     * @param card : Card to return to deck
      */
     public void returnCard(Card card)
     {

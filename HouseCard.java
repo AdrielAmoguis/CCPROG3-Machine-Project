@@ -21,9 +21,9 @@ public class HouseCard extends Card
 
     /**
      * This constructor initializes this instance's attributes as given by the constructor parameters.
-     * @param name
-     * @param buyPrice
-     * @param sellPrice
+     * @param name : String - house name
+     * @param buyPrice : double - house buy price
+     * @param sellPrice : double - house sell price
      */
     public HouseCard(String name, double buyPrice, double sellPrice)
     {

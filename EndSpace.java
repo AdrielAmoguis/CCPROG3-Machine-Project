@@ -18,7 +18,7 @@ public class EndSpace extends Space
      * This method implements the abstract method event() from the super class.
      * This method gets called when a player lands on this Space.
      * This method processes the player's retirement event.
-     * @param player
+     * @param player : Player to retire
      */
     public void event(Player player)
     {

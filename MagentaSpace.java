@@ -63,7 +63,7 @@ public class MagentaSpace extends Space
      * This method implements the abstract event() method in the superclass.
      * This method gets called when the player lands on this space.
      * For this class, this method calls the appropriate event method depending on the type.
-     * @param player
+     * @param player : Player - player to execute the event on
      */
     protected void event(Player player)
     {

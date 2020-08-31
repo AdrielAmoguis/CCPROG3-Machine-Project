@@ -24,7 +24,7 @@ public class StartSpace extends Space
 
     /**
      * Updates the value stored to the new value of where college starts.
-     * @param space
+     * @param space - sets the college path startspace
      */
     public void setCollegeStart(Space space)
     {
@@ -43,7 +43,7 @@ public class StartSpace extends Space
      * This implements the abstract event() method in the superclass.
      * This method is called when a player triggers this event.
      * This method prompts the user for the initial path, then sets that user to go to that direction.
-     * @param player
+     * @param player - the player to execute this event to
      */
     public void event(Player player)
     {

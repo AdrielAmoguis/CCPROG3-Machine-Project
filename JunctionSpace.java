@@ -42,7 +42,7 @@ public class JunctionSpace extends MagentaSpace
     /**
      * This setter method sets the leftSpace attribute.
      * This is called in map generation.
-     * @param space
+     * @param space : Space - space to set as left space
      */
     public void setLeftSpace(Space space)
     {
@@ -52,7 +52,7 @@ public class JunctionSpace extends MagentaSpace
     /**
      * This setter method sets the rightSpace attribute.
      * This is caleld in map generation.
-     * @param space
+     * @param space : Space - space to set as right space
      */
     public void setRightSpace(Space space)
     {
@@ -63,7 +63,7 @@ public class JunctionSpace extends MagentaSpace
      * This method implements the abstract method event() in the superclass of the superclass.
      * This method is called when a player lands on this junction space.
      * This method triggers the player to make a decision about the junction.
-     * @param player
+     * @param player : Player - player to execute event
      */
     protected void event(Player player)
     {
@@ -73,7 +73,7 @@ public class JunctionSpace extends MagentaSpace
     /**
      * This setter method is to be called by the event method.
      * This method prompts the user for a decision on the junction the sets that player on that path.
-     * @param player
+     * @param player : Player - player to set path
      */
     private void setPlayerPath(Player player)
     {

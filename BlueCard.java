@@ -104,7 +104,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is lawyer.
-     * @param player
+     * @param player : Player - player to lawsuit
      */
     private void lawsuit(Player player)
     {
@@ -113,7 +113,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is accountant.
-     * @param player
+     * @param player : Player - player to pay tax due
      */
     private void salaryTaxDue(Player player)
     {
@@ -122,7 +122,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is server.
-     * @param player
+     * @param player : Player - player who will tip the server
      */
     private void tipTheServer(Player player)
     {
@@ -132,7 +132,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is doctor.
-     * @param player
+     * @param player : Player - player who got into a ski accident.
      */
     private void skiAccident(Player player)
     {
@@ -141,7 +141,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is computer consultant.
-     * @param player
+     * @param player : Player - player whose computer got damaged
      */
     private void computerRepair(Player player)
     {
@@ -154,7 +154,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is athlete.
-     * @param player
+     * @param player : Player - player who watched the world cup
      */
     private void worldCup(Player player)
     {
@@ -163,7 +163,7 @@ public class BlueCard extends Card
 
     /**
      * This method gets called when the card's matching career is racecar driver.
-     * @param player
+     * @param player : Player - player who watched the F1 race
      */
     private void f1Race(Player player)
     {
@@ -184,6 +184,7 @@ public class BlueCard extends Card
 
     /**
      * This method checks if an object is equal to this instance.
+     * @param obj : Object to commpare
      * @return boolean
      */
     @Override

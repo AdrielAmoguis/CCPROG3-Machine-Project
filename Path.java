@@ -29,10 +29,10 @@ public abstract class Path
     /**
      * This constructor instantiates all attributes of this class, given the parameters.
      * The players ArrayList is not stored within this instance but used to initialize the MagentaSpaces.
-     * @param name
-     * @param origin
-     * @param dest
-     * @param players
+     * @param name : String - name of the path
+     * @param origin : Space - starting point of the path
+     * @param dest : Space - ending point of the path
+     * @param players : ArrayList of Player - list of players
      */
     public Path(String name, Space origin, Space dest, ArrayList<Player> players)
     {
@@ -70,7 +70,7 @@ public abstract class Path
 
     /**
      * This getter method returns the instance of the space with the given index in the spaces ArrayList
-     * @param index
+     * @param index : int - index of the space to grab
      * @return space : Space
      */
     public Space getSpace(int index)
@@ -107,7 +107,7 @@ public abstract class Path
 
     /**
      * This setter method sets this path instance's starting space.
-     * @param space
+     * @param space : Space - the space to set as this path's starting space
      */
     public void setStartSpace(Space space)
     {
@@ -118,7 +118,7 @@ public abstract class Path
      * This abstract method is left unimplemented for the child classes to implement.
      * This method should contain the generation method for the child classes to follow.
      * The players ArrayList parameter is to instantiate the MagentaSpaces.
-     * @param players
+     * @param players : Players ArrayList - the players of the game
      */
     protected abstract void generateSpaces(ArrayList<Player> players);
 

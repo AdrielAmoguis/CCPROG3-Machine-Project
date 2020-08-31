@@ -7,7 +7,7 @@ public class BlueDeck extends Deck
 {
     /**
      * This constructor initializes all Blue Cards and defines the deck's name.
-     * @param players
+     * @param players : the array list of players
      */
     public BlueDeck(ArrayList<Player> players)
     {
@@ -17,7 +17,7 @@ public class BlueDeck extends Deck
     
     /**
      * This method generates the cards in this deck.
-     * @param players
+     * @param players - ArrayList of players
      */
     protected void generateCards(ArrayList<Player> players)
     {
