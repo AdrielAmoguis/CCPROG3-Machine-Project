@@ -100,7 +100,8 @@ public class Map
      * This method converts the entire map (all paths) into their string representation and returns it.
      * @return mapString : String
      */
-    public String getMapDisplayString()
+    @Override
+    public String toString()
     {
         String mainString = new String("----=====| MAP |=====----\n");
 

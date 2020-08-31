@@ -143,6 +143,9 @@ public class CareerPath extends Path
     @Override
     public boolean equals(Object obj)
     {
+        if(obj == null) return false;
+        else if(!(obj instanceof CareerPath)) return false;
+
         CareerPath compare = (CareerPath) obj;
         if(compare.getName().equals(this.getName()))
             return true;

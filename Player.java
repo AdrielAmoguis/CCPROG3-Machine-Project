@@ -5,6 +5,17 @@
 public class Player 
 {
     /**
+     * This attribute holds the total playerIDs in the game.
+     * Player ids are just used for the player equals method.
+     */
+    private static int id = 0;
+
+    /**
+     * This attribute holds this player's ID.
+     */
+    private int playerID;
+
+    /**
      * This attribute holds the player's name.
      */
     private String playerName;
@@ -60,6 +71,7 @@ public class Player
      */
     public Player(String name)
     {
+        this.playerID = Player.id++;
         this.playerName = new String(name);
         career = null;
         salary = null;
@@ -150,6 +162,15 @@ public class Player
     public boolean getGraduate()
     {
         return this.graduate;
+    }
+
+    /**
+     * This getter method returns the player's unique ID number.
+     * @return playerID : int
+     */
+    public int getPlayerID()
+    {
+        return this.playerID;
     }
 
     /**
@@ -299,13 +320,19 @@ public class Player
         {
             if(this.space instanceof MagentaSpace && i != 0)
             {
-                System.out.println("You landed on a Magenta Space! You stopped moving.");
+                System.out.println("\n\nYou landed on a Magenta Space! You stopped moving.\n\n");
+                break;
+            }
+
+            if(this.space instanceof EndSpace)
+            {
+                System.out.println("\n\nYou reached the end of your career. Welcome to retirement!\n\n");
                 break;
             }
             this.space = this.space.getNextSpace();
             moved = i + 1;
         }
-        System.out.printf("Moved %d spaces!\n", moved);
+        System.out.printf("\nMoved %d spaces!\n", moved);
         this.space.playerLand(this);
         return moved;
     }
@@ -330,9 +357,18 @@ public class Player
      */
     public int spin()
     {
-        System.out.printf("[%s][Spin for a Random Number] Press [ENTER] to Spin and Continue", this.playerName);
-        ThatsLife.kb.nextLine();
-        int n = ThatsLife.rollNumber();
+        int n;
+        if(ThatsLife.args.contains("norng"))
+        {
+            System.out.printf("[NORNG][%s] Random Number Generator Inhibited. Input custom spin number: ",  this.playerName);
+            n = Integer.parseInt(ThatsLife.kb.nextLine());
+        }
+        else
+        {
+            System.out.printf("\n[%s][Spin for a Random Number] Press [ENTER] to Spin and Continue", this.playerName);
+            ThatsLife.kb.nextLine();
+            n = ThatsLife.rollNumber();
+        }
         System.out.printf("You got [%d]!\n", n);
         return n;
     }
@@ -384,6 +420,6 @@ public class Player
     {
         if(obj == null)
             return false;
-        return this.playerName.equals(((Player) obj).getName()) && this.space.equals(((Player)obj).getSpace());
+        return this.playerName.equals(((Player) obj).getName()) && this.space.equals(((Player)obj).getSpace()) && this.playerID == ((Player)obj).getPlayerID();
     }
 }

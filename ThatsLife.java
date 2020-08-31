@@ -8,6 +8,13 @@ import java.time.*;
 public class ThatsLife 
 {
     /**
+     * This static attribute contains some game arguments that some of the game classes would take.
+     * An example of such argument is the norng argument, which inhibits the use of RNG when dealing
+     * with player spin. As such, the player will enter a number rather than spin for a random one.
+     */
+    public static ArrayList<String> args = new ArrayList<String>();
+
+    /**
      * Since it is recommended by the Java community to use a single scanner for all user inputs, this is it.
      * Even the Main Driver Class has to use this scanner. This is because there are instances where when multiple scanners are being used
      * and being closed, the InputStream in Java closes, hence, not allowing other scanners to function properly.
@@ -188,6 +195,11 @@ public class ThatsLife
             rank += "[" + String.valueOf(i+1) + "] " + finalRank[i].toString() + "\n";
         }
         return rank;
+    }
+
+    public static void addGameArgs(String arg)
+    {
+        ThatsLife.args.add(arg);
     }
 
     /**

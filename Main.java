@@ -13,13 +13,15 @@ public class Main
      *  - "showactioncards" = Shows the action cards upon generation<br>
      *  - "showcareercards" = Shows the career cards upon generation<br>
      *  - "showsalarycards" = Shows the salary cards upon generation<br>
-     *  - (unimplemented) "norng" = Runs the game without the use of RNG. The user inputs a value every time.<br>
+     *  - "nomap" = inhibits map display per turn<br>
+     *  - "norng" = Runs the game without the use of RNG. The user inputs a value every time.<br>
      * Multiple arguments may be used at the same time.<br>
      * @param args - String[]
      */
     public static void main(String[] args)
     {
         // Instantiate Game
+        boolean displayMap = true;
         int nPlayers = 0;
         try
         {
@@ -70,6 +72,7 @@ public class Main
                         System.out.println(((CareerCard)card).toString());
                     }
                     break;
+
                 case "showsalarycards":
                     Card[] salaryDeck = ThatsLife.getDeck(1).getDeck();
                     System.out.println("Salary Cards:");
@@ -78,8 +81,13 @@ public class Main
                         System.out.println(((SalaryCard)card).toString());
                     }
                     break;
+
                 case "norng":
-                    // IMPLEMENT THIS
+                    ThatsLife.addGameArgs(new String("norng"));
+                    break;
+
+                case "nomap":
+                    displayMap = false;
                     break;
             }
         }
@@ -88,12 +96,16 @@ public class Main
         while(game.isOngoing())
         {
             // Print the Map
-            System.out.println(game.getMap().getMapDisplayString());
+            if(displayMap)
+                System.out.println(game.getMap().toString());
 
             System.out.println("\nStart Turn!\n");
 
             System.out.println(game.getPlayerString(game.getTurn()));
-            System.out.print("\n[Spin to Move] Press [ENTER] to spin for a number and move. ");
+            if(!ThatsLife.args.contains("norng"))
+                System.out.print("\n[Spin to Move] Press [ENTER] to spin for a number and move. ");
+            else
+                System.out.print("\n[NORNG] Random Number Generator Inhibited. Input custom spin number: ");
             ThatsLife.kb.nextLine();
             game.startTurn();
 
