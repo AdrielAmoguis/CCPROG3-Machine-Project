@@ -40,7 +40,7 @@ public class CareerCard extends Card
      */
     public void event(Player player)
     {
-        System.out.println("[CareerCard] Welcome to your new Career!: " + this.NAME);
+        System.out.println("\n[CareerCard] Welcome to your new Career!: " + this.NAME);
     }
 
     /**

@@ -10,6 +10,9 @@ public class CareerPath extends Path
 {
     /**
      * This constructor calls the super constructor and initializes the instance attributes in the superclass.
+     * @param origin - the first space on this path
+     * @param dest - the last space on this path
+     * @param players - the array of players for use to initializes all spaces
      */
     public CareerPath(Space origin, Space dest, ArrayList<Player> players)
     {

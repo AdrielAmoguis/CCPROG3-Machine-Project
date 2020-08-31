@@ -70,7 +70,7 @@ public class Map
 
     /**
      * This getter method returns the path instance given an index of the paths ArrayList.
-     * @param index
+     * @param index the index of the path to get
      * @return Path
      */
     public Path getPath(int index)

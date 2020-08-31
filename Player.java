@@ -433,6 +433,7 @@ public class Player
      * This method allows the player to pay off his loan before the game ends.
      * The player is presented this decision before the start of his turn.
      * @param override - if this is true, the method will debit the player regardless of his balance
+     * @return paid : boolean - is true when the loan has been paid
      */
     public boolean payLoan(boolean override)
     {

@@ -51,6 +51,7 @@ public abstract class Space
     /**
      * This method is to be implemented by child classes of this class.
      * It will be called by the playerLand() method upon a player lands on this instance.
+     * @param player - the player that this event will be executed on
      */
     protected abstract void event(Player player);
 
@@ -66,7 +67,7 @@ public abstract class Space
 
     /**
      * This getter method returns the instance for the next space from this space instance.
-     * @return
+     * @return nextSpace : the next space after this space on the path
      */
     public Space getNextSpace()
     {
@@ -75,7 +76,7 @@ public abstract class Space
 
     /**
      * This getter method returns the number of players on this space.
-     * @return
+     * @return nPlayers : int - the number of players on this path
      */
     public int getNoOfPlayers()
     {

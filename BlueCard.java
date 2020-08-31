@@ -29,6 +29,9 @@ public class BlueCard extends Card
 
     /**
      * This constructor initializes the attributes of this class.
+     * @param name - the name of this blue card
+     * @param matchingCareer - the career that matches the nature (name) of this blue card
+     * @param players - the list of players of the game
      */
     public BlueCard(String name, String matchingCareer, ArrayList<Player> players)
     {

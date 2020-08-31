@@ -17,6 +17,7 @@ public class JunctionSpace extends MagentaSpace
     /**
      * This constructor calls the superclass constructor to initialize all superclass attributes.
      * It passes the path, -1 for the type, and null for the players ArrayList.
+     * @param path - the path that this junction mainly belongs on
      */
     public JunctionSpace(Path path)
     {
@@ -25,6 +26,7 @@ public class JunctionSpace extends MagentaSpace
 
     /**
      * This getter method returns the leftSpace.
+     * @return leftSpace : Space
      */
     public Space getLeftSpace()
     {
@@ -33,6 +35,7 @@ public class JunctionSpace extends MagentaSpace
 
     /**
      * This getter method returns the rightSpace
+     * @return rightSpace : Space
      */
     public Space getRightSpace()
     {

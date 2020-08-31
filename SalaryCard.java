@@ -34,6 +34,7 @@ public class SalaryCard extends Card
     
     /**
      * This constructor instantiates all attributes of this instance.
+     * @param salary : double - the salary value to assign to this card
      */
     public SalaryCard(double salary)
     {
