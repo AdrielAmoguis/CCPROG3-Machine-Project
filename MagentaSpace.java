@@ -332,6 +332,14 @@ public class MagentaSpace extends Space
         System.out.println("Career Chosen: " + card.toString());
         System.out.println("Salary Chosen: " + sCard.toString());
 
+        // Return the player's existing cards (if any)
+        if(player.getCareer() != null && player.getSalary() != null)
+        {
+            ThatsLife.getDeck(0).returnCard(player.getCareer());
+            ThatsLife.getDeck(1).returnCard(player.getSalary());
+        }
+
+
         // Store the Cards
         player.setCareer(card);
         player.setSalary(sCard);
