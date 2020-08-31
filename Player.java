@@ -432,15 +432,16 @@ public class Player
     /**
      * This method allows the player to pay off his loan before the game ends.
      * The player is presented this decision before the start of his turn.
+     * @param override - if this is true, the method will debit the player regardless of his balance
      */
-    public boolean payLoan()
+    public boolean payLoan(boolean override)
     {
         // Check if the player has enough funds
-        if(this.balance < this.loan)
+        if(this.balance < this.loan && !override)
             return false;
         
         // Pay off the loan
-        this.debit(this.loan, "You have paid off your loan!");
+        this.rawDebit(this.loan, "You have paid off your loan!");
         this.loan = 0;
 
         return true;

@@ -45,7 +45,8 @@ public class EndSpace extends Space
         }
 
         // Repay all loans
-        player.rawDebit(player.getLoan(), "Your loans were paid off.");
+        System.out.printf("You were debited %.2f : Your loans were paid off.\n", player.getLoan());
+        player.payLoan(true);
     }   
 
     /**

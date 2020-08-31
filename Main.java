@@ -128,7 +128,7 @@ public class Main
         String ranking = game.declareRanking();
 
         System.out.println("--------==========| GAME OVER |==========--------");
-        System.out.println("Final Rankings:");
+        System.out.println("Final Rankings:\n");
         System.out.println(ranking);
 
         ThatsLife.kb.close();

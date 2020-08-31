@@ -174,7 +174,7 @@ public class ThatsLife
                             break;
                     }
                     if(choice == 1)
-                        player.payLoan();
+                        player.payLoan(false);
                 }
             }
 
