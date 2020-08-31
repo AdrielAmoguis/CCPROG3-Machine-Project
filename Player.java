@@ -352,7 +352,7 @@ public class Player
             System.out.print("\n\n" + options);
             try
             {   
-                choice = Integer.parseInt(ThatsLife.kb.nextLine());
+                choice = Integer.parseInt(ThatsLife.kb.nextLine(), 10);
             }
             catch(Exception e)
             {
@@ -385,7 +385,7 @@ public class Player
                 System.out.printf("[NORNG][%s] Random Number Generator Inhibited. Input custom spin number: ",  this.playerName);
                 try
                 {
-                    n = Integer.parseInt(ThatsLife.kb.nextLine());
+                    n = Integer.parseInt(ThatsLife.kb.nextLine(), 10);
                 }
                 catch(Exception e)
                 {

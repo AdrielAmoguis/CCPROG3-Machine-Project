@@ -26,13 +26,15 @@ public class CareerDeck extends Deck
             Generation Rules for Career Card:
             - Just generate all seven careers
         */
-        cards.add(new CareerCard("Lawyer", true, 4 + ThatsLife.rollNumber() % 5));
-        cards.add(new CareerCard("Accountant", true, 3 + ThatsLife.rollNumber() % 5));
-        cards.add(new CareerCard("Computer Consultant", true, 2 + ThatsLife.rollNumber() % 6));
-        cards.add(new CareerCard("Doctor", true, 4 + ThatsLife.rollNumber() % 5));
-        cards.add(new CareerCard("Server", false, ThatsLife.rollNumber() % 5));
-        cards.add(new CareerCard("Racecar Driver", false, 1 + ThatsLife.rollNumber() % 8));
-        cards.add(new CareerCard("Athlete", false, ThatsLife.rollNumber() % 7));
+        // This new random object has been created due to the anomaly that the game randomizer does on this class.
+        Random rand = new Random(ThatsLife.rollNumber());
+        cards.add(new CareerCard("Lawyer", true, 5 + rand.nextInt(4)));
+        cards.add(new CareerCard("Accountant", true, 4 + rand.nextInt(4)));
+        cards.add(new CareerCard("Computer Consultant", true, 3 + rand.nextInt(5)));
+        cards.add(new CareerCard("Doctor", true, 5 + rand.nextInt(4)));
+        cards.add(new CareerCard("Server", false, 1 + rand.nextInt(4)));
+        cards.add(new CareerCard("Racecar Driver", false, 2 + rand.nextInt(7)));
+        cards.add(new CareerCard("Athlete", false, 1 + rand.nextInt(6)));
         // Shuffle Deck
         Collections.shuffle(cards, new Random(ThatsLife.rollNumber()));
     }
