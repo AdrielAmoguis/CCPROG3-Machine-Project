@@ -189,6 +189,26 @@ public class ThatsLife
     public String declareRanking()
     {
         Player[] finalRank = map.getEndSpace().getPlayers();
+
+        // Sort the player ranking (sort by balance) - using Insertion Sort
+        // Insertion sort by Rajat Mishra. Reference: https://www.geeksforgeeks.org/insertion-sort/
+        int n = finalRank.length; 
+        for (int i = 1; i < n; ++i) 
+        { 
+            Player key = finalRank[i]; 
+            int j = i - 1; 
+  
+            /* Move elements of arr[0..i-1], that are 
+               greater than key, to one position ahead 
+               of their current position */
+            while (j >= 0 && finalRank[j].getBalance() > key.getBalance()) 
+            { 
+                finalRank[j + 1] = finalRank[j]; 
+                j = j - 1; 
+            } 
+            finalRank[j + 1] = key; 
+        }
+        
         String rank = new String();
         for(int i = 0; i < finalRank.length; i++)
         {
@@ -197,6 +217,11 @@ public class ThatsLife
         return rank;
     }
 
+    /**
+     * This method adds arguments to the game's static arguments class variable.
+     * These arguments are used to inhibit/customize certain game behaviors.
+     * @param arg : String - argument to add.
+     */
     public static void addGameArgs(String arg)
     {
         ThatsLife.args.add(arg);

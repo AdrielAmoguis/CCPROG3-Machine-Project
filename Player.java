@@ -344,9 +344,27 @@ public class Player
      */
     public int decision(String options)
     {
-        System.out.print(options);
-        int choice = Integer.parseInt(ThatsLife.kb.nextLine());
-
+        int choice = 0;
+        while(true)
+        {
+            boolean valid = true;
+            System.out.print(options);
+            try
+            {   
+                choice = Integer.parseInt(ThatsLife.kb.nextLine());
+            }
+            catch(Exception e)
+            {
+                System.out.printf("You might have inputted an invalid string (%s). Please try again.\n", e.toString());
+                valid = false;
+            }
+            finally
+            {
+                if(valid)
+                    break;
+            }
+            
+        }
         return choice;
     }
 
@@ -357,11 +375,28 @@ public class Player
      */
     public int spin()
     {
-        int n;
+        int n = 0;
         if(ThatsLife.args.contains("norng"))
         {
-            System.out.printf("[NORNG][%s] Random Number Generator Inhibited. Input custom spin number: ",  this.playerName);
-            n = Integer.parseInt(ThatsLife.kb.nextLine());
+            while(true)
+            {
+                boolean valid = true;
+                System.out.printf("[NORNG][%s] Random Number Generator Inhibited. Input custom spin number: ",  this.playerName);
+                try
+                {
+                    n = Integer.parseInt(ThatsLife.kb.nextLine());
+                }
+                catch(Exception e)
+                {
+                    System.out.printf("You might have inputted an invalid string (%s). Please try again.\n", e.toString());
+                    valid = false;
+                }
+                finally
+                {
+                    if(valid)
+                        break;
+                }
+            }
         }
         else
         {
