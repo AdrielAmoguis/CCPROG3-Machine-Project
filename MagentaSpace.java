@@ -80,7 +80,7 @@ public class MagentaSpace extends Space
         }
 
         // Roll Again
-        System.out.println("Move Again!");
+        System.out.println("\n[Magenta Space] You can move again!\n");
         int spin = player.spin();
         player.move(spin);
     }

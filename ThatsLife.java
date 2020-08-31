@@ -145,21 +145,27 @@ public class ThatsLife
     {
         // Get the player instance
         Player player = players.get(turn);
+        boolean moved = false;
 
         // Check if first move
         if(firstMove++ < players.size())
+        {
             player.getSpace().playerLand(player);
+            moved = true;
+        }
 
         // Check if player finished
-        if(!(player.getSpace() instanceof EndSpace))
+        if(!(player.getSpace() instanceof EndSpace) && !moved)
         {
             // Player Spins for a Move
             int moveSteps = rollNumber();
 
             // Move the player
             player.move(moveSteps);
+
+            moved = true;
         }
-        else
+        else if(player.getSpace() instanceof EndSpace)
             System.out.printf("[%s] You have already retired!\n", player.getName());
 
         // Update turn

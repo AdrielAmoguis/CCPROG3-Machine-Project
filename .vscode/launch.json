@@ -17,7 +17,7 @@
             "request": "launch",
             "mainClass": "Main",
             "projectName": "CCPROG3 MP_8a5010d9",
-            "args" : "2 showcareercards"
+            "args" : "2 nomap norng"
         },
         {
             "type": "java",

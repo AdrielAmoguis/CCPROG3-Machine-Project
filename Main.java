@@ -30,6 +30,7 @@ public class Main
         catch(Exception e)
         {
             System.out.println("Invalid argument for number of players. Quitting.");
+            System.out.println("Usage: java Main <number of players [2,3]> <optional arguments>");
             System.exit(0);
         }
         finally
@@ -37,6 +38,7 @@ public class Main
             if(nPlayers < 2 || nPlayers > 3)
             {
                 System.out.println("Incorrect value of number of players. Number of players must range from 2-3, inclusive. Quitting.");
+                System.out.println("Usage: java Main <number of players [2,3]> <optional arguments>");
                 System.exit(0);
             }
         }
@@ -92,6 +94,15 @@ public class Main
 
                 case "nomap":
                     displayMap = false;
+                    break;
+
+                case "showbluecards":
+                    Card[] blueDeck = ThatsLife.getDeck(2).getDeck();
+                    System.out.println("Blue Cards:");
+                    for(Card card : blueDeck)
+                    {
+                        System.out.println(((BlueCard)card).toString());
+                    }
                     break;
             }
         }

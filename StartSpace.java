@@ -48,6 +48,7 @@ public class StartSpace extends Space
     public void event(Player player)
     {
         System.out.println("Welcome to the game!");
+        int choice = -1;
         while(true)
         {
             String options = new String("\n[" + player.getName() + "]\n\n");
@@ -55,25 +56,25 @@ public class StartSpace extends Space
             options += "[1] Take the Career Path\n";
             options += "[2] Take the College Path\n";
             options += "Your Choice: ";
-            int choice = player.decision(options) - 1;
-            if(choice == 0)
-            {
-                this.setNextSpace(careerStart);
-                players.remove(player);
-                player.move(player.spin());
+            choice = player.decision(options) - 1;
+            if(choice >= 0 && choice <= 1)
                 break;
-            }
-            else if(choice == 1)
-            {
-                player.doLoan(2);
-                System.out.println("You chose college! You loaned $40000 from the bank.");
-                this.setNextSpace(collegeStart);
-                players.remove(player);
-                player.move(player.spin());
-                break;
-            }
         }
-        
+
+        if(choice == 0)
+        {
+            this.setNextSpace(careerStart);
+            players.remove(player);
+            player.move(player.spin());
+        }
+        else if(choice == 1)
+        {
+            player.doLoan(2);
+            System.out.println("You chose college! You loaned $40000 from the bank.");
+            this.setNextSpace(collegeStart);
+            players.remove(player);
+            player.move(player.spin());
+         }
     }
 
     @Override
