@@ -1,0 +1,2166 @@
+PS C:\Users\redst\Desktop\CCPROG3 MP> java Main 3 nomap
+
+That's Life | CCPROG3 Machine Project
+Program Author: Adriel Isaiah V. Amoguis (CCPROG3 - S13B)
+Professor: Ms. Shirley Chu
+
+[1] Enter new player name: Player 1
+[2] Enter new player name: Player 2
+[3] Enter new player name: Player 3
+
+Start Turn!
+
+[Player 1]
+Balance = $200000.0
+Loan: $0.0
+Career: No Career Set
+Salary: No Salary Set
+Married : false
+House : No House
+Children : 0
+Current Space : [StartSpace 2]
+Welcome to the game!
+
+
+
+[Player 1]
+
+Pick your initial path:
+[1] Take the Career Path
+[2] Take the College Path
+Your Choice: 1
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+Career Chosen: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary Chosen: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 60000.0
+
+[CareerCard] Welcome to your new Career!: Racecar Driver
+
+
+[SalaryCard] Your salary card changed! : [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 60000.0
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] The bank pays you 50000.00 for Write a Book.
+
+[Player 1] You were credited $50000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $200000.0
+Loan: $0.0
+Career: No Career Set
+Salary: No Salary Set
+Married : false
+House : No House
+Children : 0
+Current Space : [StartSpace 2]
+Welcome to the game!
+
+
+
+[Player 2]
+
+Pick your initial path:
+[1] Take the Career Path
+[2] Take the College Path
+Your Choice: 2
+You chose college! You loaned $40000 from the bank.
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] The bank pays you 30000.00 for Tax Refund.
+
+[Player 2] You were credited $30000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $200000.0
+Loan: $0.0
+Career: No Career Set
+Salary: No Salary Set
+Married : false
+House : No House
+Children : 0
+Current Space : [StartSpace 2]
+Welcome to the game!
+
+
+
+[Player 3]
+
+Pick your initial path:
+[1] Take the Career Path
+[2] Take the College Path
+Your Choice: 1
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [8]!
+Moving 8 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+Career Chosen: [Career] Athlete | Degree Not Required | MaxRaise = 6
+Salary Chosen: [SalaryCard] 40000.0 | TaxDue : 4000.0 | Pay Raise = 20000.0
+
+[CareerCard] Welcome to your new Career!: Athlete
+
+
+[SalaryCard] Your salary card changed! : [SalaryCard] 40000.0 | TaxDue : 4000.0 | Pay Raise = 20000.0
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [10]!
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 3 spaces!
+
+
+Spin to determine your wedding gift!
+Odd Number : Collect $5000 from each player
+Even Number : Collect $10000 from each player
+
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [4]!
+
+[Player 3] You were credited $20000.00 : You got married! Here's $10000 from each other player for your wedding gift.
+
+[Player 1] You were debited $10000.00 : Someone got married! You paid them $10000 as a wedding gift.
+
+[Player 2] You were debited $10000.00 : Someone got married! You paid them $10000 as a wedding gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] You pay the bank 60000.00 for Buy an Item.
+
+[Player 3] You were debited $60000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $240000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 60000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 4]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 7 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 2 spaces!
+
+
+Spin to determine your wedding gift!
+Odd Number : Collect $5000 from each player
+Even Number : Collect $10000 from each player
+
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [8]!
+
+[Player 1] You were credited $20000.00 : You got married! Here's $10000 from each other player for your wedding gift.
+
+[Player 2] You were debited $10000.00 : Someone got married! You paid them $10000 as a wedding gift.
+
+[Player 3] You were debited $10000.00 : Someone got married! You paid them $10000 as a wedding gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [2]!
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[You drew an Action Card!] The bank pays you 30000.00 for Tax Refund.
+
+[Player 1] You were credited $30000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $250000.0
+Loan: $50000.0
+Career: No Career Set
+Salary: No Salary Set
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 113]
+
+
+You have an outstanding loan balance of 50000.00.
+
+
+You have enough money to pay off your loans. Would you like to do it?
+[1] Yes | [2] No
+Your Choice:
+You might have inputted an invalid string (java.lang.NumberFormatException: For input string: ""). Please try again.
+
+
+You have enough money to pay off your loans. Would you like to do it?
+[1] Yes | [2] No
+Your Choice: 3
+
+
+You have enough money to pay off your loans. Would you like to do it?
+[1] Yes | [2] No
+Your Choice: 0
+
+
+You have enough money to pay off your loans. Would you like to do it?
+[1] Yes | [2] No
+Your Choice: 2
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 8 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 4 spaces!
+Contratulations on your graduation, Player 2!
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [8]!
+Moving 8 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 4 spaces!
+
+
+Select from the two Career Cards:
+[1] [Career] Accountant | Degree Required | MaxRaise = 5
+[2] [Career] Lawyer | Degree Required | MaxRaise = 7
+Your Choice: 2
+
+[CareerCard] Welcome to your new Career!: Lawyer
+
+
+Select from the two Salary Cards:
+[1] [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+[2] [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Your Choice: 2
+
+
+[SalaryCard] Your salary card changed! : [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] The bank pays you 60000.00 for Sell an Item.
+
+[Player 2] You were credited $60000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $150000.0
+Loan: $0.0
+Career: [Career] Athlete | Degree Not Required | MaxRaise = 6
+Salary: [SalaryCard] 40000.0 | TaxDue : 4000.0 | Pay Raise = 20000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 7]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 8 spaces!
+
+Moved 8 spaces!
+
+
+[You drew an Action Card!] You pay the bank 30000.00 for Hiking.
+
+[Player 3] You were debited $30000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $290000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 60000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 8]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 7 spaces!
+
+Moved 7 spaces!
+
+
+[You drew an Action Card!] You pay the bank 30000.00 for Win a Competition.
+
+[Player 1] You were debited $30000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $310000.0
+Loan: $50000.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 8]
+
+
+You have an outstanding loan balance of 50000.00.
+
+
+You have enough money to pay off your loans. Would you like to do it?
+[1] Yes | [2] No
+Your Choice: 1
+
+[Player 2] You were debited $50000.00 : You have paid off your loan!
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[You drew an Action Card!] The bank pays you 10000.00 for Tax Refund.
+
+[Player 2] You were credited $10000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $120000.0
+Loan: $0.0
+Career: [Career] Athlete | Degree Not Required | MaxRaise = 6
+Salary: [SalaryCard] 40000.0 | TaxDue : 4000.0 | Pay Raise = 20000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 15]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] The bank pays you 40000.00 for Bonus Payday.
+
+[Player 3] You were credited $40000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $260000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 60000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 15]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 8 spaces!
+
+Moved 8 spaces!
+
+
+You have hit a junction. Choose a path:
+[1] Career Path
+[2] Change Career Path
+Your Choice: 2
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [10]!
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+Career Chosen: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary Chosen: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+
+[CareerCard] Welcome to your new Career!: Server
+
+
+[SalaryCard] Your salary card changed! : [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [3]!
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+[Player 1] You were credited $30000.00 : What day is it? It's Pay Day!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $270000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 10]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] The bank pays you 10000.00 for Write a Book.
+
+[Player 2] You were credited $10000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $160000.0
+Loan: $0.0
+Career: [Career] Athlete | Degree Not Required | MaxRaise = 6
+Salary: [SalaryCard] 40000.0 | TaxDue : 4000.0 | Pay Raise = 20000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 18]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 8 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 5 spaces!
+
+
+You have hit a junction. Choose a path:
+[1] Career Path
+[2] Change Career Path
+Your Choice: 2
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [7]!
+Moving 7 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+Career Chosen: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary Chosen: [SalaryCard] 80000.0 | TaxDue : 8000.0 | Pay Raise = 50000.0
+
+[CareerCard] Welcome to your new Career!: Racecar Driver
+
+
+[SalaryCard] Your salary card changed! : [SalaryCard] 80000.0 | TaxDue : 8000.0 | Pay Raise = 50000.0
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [6]!
+Moving 6 spaces!
+
+Moved 6 spaces!
+You got a Pay Raise!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $290000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [GreenSpace 135]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 6 spaces!
+
+Moved 6 spaces!
+
+[Player 1] You were debited $15000.00 : Your career does not match this card. You give funds to the player with this career.
+
+[Player 3] You were credited $15000.00 : Another player has picked up your matching blue card for your career.
+
+
+[BlueCard] You want to watch the Foruma One race!
+
+[Player 1] You were debited $3000.00 : You watch the Formula One race.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $280000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 13]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] You pay the bank 50000.00 for Buy an Item.
+
+[Player 2] You were debited $50000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $175000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 10000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [GreenSpace 138]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] The bank pays you 30000.00 for Sell an Item.
+
+[Player 3] You were credited $30000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $272000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [BlueSpace 141]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[You drew an Action Card!] You pay the bank 40000.00 for Buy an Item.
+
+[Player 1] You were debited $40000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $230000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 16]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] You pay the bank 50000.00 for Buy an Item.
+
+[Player 2] You were debited $50000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $205000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 10000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 139]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 4 spaces!
+
+Moved 4 spaces!
+
+
+[You drew an Action Card!] You pay the bank 30000.00 for Hiking.
+
+[Player 3] You were debited $30000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $232000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 43]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+[Player 1] You were credited $30000.00 : What day is it? It's Pay Day!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $180000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 19]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] The bank pays you 50000.00 for Setup School.
+
+[Player 2] You were credited $50000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $175000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 10000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 43]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] You pay the bank 50000.00 for Traffic Violation.
+
+[Player 3] You were debited $50000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $262000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [GreenSpace 44]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[You drew an Action Card!] You pay the bank 30000.00 for Hiking.
+
+[Player 1] You were debited $30000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $230000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 22]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+
+
+You have hit a junction. Choose a path:
+[1] Career Path
+[2] Change Career Path
+Your Choice: 1
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [5]!
+Moving 5 spaces!
+
+Moved 5 spaces!
+
+
+[You drew an Action Card!] You pay the bank 60000.00 for Buy an Item.
+
+[Player 2] You were debited $60000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $125000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 10000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 46]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 9 spaces!
+
+Moved 9 spaces!
+
+
+[You drew an Action Card!] You pay a player 50000.00 for Christmas Bonus.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 1
+
+[Player 3] You were debited $50000.00 : You paid a player the value of the this Action Card.
+
+[Player 1] You were credited $50000.00 : Player 3 has paid you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $282000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 46]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 6 spaces!
+
+Moved 6 spaces!
+
+
+[You drew an Action Card!] You pay the bank 40000.00 for Visit a Place.
+
+[Player 1] You were debited $40000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $170000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 28]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 7 spaces!
+
+Moved 7 spaces!
+
+
+[You drew an Action Card!] The bank pays you 60000.00 for Tax Refund.
+
+[Player 2] You were credited $60000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $75000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 10000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 55]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+
+
+You have hit a junction. Choose a path:
+[1] Career Path
+[2] Start a Family Path
+Your Choice: 1
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [7]!
+Moving 7 spaces!
+
+Moved 7 spaces!
+You got a Pay Raise!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $242000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 52]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 4 spaces!
+
+Moved 4 spaces!
+
+
+You have hit a junction. Choose a path:
+[1] Career Path
+[2] Start a Family Path
+Your Choice: 2
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [4]!
+Moving 4 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+You're already married!
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [4]!
+Moving 4 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 3 spaces!
+
+
+Select a house to purchase:
+[1] [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+[2] [HOUSE] Country Side | BUY: 500000.0; SELL: 200000.0
+[3] [HOUSE] Bungalow | BUY: 500000.0; SELL: 200000.0
+
+[4] Do not purchase a house
+Your Choice: 1
+
+[Player 1] You were debited $0.00 : You bought a house!
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [10]!
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 3 spaces!
+
+[Player 1] You were credited $10000.00 : Your child was born! Everyone gives you $5000 as a gift.
+
+[Player 2] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Player 3] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [6]!
+Moving 6 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 2 spaces!
+
+[Player 1] You were credited $20000.00 : Your twins were born! Everyone gives you $10000 as a gift.
+
+[Player 2] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Player 3] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [2]!
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[You drew an Action Card!] The bank pays you 60000.00 for Sell an Item.
+
+[Player 1] You were credited $60000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $215000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 35]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[JOB SEARCH] Accept new Career?
+[Career] Lawyer | Degree Required | MaxRaise = 7
+[SalaryCard] 120000.0 | TaxDue : 12000.0 | Pay Raise = 30000.0
+[1] Yes | [2] No
+Your Choice: 2
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [5]!
+Moving 5 spaces!
+
+Moved 5 spaces!
+
+
+[You drew an Action Card!] You pay the bank 60000.00 for Visit a Place.
+
+[Player 2] You were debited $60000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $60000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [GreenSpace 63]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] You pay the bank 40000.00 for Buy an Item.
+
+[Player 3] You were debited $40000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $332000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 3
+Current Space : [OrangeSpace 75]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 6 spaces!
+
+Moved 6 spaces!
+You're already married!
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [3]!
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] The bank pays you 30000.00 for Write a Book.
+
+[Player 1] You were credited $30000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $155000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 42]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 7 spaces!
+
+Moved 7 spaces!
+
+
+[You drew an Action Card!] The bank pays you 30000.00 for Bonus Payday.
+
+[Player 2] You were credited $30000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $20000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 64]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+[Player 3] You were debited $15000.00 : Your career does not match this card. You give funds to the player with this career.
+
+[Player 1] You were credited $15000.00 : Another player has picked up your matching blue card for your career.
+
+
+[BlueCard] You wanna tip the server in your favorite restaurant.
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [10]!
+
+[Player 3] You were debited $100000.00 : You tipped the server.
+[Player 3] You do not have enough funds for this transaction. You loaned $20000 from the bank.
+[Player 3] You do not have enough funds for this transaction. You loaned $20000 from the bank.
+[Player 3] You do not have enough funds for this transaction. You loaned $20000 from the bank.
+[Player 3] You do not have enough funds for this transaction. You loaned $20000 from the bank.
+[Player 3] You do not have enough funds for this transaction. You loaned $20000 from the bank.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $377000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 3
+Current Space : [OrangeSpace 84]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+
+[You drew an Action Card!] You pay a player 40000.00 for Christmas Bonus.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 1
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 3
+
+[Player 1] You were debited $40000.00 : You paid a player the value of the this Action Card.
+
+[Player 3] You were credited $40000.00 : Player 1 has paid you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $185000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [OrangeSpace 49]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 5 spaces!
+
+Moved 5 spaces!
+
+
+[BlueCard] You want to watch the world cup!
+
+[Player 2] You were debited $15000.00 : You watch the world cup!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $45000.0
+Loan: $125000.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [BlueSpace 66]
+
+
+You have an outstanding loan balance of 125000.00.
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 4 spaces!
+
+
+Select a house to purchase:
+[1] [HOUSE] Mansion | BUY: 700000.0; SELL: 600000.0
+[2] [HOUSE] Penthouse | BUY: 900000.0; SELL: 700000.0
+[3] [HOUSE] Villa | BUY: 600000.0; SELL: 600000.0
+
+[4] Do not purchase a house
+Your Choice: 4
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [3]!
+Moving 3 spaces!
+
+Moved 3 spaces!
+
+[Player 3] You were credited $180000.00 : What day is it? It's Pay Day!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $337000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 3
+Current Space : [OrangeSpace 87]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 6 spaces!
+
+[Player 1] You were credited $10000.00 : Your child was born! Everyone gives you $5000 as a gift.
+
+[Player 2] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Player 3] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] You pay a player 60000.00 for Lawsuit.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 3
+
+[Player 1] You were debited $60000.00 : You paid a player the value of the this Action Card.
+
+[Player 3] You were credited $60000.00 : Player 1 has paid you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $165000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : false
+House : No House
+Children : 0
+Current Space : [BlueSpace 54]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 5 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 2 spaces!
+
+
+You have hit a junction. Choose a path:
+[1] Career Path
+[2] Start a Family Path
+Your Choice: 2
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [5]!
+Moving 5 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+
+
+Spin to determine your wedding gift!
+Odd Number : Collect $5000 from each player
+Even Number : Collect $10000 from each player
+
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [5]!
+
+[Player 2] You were credited $10000.00 : You got married! Here's $5000 from each other player for your wedding gift.
+
+[Player 1] You were debited $5000.00 : Someone got married! You paid them $5000 as a wedding gift.
+
+[Player 3] You were debited $5000.00 : Someone got married! You paid them $5000 as a wedding gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [10]!
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 3 spaces!
+
+
+Select a house to purchase:
+[1] [HOUSE] Country Side | BUY: 500000.0; SELL: 200000.0
+[2] [HOUSE] Bungalow | BUY: 500000.0; SELL: 200000.0
+[3] [HOUSE] Mansion | BUY: 700000.0; SELL: 600000.0
+
+[4] Do not purchase a house
+Your Choice: 4
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [7]!
+Moving 7 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 3 spaces!
+
+[Player 2] You were credited $10000.00 : Your child was born! Everyone gives you $5000 as a gift.
+
+[Player 1] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Player 3] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] You pay the bank 50000.00 for Buy an Item.
+
+[Player 2] You were debited $50000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $270000.0
+Loan: $125000.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [GreenSpace 73]
+
+
+You have an outstanding loan balance of 125000.00.
+
+
+You have enough money to pay off your loans. Would you like to do it?
+[1] Yes | [2] No
+Your Choice: 1
+
+[Player 3] You were debited $125000.00 : You have paid off your loan!
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 8 spaces!
+You're already married!
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [8]!
+Moving 8 spaces!
+
+Moved 8 spaces!
+
+
+[You drew an Action Card!] The bank pays you 60000.00 for Tax Refund.
+
+[Player 3] You were credited $60000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $277000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 4
+Current Space : [OrangeSpace 94]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 6 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+
+[Player 1] You were credited $20000.00 : Your twins were born! Everyone gives you $10000 as a gift.
+
+[Player 2] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Player 3] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [6]!
+Moving 6 spaces!
+
+Moved 6 spaces!
+
+
+[You drew an Action Card!] You pay a player 30000.00 for Lawsuit.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 2
+
+[Player 1] You were debited $30000.00 : You paid a player the value of the this Action Card.
+
+[Player 2] You were credited $30000.00 : Player 1 has paid you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $155000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : true
+House : No House
+Children : 1
+Current Space : [OrangeSpace 129]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 5 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+
+[Player 2] You were credited $20000.00 : Your twins were born! Everyone gives you $10000 as a gift.
+
+[Player 1] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Player 3] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [6]!
+Moving 6 spaces!
+
+Moved 6 spaces!
+
+
+[You drew an Action Card!] You pay the bank 40000.00 for Traffic Violation.
+
+[Player 2] You were debited $40000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $185000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 0
+Current Space : [OrangeSpace 89]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 5 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 4 spaces!
+
+[Player 3] You were credited $10000.00 : Your child was born! Everyone gives you $5000 as a gift.
+
+[Player 1] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Player 2] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [2]!
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+[Player 3] You were credited $20000.00 : Your twins were born! Everyone gives you $10000 as a gift.
+
+[Player 1] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Player 2] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [9]!
+Moving 9 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 7 spaces!
+
+
+Select a house to purchase:
+[1] [HOUSE] Penthouse | BUY: 900000.0; SELL: 700000.0
+[2] [HOUSE] Villa | BUY: 600000.0; SELL: 600000.0
+[3] [HOUSE] Country Side | BUY: 500000.0; SELL: 200000.0
+
+[4] Do not purchase a house
+Your Choice: 4
+
+[Magenta Space] You can move again!
+
+
+[Player 3][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [9]!
+Moving 9 spaces!
+
+Moved 9 spaces!
+
+
+[You drew an Action Card!] You pay the bank 60000.00 for Buy an Item.
+
+[Player 3] You were debited $60000.00 : Action card value debited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $242000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 6
+Current Space : [OrangeSpace 101]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 1 spaces!
+
+[Magenta Space] You can move again!
+
+
+[Player 1][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [1]!
+Moving 1 spaces!
+
+Moved 1 spaces!
+
+
+[You drew an Action Card!] The bank pays you 60000.00 for Sell an Item.
+
+[Player 1] You were credited $60000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $120000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [OrangeSpace 79]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 2 spaces!
+You're already married!
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [2]!
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+
+[You drew an Action Card!] The bank pays you 40000.00 for Bonus Payday.
+
+[Player 2] You were credited $40000.00 : Action card value credited.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $155000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [OrangeSpace 111]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 3 spaces!
+
+
+You reached the end of your career. Welcome to retirement!
+
+
+
+Moved 2 spaces!
+Congratulations on your retirement, Player 3!
+
+[Player 3] You were credited $100000.00 : You're the first to retire! Retirement pay has been paid.
+
+[Player 3] You were credited $30000.00 : Your children (if any) wants to give back and has given you $10000 each!
+You were debited 0.00 : Your loans were paid off.
+
+[Player 3] You were debited $0.00 : You have paid off your loan!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $302000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 6
+Current Space : [OrangeSpace 103]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 7 spaces!
+
+Moved 7 spaces!
+
+
+[You drew an Action Card!] You collect 20000.00 from a player for It's your Birthday.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 3
+
+[Player 1] You were credited $20000.00 : You received the value of this Action Card from another player.
+
+[Player 3] You were debited $20000.00 : Player 1 has collected funds from you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $160000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [OrangeSpace 83]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 8 spaces!
+
+Moved 8 spaces!
+
+
+[You drew an Action Card!] You collect 30000.00 from a player for File a Lawsuit.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 3
+
+[Player 2] You were credited $30000.00 : You received the value of this Action Card from another player.
+
+[Player 3] You were debited $30000.00 : Player 2 has collected funds from you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $235000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [EndSpace 1]
+[Player 3] You have already retired!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $322000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : [HOUSE] Apartment | BUY: 0.0; SELL: 200000.0
+Children : 6
+Current Space : [OrangeSpace 110]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 7 spaces!
+
+
+You reached the end of your career. Welcome to retirement!
+
+
+
+Moved 3 spaces!
+Congratulations on your retirement, Player 1!
+
+[Player 1] You were credited $50000.00 : You retired second! Retirement pay has been paid.
+
+[Player 1] You were credited $60000.00 : Your children (if any) wants to give back and has given you $10000 each!
+
+[Player 1] You were credited $200000.00 : You sold your house.
+You were debited 0.00 : Your loans were paid off.
+
+[Player 1] You were debited $0.00 : You have paid off your loan!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $190000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [OrangeSpace 91]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 10 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 2 spaces!
+
+[Player 2] You were credited $10000.00 : Your child was born! Everyone gives you $5000 as a gift.
+
+[Player 1] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Player 3] You were debited $5000.00 : Someone just had a child! You pay $5000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [2]!
+Moving 2 spaces!
+
+Moved 2 spaces!
+
+[Player 2] You were credited $20000.00 : Your twins were born! Everyone gives you $10000 as a gift.
+
+[Player 1] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Player 3] You were debited $10000.00 : Someone just had twins! You pay $10000 as a gift.
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [9]!
+Moving 9 spaces!
+
+
+You landed on a Magenta Space! You stopped moving.
+
+
+
+Moved 7 spaces!
+
+
+Select a house to purchase:
+[1] [HOUSE] Bungalow | BUY: 500000.0; SELL: 200000.0
+[2] [HOUSE] Mansion | BUY: 700000.0; SELL: 600000.0
+[3] [HOUSE] Penthouse | BUY: 900000.0; SELL: 700000.0
+
+[4] Do not purchase a house
+Your Choice: 4
+
+[Magenta Space] You can move again!
+
+
+[Player 2][Spin for a Random Number] Press [ENTER] to Spin and Continue
+You got [6]!
+Moving 6 spaces!
+
+Moved 6 spaces!
+
+
+[You drew an Action Card!] You collect 10000.00 from a player for File a Lawsuit.
+
+
+Choose player:
+[1] Player 1
+[2] Player 2
+[3] Player 3
+Your Choice: 3
+
+[Player 2] You were credited $10000.00 : You received the value of this Action Card from another player.
+
+[Player 3] You were debited $10000.00 : Player 2 has collected funds from you.
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 3]
+Balance = $210000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [EndSpace 1]
+[Player 3] You have already retired!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 1]
+Balance = $617000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 6
+Current Space : [EndSpace 1]
+[Player 1] You have already retired!
+Your turn is over! Next player, press enter to continue.
+
+
+Start Turn!
+
+[Player 2]
+Balance = $230000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : true
+House : No House
+Children : 6
+Current Space : [OrangeSpace 108]
+
+[Spin to Move] Press [ENTER] to spin for a number and move.
+Moving 8 spaces!
+
+
+You reached the end of your career. Welcome to retirement!
+
+
+
+Moved 5 spaces!
+Congratulations on your retirement, Player 2!
+
+[Player 2] You were credited $20000.00 : You retired last! Retirement pay has been paid.
+
+[Player 2] You were credited $60000.00 : Your children (if any) wants to give back and has given you $10000 each!
+You were debited 0.00 : Your loans were paid off.
+
+[Player 2] You were debited $0.00 : You have paid off your loan!
+Your turn is over! Next player, press enter to continue.
+
+--------==========| GAME OVER |==========--------
+Final Rankings:
+
+[1] [Player 1]
+Balance = $617000.0
+Loan: $0.0
+Career: [Career] Server | Degree Not Required | MaxRaise = 4
+Salary: [SalaryCard] 30000.0 | TaxDue : 3000.0 | Pay Raise = 10000.0
+Married : true
+House : No House
+Children : 6
+Current Space : [EndSpace 1]
+
+[2] [Player 2]
+Balance = $310000.0
+Loan: $0.0
+Career: [Career] Lawyer | Degree Required | MaxRaise = 7
+Salary: [SalaryCard] 130000.0 | TaxDue : 13000.0 | Pay Raise = 30000.0
+Married : true
+House : No House
+Children : 6
+Current Space : [EndSpace 1]
+
+[3] [Player 3]
+Balance = $210000.0
+Loan: $0.0
+Career: [Career] Racecar Driver | Degree Not Required | MaxRaise = 7
+Salary: [SalaryCard] 180000.0 | TaxDue : 12000.0 | Pay Raise = 50000.0
+Married : true
+House : No House
+Children : 3
+Current Space : [EndSpace 1]
+
+
+Thank you for playing That's Life!
+Program Author: Adriel Isaiah V. Amoguis (CCPROG3 - S13B)
+Professor: Ms. Shirley Chu
