@@ -107,6 +107,7 @@ public class SalaryCard extends Card
     public void event(Player player) 
     {
         this.player = player;
+        System.out.println("\n\n[SalaryCard] Your salary card changed! : " + this.toString());
     }
 
     @Override

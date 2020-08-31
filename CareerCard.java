@@ -39,7 +39,9 @@ public class CareerCard extends Card
      * This is an unimplemented method for this class as there is no event to be executed when this card is drawn.
      */
     public void event(Player player)
-    {}
+    {
+        System.out.println("[CareerCard] Welcome to your new Career!: " + this.NAME);
+    }
 
     /**
      * This getter method returns the career's maximum number of pay raises.

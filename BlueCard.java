@@ -108,6 +108,7 @@ public class BlueCard extends Card
      */
     private void lawsuit(Player player)
     {
+        System.out.println("\n\n[BlueCard] Someone filed a lawsuit against you!");
         player.debit(this.amount, "You get into a nasty lawsuit!");
     }
 
@@ -117,6 +118,7 @@ public class BlueCard extends Card
      */
     private void salaryTaxDue(Player player)
     {
+        System.out.println("\n\n[BlueCard] The government told you to pay your tax dues.");
         player.debit(player.getSalary().getTaxDue(), "You paid your tax dues.");
     }
 
@@ -126,6 +128,7 @@ public class BlueCard extends Card
      */
     private void tipTheServer(Player player)
     {
+        System.out.println("\n\n[BlueCard] You wanna tip the server in your favorite restaurant.");
         int randNum = player.spin();
         player.debit(randNum*10000, "You tipped the server.");
     }
@@ -136,6 +139,7 @@ public class BlueCard extends Card
      */
     private void skiAccident(Player player)
     {
+        System.out.println("\n\n[BlueCard] You got into a ski accident!");
         player.debit(10000, "You got into a ski accident and paid for hospital bills!");
     }
 
@@ -145,6 +149,7 @@ public class BlueCard extends Card
      */
     private void computerRepair(Player player)
     {
+        System.out.println("\n\n[BlueCard] Your personal computer is broken. How broken is it? [Even - 5000; Odd - 10000]");
         int randNum = player.spin();;
         if(randNum % 2 == 0)
             player.debit(5000, "Computer damages aren't as bad. Your paid for its repair.");
@@ -158,6 +163,7 @@ public class BlueCard extends Card
      */
     private void worldCup(Player player)
     {
+        System.out.println("\n\n[BlueCard] You want to watch the world cup!");
         player.debit(this.players.size() * 5000, "You watch the world cup!");
     }
 
@@ -167,6 +173,7 @@ public class BlueCard extends Card
      */
     private void f1Race(Player player)
     {
+        System.out.println("\n\n[BlueCard] You want to watch the Foruma One race!");
         player.debit(player.getSalary().getSalary()*0.1, "You watch the Formula One race.");
     }
 
