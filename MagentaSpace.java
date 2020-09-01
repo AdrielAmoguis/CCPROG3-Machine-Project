@@ -119,7 +119,7 @@ public class MagentaSpace extends Space
         }
         // Lock the career and return the other one
         player.setCareer(cCards[choice-1]);
-        if(choice == 1)
+        if(choice-1 == 1)
             ThatsLife.getDeck(0).returnCard(cCards[0]);
         else
             ThatsLife.getDeck(0).returnCard(cCards[1]);
@@ -140,7 +140,7 @@ public class MagentaSpace extends Space
         }
         // Lock the career and return the other one
         player.setSalary(sCards[choice-1]);
-        if(choice == 1)
+        if(choice-1 == 1)
             ThatsLife.getDeck(1).returnCard(sCards[0]);
         else
             ThatsLife.getDeck(1).returnCard(sCards[1]);
