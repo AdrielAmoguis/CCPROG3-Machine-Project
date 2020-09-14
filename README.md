@@ -5,7 +5,24 @@ That's Life! - A Mirror of the Boardgame, "The Game of Life"
 - for the CCPROG3 course
 #### Professor: Shirley B. Chu
 
-### Starting Up the Game
+## MCO2 Tracker
+- [INCOMPLETE] Update UML Class Diagram (corrects & extra features)
+- [INCOMPLETE] Develop Extra Features
+- [INCOMPLETE] Have the MVC Architecture for GUI Implementation
+    - [INCOMPLETE] Develop the View
+        - [INCOMPLETE] Main Menu
+        - [INCOMPLETE] Game Menu
+        - [INCOMPLETE] Main Playing Window
+        - [INCOMPLETE] Game Elements
+    - [INCOMPLETE] Develop/Debug the Model
+        - [INCOMPLETE] Verify all Classes and Specs are Correct
+    - [INCOMPLETE] Develop the Controllers
+        - [INCOMPLETE] Button Controllers
+    - [INCOMPLETE] Integrate the View and Controllers to the Model
+- [INCOMPLETE] Exhaustive Testing
+- [INCOMPLETE] Javadoc Documentation
+
+### Starting Up the Game (CLI)
 - The Main driver class takes some arguments when starting the game.
 - According to the Javadoc, here are the arguments:
 
