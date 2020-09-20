@@ -1,13 +1,16 @@
 package thatslife;
 import java.util.*;
 import java.time.*;
+import java.io.*;
 
 /**
  * That's Life (inspired by the board game "The Game of Life")
  * This class is the master That's Life game class. It holds all the life cycles of all the classes.
  */
-public class ThatsLife 
+public class ThatsLife implements java.io.Serializable
 {
+	private static final long serialVersionUID = 22552965L;
+	
     /**
      * This static attribute contains some game arguments that some of the game classes would take.
      * An example of such argument is the norng argument, which inhibits the use of RNG when dealing
@@ -284,6 +287,59 @@ public class ThatsLife
     public static Deck getDeck(int index)
     {
         return decks[index];
+    }
+    
+    /**
+     * This method allows the user to save the instance of the game in a binary file unique to this program implementation.
+     * @param game The instance of the game.
+     * @param filepath The filepath for the save location.
+     * @return Boolean representation if the game was successfully saved or otherwise.
+     */
+    public static boolean saveGame(ThatsLife game, String filepath)
+    {
+    	try
+    	{
+    		FileOutputStream f = new FileOutputStream(filepath);
+    		ObjectOutputStream out = new ObjectOutputStream(f);
+    		
+    		out.writeObject(game);
+    		
+    		out.close();
+    		f.close();
+    	}
+    	catch(Exception e)
+    	{
+    		System.out.println("Error saving game state: " + e.toString());
+    		return false;
+    	}
+    	
+    	return true;
+    }
+    
+    /**
+     * This method allows the user to load a serialized instance of a game and continue playing it.
+     * @param filepath The filepath for the saved game binary file.
+     * @return Returns the instance of the ThatsLife game.
+     */
+    public static ThatsLife loadGame(String filepath)
+    {
+    	ThatsLife game = null;
+    	try
+    	{
+    		FileInputStream f = new FileInputStream(filepath);
+    		ObjectInputStream in = new ObjectInputStream(f);
+    		
+    		game = (ThatsLife)in.readObject();
+    		
+    		in.close();
+    		f.close();
+    	}
+    	catch(Exception e)
+    	{
+    		System.out.println("Error loading game save: " + e.toString());
+    	}
+    	
+    	return game;
     }
     
 }
