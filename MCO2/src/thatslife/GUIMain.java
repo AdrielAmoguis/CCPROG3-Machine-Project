@@ -14,10 +14,12 @@ public class GUIMain extends Application
 	{
 		try 
 		{
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("./MainMenu.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/MainMenu.fxml"));
 			AnchorPane root = (AnchorPane) fxmlLoader.load();
 			Scene scene = new Scene(root);
 			
+			primaryStage.setTitle("Main Menu - That's Life! (AMOGUIS - S13B)");
+			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} 
