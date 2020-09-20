@@ -6,8 +6,8 @@ That's Life! - A Mirror of the Boardgame, "The Game of Life"
 #### Professor: Shirley B. Chu
 
 ## MCO2 Tracker
-- [INCOMPLETE] Update UML Class Diagram (corrects & extra features)
-- [INCOMPLETE] Develop Extra Features
+- [COMPLETE] Update UML Class Diagram (corrects & extra features)
+- [COMPLETE] Develop Extra Features
 - [INCOMPLETE] Have the MVC Architecture for GUI Implementation
     - [INCOMPLETE] Develop the View
         - [INCOMPLETE] Main Menu
