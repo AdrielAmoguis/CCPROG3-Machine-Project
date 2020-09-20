@@ -1,9 +1,10 @@
 package thatslife;
 	
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+import javafx.fxml.*;
 
 
 public class GUIMain extends Application 
@@ -13,8 +14,10 @@ public class GUIMain extends Application
 	{
 		try 
 		{
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("./MainMenu.fxml"));
+			AnchorPane root = (AnchorPane) fxmlLoader.load();
+			Scene scene = new Scene(root);
+			
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} 
