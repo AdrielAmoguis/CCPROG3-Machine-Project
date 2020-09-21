@@ -1,6 +1,5 @@
 package controllers;
 
-import thatslife.*;
 import javafx.event.*;
 import javafx.scene.control.*;
 import javafx.stage.*;
@@ -9,6 +8,9 @@ import javafx.fxml.*;
 
 public class MainController implements EventHandler<Event>
 {	
+	@FXML
+	void initialize() {}
+	
 	@Override
 	public void handle(Event e)
 	{

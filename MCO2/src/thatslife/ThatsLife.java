@@ -69,14 +69,15 @@ public class ThatsLife implements java.io.Serializable
      * A game is instantiated given the number of players for the game. The constructor initializes all the players, the map, and all card decks.
      * @param numPlayers An integer value of the number of players for the new instance of the game.
      */
-    public ThatsLife(int numPlayers)
-    {    
+    public ThatsLife(ArrayList<String> playerNames)
+    {
         // Declare Players ArrayList instance
         this.players = new ArrayList<Player>();
 
-        // Create players
-        for(int i = 0; i < numPlayers; i++)
-            createPlayer();
+        for(int i = 0; i < playerNames.size(); i++)
+        {
+        	this.players.add(new Player(playerNames.get(i)));
+        }
 
         // Initialize the turn
         turn = 0;
@@ -100,17 +101,6 @@ public class ThatsLife implements java.io.Serializable
 
         // Initialize Player StartSpace
         firstMove = 0;
-    }
-
-    /**
-     * This method instantiates the player object and stores it into the main players ArrayList which is found as a private instance variable for this class.
-     */
-    private void createPlayer()
-    {
-        // Get player name
-        System.out.printf("[%d] Enter new player name: ", this.players.size()+1);
-        Player player = new Player(ThatsLife.kb.nextLine());
-        this.players.add(player);
     }
 
     /**

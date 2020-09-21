@@ -11,7 +11,7 @@ That's Life! - A Mirror of the Boardgame, "The Game of Life"
 - [INCOMPLETE] Have the MVC Architecture for GUI Implementation
     - [INCOMPLETE] Develop the View
         - [COMPLETE] Main Menu
-        - [INCOMPLETE] Game Menu
+        - [COMPLETE] Game Menu
         - [INCOMPLETE] Main Playing Window
         - [INCOMPLETE] Game Elements
     - [INCOMPLETE] Develop/Debug the Model
