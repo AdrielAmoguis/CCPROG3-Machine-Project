@@ -34,6 +34,7 @@ public class GameWindowController implements EventHandler<Event>
 	{
 		// Load visual elements to the JavaFX Window
 		System.out.println("Game initialized");
+		activeGame.setJFXController(this);
 	}
 	
 	@Override

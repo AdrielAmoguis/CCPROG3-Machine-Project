@@ -1,4 +1,6 @@
 package thatslife;
+
+import controllers.GameWindowController;
 import java.util.*;
 import java.time.*;
 import java.io.*;
@@ -9,7 +11,15 @@ import java.io.*;
  */
 public class ThatsLife implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
 	private static final long serialVersionUID = 22552965L;
+	
+	/**
+	 * The controller instance assigned to this instance of the game
+	 */
+	private GameWindowController controller;
 	
     /**
      * This static attribute contains some game arguments that some of the game classes would take.
@@ -17,15 +27,6 @@ public class ThatsLife implements java.io.Serializable
      * with player spin. As such, the player will enter a number rather than spin for a random one.
      */
     public static ArrayList<String> args = new ArrayList<String>();
-
-    /**
-     * Since it is recommended by the Java community to use a single scanner for all user inputs, this is it.
-     * Even the Main Driver Class has to use this scanner. This is because there are instances where when multiple scanners are being used
-     * and being closed, the InputStream in Java closes, hence, not allowing other scanners to function properly.
-     * 
-     * This scanner should be closed before the driver class closes.
-     */
-    public static final Scanner kb = new Scanner(System.in);
 
     /**
      * This is the central randomizer to be used by the entire game. Keeping just one randomizer object will use the same source
@@ -67,10 +68,12 @@ public class ThatsLife implements java.io.Serializable
 
     /**
      * A game is instantiated given the number of players for the game. The constructor initializes all the players, the map, and all card decks.
-     * @param numPlayers An integer value of the number of players for the new instance of the game.
+     * @param playerNames An ArrayList of the player names to be used to instantiate the game. playerNames.size() will be used to determine the number of players.
      */
     public ThatsLife(ArrayList<String> playerNames)
     {
+    	controller = null;
+    	
         // Declare Players ArrayList instance
         this.players = new ArrayList<Player>();
 
@@ -101,6 +104,19 @@ public class ThatsLife implements java.io.Serializable
 
         // Initialize Player StartSpace
         firstMove = 0;
+    }
+    
+    /**
+     * This constructor includes the JFX GameWindowController instance as parameter.
+     * It calls the previous contructor.
+     * @param playerNames An ArrayList of type String that contains the player names
+     * @param c The instance of the controller to be used for this game instance.
+     */
+    public ThatsLife(ArrayList<String> playerNames, GameWindowController c)
+    {
+    	this(playerNames);
+    	
+    	this.controller = c;
     }
 
     /**
@@ -245,6 +261,24 @@ public class ThatsLife implements java.io.Serializable
         return rank;
     }
 
+    /**
+     * This method returns the assigned controller for this instance of the game.
+     * @return The assigned JFX controller.
+     */
+    public GameWindowController getJFXController()
+    {
+    	return this.controller;
+    }
+    
+    /**
+     * This method assigns a new JavaFX controller for this instance of the game.
+     * @param c The new JFX GameWindowController
+     */
+    public void setJFXController(GameWindowController c)
+    {
+    	this.controller = c;
+    }
+    
     /**
      * This method adds arguments to the game's static arguments class variable.
      * These arguments are used to inhibit/customize certain game behaviors.
