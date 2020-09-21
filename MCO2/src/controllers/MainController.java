@@ -27,7 +27,7 @@ public class MainController implements EventHandler<Event>
 		if(buttonText.equals("New Game"))
 			newGame(e);
 		else if(buttonText.equals("Load Saved Game"))
-			loadGame();
+			loadGame(e);
 		else if(buttonText.equals("Settings"))
 			settings();
 	}
@@ -54,9 +54,26 @@ public class MainController implements EventHandler<Event>
 		}
 	}
 	
-	private void loadGame()
+	private void loadGame(ActionEvent ev)
 	{
-		
+		// Close current window and display load game window
+		try
+		{
+			Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
+			currentStage.close();
+			
+			FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/LoadGameMenu.fxml"));
+			Parent root = newLoader.load();
+			currentStage = new Stage();
+			currentStage.setTitle("Load Game - That's Life!");
+			currentStage.setResizable(false);
+			currentStage.setScene(new Scene(root));
+			currentStage.show();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	private void settings()

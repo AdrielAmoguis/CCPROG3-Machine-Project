@@ -15,6 +15,11 @@ public class ThatsLife implements java.io.Serializable
 	 * This is the UID for serializing into a binary object.
 	 */
 	private static final long serialVersionUID = 22552965L;
+
+	/**
+	 * This is the supported file extension for save games
+	 */
+	public static final String FILEEXT = ".lifesav";
 	
 	/**
 	 * The controller instance assigned to this instance of the game
@@ -345,7 +350,7 @@ public class ThatsLife implements java.io.Serializable
      * @param filepath The filepath for the saved game binary file.
      * @return Returns the instance of the ThatsLife game.
      */
-    public static ThatsLife loadGame(String filepath)
+    public static ThatsLife loadGame(String filepath) throws Exception
     {
     	ThatsLife game = null;
     	try
