@@ -9,40 +9,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="1111.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewGameController">
    <children>
-      <ImageView fitHeight="166.0" fitWidth="323.0" layoutX="171.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="718.0" fitWidth="1111.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@thatslife.png" />
+            <Image url="@%5BCCPROG3%5D%20Machine%20Project%20Standard%20Background.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="playerCombo" layoutX="240.0" layoutY="190.0" onAction="#handle" prefHeight="34.0" prefWidth="186.0" promptText="Select Number of Players" />
-      <Button fx:id="createGame" layoutX="261.0" layoutY="389.0" mnemonicParsing="false" onAction="#handle" prefHeight="34.0" prefWidth="143.0" text="Create Game">
+      <ComboBox fx:id="playerCombo" layoutX="666.0" layoutY="75.0" onAction="#handle" prefHeight="47.0" prefWidth="362.0" promptText="Select Number of Players" styleClass="combobox" stylesheets="@styles.css" />
+      <Button fx:id="createGame" layoutX="742.0" layoutY="422.0" mnemonicParsing="false" onAction="#handle" prefHeight="47.0" prefWidth="210.0" stylesheets="@styles.css" text="Create Game">
          <font>
             <Font name="Copperplate Gothic Bold" size="16.0" />
          </font></Button>
-      <TextField fx:id="playerOneName" layoutX="244.0" layoutY="257.0" prefHeight="25.0" prefWidth="178.0" />
-      <TextField fx:id="playerTwoName" layoutX="244.0" layoutY="303.0" prefHeight="25.0" prefWidth="178.0" />
-      <TextField fx:id="playerThreeName" layoutX="244.0" layoutY="351.0" prefHeight="25.0" prefWidth="178.0" />
-      <Label layoutX="255.0" layoutY="231.0" text="Player One Name">
+      <TextField fx:id="playerOneName" layoutX="666.0" layoutY="177.0" prefHeight="41.0" prefWidth="362.0" styleClass="textbox" stylesheets="@styles.css">
          <font>
-            <Font name="Copperplate Gothic Light" size="17.0" />
+            <Font name="Comic Sans MS" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="playerTwoName" layoutX="666.0" layoutY="263.0" prefHeight="41.0" prefWidth="362.0" styleClass="textbox" stylesheets="@styles.css">
+         <font>
+            <Font name="Comic Sans MS" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="playerThreeName" layoutX="666.0" layoutY="348.0" prefHeight="43.0" prefWidth="362.0" styleClass="textbox" stylesheets="@styles.css">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label layoutX="672.0" layoutY="139.0" text="Player One Name">
+         <font>
+            <Font name="Comic Sans MS" size="27.0" />
          </font>
       </Label>
-      <Label layoutX="254.0" layoutY="281.0" text="Player Two Name">
-         <font>
-            <Font name="Copperplate Gothic Light" size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="246.0" layoutY="329.0" text="Player Three Name">
-         <font>
-            <Font name="Copperplate Gothic Light" size="17.0" />
-         </font>
-      </Label>
-      <Button fx:id="backButton" layoutX="261.0" layoutY="431.0" mnemonicParsing="false" onAction="#handle" prefHeight="34.0" prefWidth="143.0" text="Back">
+      <Button fx:id="backButton" layoutX="742.0" layoutY="477.0" mnemonicParsing="false" onAction="#handle" prefHeight="47.0" prefWidth="210.0" stylesheets="@styles.css" text="Back">
          <font>
             <Font name="Copperplate Gothic Light" size="16.0" />
          </font>
       </Button>
+      <Label layoutX="666.0" layoutY="225.0" text="Player Two Name">
+         <font>
+            <Font name="Comic Sans MS" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="666.0" layoutY="310.0" text="Player Three Name">
+         <font>
+            <Font name="Comic Sans MS" size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
