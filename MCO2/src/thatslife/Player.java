@@ -1,4 +1,7 @@
 package thatslife;
+
+import java.util.ArrayList;
+
 /**
  * This is the Player class. All user interaction takes place in this class.
  * This player object is stored and instantiated in the ThatsLife class. References to this may also be found in some of the deck classes.
@@ -60,6 +63,11 @@ public class Player
      * This attribute holds the value for how many children the player has.
      */
     private int children;
+    
+    /**
+     * The list of the player's transactions.
+     */
+    private ArrayList<Transaction> transactions;
 
     /**
      * This attribute holds the space where the player is currently on.
@@ -72,6 +80,7 @@ public class Player
      */
     public Player(String name)
     {
+    	this.transactions = new ArrayList<Transaction>();
         this.playerID = Player.id++;
         this.playerName = new String(name);
         career = null;
@@ -193,6 +202,15 @@ public class Player
             return false;
         return true;
     }
+    
+    /**
+     * Returns an array of transactions by the player.
+     * @return Array of transactions by the player
+     */
+    public Transaction[] getTransactions()
+    {
+    	return (Transaction[]) this.transactions.toArray();
+    }
 
     // Balance operations
     /**
@@ -204,6 +222,7 @@ public class Player
     {
         ThatsLife.getSessionJFXController().displayPrompt(String.format("\n[%s] You were credited $%.2f : %s\n", this.playerName, amount, desc));
         this.balance += amount;
+        this.transactions.add(new Transaction(desc, amount));
     }
 
     /**
@@ -224,6 +243,7 @@ public class Player
         }
         
         this.balance -= amount;
+        this.transactions.add(new Transaction(desc, (-1)*amount));
     }
 
     /**
@@ -236,6 +256,7 @@ public class Player
     {
     	ThatsLife.getSessionJFXController().displayPrompt(String.format("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc));
         this.balance -= amount;
+        this.transactions.add(new Transaction(desc, (-1)*amount));
     }
 
     // SETTERS

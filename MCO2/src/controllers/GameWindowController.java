@@ -35,9 +35,14 @@ public class GameWindowController implements EventHandler<Event>
 	
 	private void initializeGame()
 	{
-		// Load visual elements to the JavaFX Window
-		System.out.println("Game initialized");
 		ThatsLife.setSessionJFXController(this);
+		
+		// Display Preliminary Messages
+		this.displayPrompt("Game Started!");
+		displayAlert("Welcome! - That's Life!", "Game Started!", "Have fun!", true);
+		
+		// Load visual elements to the JavaFX Window
+		
 	}
 	
 	@Override
@@ -104,5 +109,21 @@ public class GameWindowController implements EventHandler<Event>
 				
 				messagePrompt.setText(existingText);
 			}
+	}
+	
+	
+	// Alert Box
+	public void displayAlert(String title, String header, String prompt, boolean willWait)
+	{
+		Alert aBox = new Alert(Alert.AlertType.INFORMATION);
+		
+		aBox.setContentText(prompt);
+		aBox.setTitle(title);
+		aBox.setHeaderText(header);
+		
+		if(willWait)
+			aBox.showAndWait();
+		else
+			aBox.show();
 	}
 }
