@@ -25,6 +25,9 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 	@FXML
 	Button loadGame;
 	
+	@FXML
+	Button backButton;
+	
 	public LoadGameController()
 	{
 		currentFile = null;
@@ -102,6 +105,26 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 					{
 						e.printStackTrace();
 					}
+				}
+			}
+			// Back Button
+			if(((Button) ev.getSource()).getId().equals(backButton.getId()))
+			{
+				try
+				{
+					Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
+					
+					FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/MainMenu.fxml"));
+					Parent root = newLoader.load();
+					
+					currentStage.setTitle("Main Menu - That's Life! (AMOGUIS - S13B)");
+					currentStage.setResizable(false);
+					currentStage.setScene(new Scene(root));
+					currentStage.show();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
 				}
 			}
 		}

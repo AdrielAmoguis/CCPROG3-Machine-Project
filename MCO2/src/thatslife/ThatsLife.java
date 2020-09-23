@@ -24,7 +24,7 @@ public class ThatsLife implements java.io.Serializable
 	/**
 	 * The controller instance assigned to this instance of the game
 	 */
-	private GameWindowController controller;
+	private static GameWindowController controller;
 	
     /**
      * This static attribute contains some game arguments that some of the game classes would take.
@@ -121,7 +121,7 @@ public class ThatsLife implements java.io.Serializable
     {
     	this(playerNames);
     	
-    	this.controller = c;
+    	ThatsLife.controller = c;
     }
 
     /**
@@ -182,7 +182,7 @@ public class ThatsLife implements java.io.Serializable
             	choices[1] = new String("No");
             	
             	// Display Decision Box
-            	int decision = this.controller.displayDecision(prompt, choices);
+            	int decision = ThatsLife.controller.displayDecision(prompt, choices);
             	
             	// Pay off the loan if decision = 0
             	if(decision == 0)
@@ -191,10 +191,9 @@ public class ThatsLife implements java.io.Serializable
 
             // Prompt the player
             if(!ThatsLife.args.contains("norng"))
-                System.out.print("\n[Spin to Move] Press [ENTER] to spin for a number and move. ");
+                ThatsLife.controller.displayPrompt("\n[Spin to Move] Press button to spin for a number and move. ");
             else
-                System.out.print("\n[NORNG] Random Number Generator Inhibited. Input custom spin number: ");
-            ThatsLife.kb.nextLine();
+            	ThatsLife.controller.displayPrompt("\n[NORNG] Random Number Generator Inhibited. Input custom spin number: ");
 
             // Player Spins for a Move
             int moveSteps = rollNumber();
@@ -205,7 +204,7 @@ public class ThatsLife implements java.io.Serializable
             moved = true;
         }
         else if(player.getSpace() instanceof EndSpace)
-            System.out.printf("[%s] You have already retired!\n", player.getName());
+        	ThatsLife.controller.displayPrompt(String.format("[%s] You have already retired!\n", player.getName()));
 
         // Update turn
         this.turn = (this.turn + 1) % players.size();
@@ -260,24 +259,6 @@ public class ThatsLife implements java.io.Serializable
             rank += "[" + String.valueOf(i+1) + "] " + finalRank[i].toString() + "\n\n";
         }
         return rank;
-    }
-
-    /**
-     * This method returns the assigned controller for this instance of the game.
-     * @return The assigned JFX controller.
-     */
-    public GameWindowController getJFXController()
-    {
-    	return this.controller;
-    }
-    
-    /**
-     * This method assigns a new JavaFX controller for this instance of the game.
-     * @param c The new JFX GameWindowController
-     */
-    public void setJFXController(GameWindowController c)
-    {
-    	this.controller = c;
     }
     
     /**
@@ -367,4 +348,21 @@ public class ThatsLife implements java.io.Serializable
     	return game;
     }
     
+    /**
+     * This sets the session's JavaFX controller.
+     * @param c : The JFX controller class to set.
+     */
+    public static void setSessionJFXController(GameWindowController c)
+    {
+    	ThatsLife.controller = c;
+    }
+    
+    /**
+     * This returns the reference to the instance of the game's JavaFX controller.
+     * @return : The game's assigned JFX controller class.
+     */
+    public static GameWindowController getSessionJFXController()
+    {
+    	return ThatsLife.controller;
+    }
 }

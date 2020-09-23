@@ -106,18 +106,13 @@ public class MagentaSpace extends Space
         sCards[1] = (SalaryCard) ThatsLife.getDeck(1).drawCard();
 
         // Have the player choose
-        String options = new String();
-        options += "Select from the two Career Cards:\n";
-        options += "[1] " + cCards[0].toString() + "\n";
-        options += "[2] " + cCards[1].toString() + "\n";
-        options += "Your Choice: ";
-        int choice;
-        while (true)
-        {
-            choice = player.decision(options);
-            if(choice > 0 && choice < 3)
-                break;
-        }
+        String prompt = new String("Select from the two Career Cards:");
+        String[] options = new String[2];
+        options[0] = new String("[1] " + cCards[0].toString());
+        options[1] = new String("[2] " + cCards[1].toString());
+
+        int choice  = player.decision(prompt, options);
+        
         // Lock the career and return the other one
         player.setCareer(cCards[choice-1]);
         if(choice-1 == 1)
@@ -128,17 +123,13 @@ public class MagentaSpace extends Space
         // Repeat for Salary
 
         // Have the player choose
-        options = new String();
-        options += "Select from the two Salary Cards:\n";
-        options += "[1] " + sCards[0].toString() + "\n";
-        options += "[2] " + sCards[1].toString() + "\n";
-        options += "Your Choice: ";
-        while (true)
-        {
-            choice = player.decision(options);
-            if(choice > 0 && choice < 3)
-                break;
-        }
+        prompt = new String("Select from the two Salary Cards:");
+        options = new String[2];
+        options[0] = new String("[1] " + sCards[0].toString());
+        options[1] = new String("[2] " + sCards[1].toString());
+
+        choice  = player.decision(prompt, options);
+        
         // Lock the career and return the other one
         player.setSalary(sCards[choice-1]);
         if(choice-1 == 1)
@@ -156,24 +147,17 @@ public class MagentaSpace extends Space
         while(true)
         {
             cCard = (CareerCard) ThatsLife.getDeck(0).drawCard();
-            if(cCard.DEGREE == player.getGraduate())
+            if(!cCard.DEGREE)
                 break;
         }
 
         // Display the Cards to the player
-        String options = new String();
-        options += "[JOB SEARCH] Accept new Career?\n";
-        options += cCard.toString() + "\n";
-        options += sCard.toString() + "\n";
-        options += "[1] Yes | [2] No\n";
-        options += "Your Choice: ";
-        int choice;
-        while (true)
-        {
-            choice = player.decision(options);
-            if(choice > 0 && choice < 3)
-                break;
-        }
+        String prompt = new String("[JOB SEARCH] Accept new Career?");
+        String[] options = new String[2];
+        options[0] = new String(cCard.toString());
+        options[1] = new String(sCard.toString());
+
+        int choice = player.decision(prompt, options);
 
         // Lock the cards
         if(choice == 2)
@@ -202,31 +186,25 @@ public class MagentaSpace extends Space
     {
         if(player.getHouse() == null)
         {
-            String options = new String();
+        	String prompt = new String("Select a house to purchase:");
+            String[] options = new String[ThatsLife.getDeck(4).getDeckSize() + 1];
         
             // Allow the Player to Select from the House Cards
             ArrayList<HouseCard> houseCards = new ArrayList<HouseCard>();
-            for(int i = 0; i < ThatsLife.getDeck(4).getDeckSize(); i++)
+            int size = ThatsLife.getDeck(4).getDeckSize();
+            for(int i = 0; i < size; i++)
                 houseCards.add((HouseCard)ThatsLife.getDeck(4).drawCard());
 
-            options += "Select a house to purchase:\n";
 
             int endIndex = 0;
             for(int i = 0; i < houseCards.size(); i++)
             {
-                options += "[" + String.valueOf(i+1) + "] " + houseCards.get(i).toString() + "\n";
+                options[i] = new String("[" + String.valueOf(i+1) + "] " + houseCards.get(i).toString());
                 endIndex = i + 1;
             }
-            options += "\n[" + String.valueOf(endIndex + 1) + "] Do not purchase a house\n";
-            options += "Your Choice: ";
+            options[endIndex] = new String("[" + String.valueOf(endIndex + 1) + "] Do not purchase a house");
 
-            int choice;
-            while (true)
-            {
-                choice = player.decision(options);
-                if(choice > 0 && choice <= houseCards.size() + 1)
-                    break;
-            }
+            int choice = player.decision(prompt, options);
 
             if(choice != houseCards.size()+1)
             {

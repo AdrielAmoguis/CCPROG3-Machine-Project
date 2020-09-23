@@ -38,11 +38,9 @@ public class MainController implements EventHandler<Event>
 		try
 		{
 			Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
-			currentStage.close();
 			
 			FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/NewGameMenu.fxml"));
 			Parent root = newLoader.load();
-			currentStage = new Stage();
 			currentStage.setTitle("New Game - That's Life!");
 			currentStage.setResizable(false);
 			currentStage.setScene(new Scene(root));
@@ -60,11 +58,9 @@ public class MainController implements EventHandler<Event>
 		try
 		{
 			Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
-			currentStage.close();
 			
 			FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/LoadGameMenu.fxml"));
 			Parent root = newLoader.load();
-			currentStage = new Stage();
 			currentStage.setTitle("Load Game - That's Life!");
 			currentStage.setResizable(false);
 			currentStage.setScene(new Scene(root));

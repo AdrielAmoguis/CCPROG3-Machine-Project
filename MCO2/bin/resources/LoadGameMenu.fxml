@@ -8,20 +8,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="528.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoadGameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoadGameController">
    <children>
-      <ImageView fitHeight="166.0" fitWidth="323.0" layoutX="111.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="166.0" fitWidth="413.0" layoutX="163.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@thatslife.png" />
          </image>
       </ImageView>
-      <Label layoutX="144.0" layoutY="180.0" text="Enter Game Save Filepath">
+      <Label layoutX="172.0" layoutY="232.0" text="Enter Game Save Filepath">
          <font>
-            <Font name="Copperplate Gothic Bold" size="16.0" />
+            <Font name="Copperplate Gothic Bold" size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="pathField" layoutX="137.0" layoutY="201.0" prefHeight="25.0" prefWidth="177.0" />
-      <Button fx:id="chooseFile" layoutX="311.0" layoutY="201.0" mnemonicParsing="false" onAction="#handle" text="Choose File" />
-      <Button fx:id="loadGame" layoutX="227.0" layoutY="254.0" mnemonicParsing="false" onAction="#handle" text="Load Game" />
+      <TextField fx:id="pathField" layoutX="209.0" layoutY="278.0" prefHeight="25.0" prefWidth="177.0" />
+      <Button fx:id="chooseFile" layoutX="383.0" layoutY="278.0" mnemonicParsing="false" onAction="#handle" text="Choose File" />
+      <Button fx:id="backButton" layoutX="295.0" layoutY="356.0" mnemonicParsing="false" onAction="#handle" text="Back">
+         <font>
+            <Font name="Copperplate Gothic Light" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="loadGame" layoutX="264.0" layoutY="315.0" mnemonicParsing="false" onAction="#handle" text="Load Game">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

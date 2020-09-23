@@ -14,6 +14,8 @@ public class GameWindowController implements EventHandler<Event>
 {
 	private ThatsLife activeGame;
 	
+	@FXML
+	TextArea messagePrompt;
 	
 	public GameWindowController()
 	{
@@ -34,17 +36,18 @@ public class GameWindowController implements EventHandler<Event>
 	private void initializeGame()
 	{
 		// Load visual elements to the JavaFX Window
-		//System.out.println("Game initialized");
-		//activeGame.setJFXController(this);
+		System.out.println("Game initialized");
+		ThatsLife.setSessionJFXController(this);
 	}
 	
 	@Override
 	public void handle(Event ev) 
 	{
-		
+		if(ev instanceof ActionEvent)
+			handle((ActionEvent) ev);
 	}
 	
-	public void handle(ActionEvent ev)
+	private void handle(ActionEvent ev)
 	{
 		
 	}
@@ -89,4 +92,17 @@ public class GameWindowController implements EventHandler<Event>
 	}
 	
 	// Prompt Box
+	public void displayPrompt(String prompt)
+	{
+		if(prompt != null)
+			if(!prompt.isEmpty())
+			{
+				String existingText = new String(messagePrompt.getText());
+				
+				existingText += "\n";
+				existingText += prompt;
+				
+				messagePrompt.setText(existingText);
+			}
+	}
 }

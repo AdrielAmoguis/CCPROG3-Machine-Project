@@ -44,6 +44,9 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 	Button createGame;
 	
 	@FXML
+	Button backButton;
+	
+	@FXML
 	void initialize()
 	{
 		playerCombo.setOnAction(this::handle);
@@ -99,33 +102,55 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 		}
 		else if(ev.getSource() instanceof Button)
 		{
-			// Pass the number of players to the next controller for the next window
-			try
+			if(((Button)ev.getSource()).getId().equals(createGame.getId()))
 			{
-				Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
-				currentStage.close();
-				
-				FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/GameWindow.fxml"));
-				Parent root = newLoader.load();
-				
-				// Submit nPlayers and playerNames to the next controller
-				GameWindowController nextController = newLoader.getController();
+				// Pass the number of players to the next controller for the next window
+				try
+				{
+					Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
+					currentStage.close();
+					
+					FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/GameWindow.fxml"));
+					Parent root = newLoader.load();
+					
+					// Submit nPlayers and playerNames to the next controller
+					GameWindowController nextController = newLoader.getController();
 
-				// Create game instance
-				ArrayList<String> names = new ArrayList<String>();
-				for(int i = 0; i < nPlayers; i++)
-					names.add(playerNames[i]);
-				nextController.setActiveGame(new ThatsLife(names));
-				
-				currentStage = new Stage();
-				currentStage.setTitle("Active Game - That's Life!");
-				currentStage.setResizable(false);
-				currentStage.setScene(new Scene(root));
-				currentStage.show();
+					// Create game instance
+					ArrayList<String> names = new ArrayList<String>();
+					for(int i = 0; i < nPlayers; i++)
+						names.add(playerNames[i]);
+					nextController.setActiveGame(new ThatsLife(names));
+					
+					currentStage = new Stage();
+					currentStage.setTitle("Active Game - That's Life!");
+					currentStage.setResizable(false);
+					currentStage.setScene(new Scene(root));
+					currentStage.show();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
 			}
-			catch(Exception e)
+			else if(((Button)ev.getSource()).getId().equals(backButton.getId()))
 			{
-				e.printStackTrace();
+				try
+				{
+					Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
+					
+					FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/MainMenu.fxml"));
+					Parent root = newLoader.load();
+					
+					currentStage.setTitle("Main Menu - That's Life! (AMOGUIS - S13B)");
+					currentStage.setResizable(false);
+					currentStage.setScene(new Scene(root));
+					currentStage.show();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
 			}
 		}
 	}

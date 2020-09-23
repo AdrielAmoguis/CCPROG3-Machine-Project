@@ -118,34 +118,26 @@ public class ActionCard extends Card
      */
     private Player choosePlayer(Player exclude)
     {
-        int index = -1;
-        while(true)
+        String prompt = new String("Choose a player (check message prompt for purpose)");
+        String[] options = new String[allPlayers.size() - 1];
+        
+        int j = 0;
+        for(Player player : this.allPlayers)
         {
-            boolean valid = true;
-            System.out.println("\n\nChoose player:");
-            for(int i = 0; i < allPlayers.size(); i++)
-            {
-                System.out.printf("[%d] %s\n", i+1, allPlayers.get(i).getName());
-            }
-            System.out.print("Your Choice: ");
-            try
-            {
-                index = Integer.parseInt(ThatsLife.kb.nextLine()) - 1;
-            }
-            catch(Exception e)
-            {
-                System.out.printf("You may have entered an invalid string (%s). Please try again.\n", e.toString());
-                valid = false;
-            }
-            finally
-            {
-                if(!(index < 0 || index >= allPlayers.size()))
-                    if(!allPlayers.get(index).equals(exclude))
-                        if(valid)
-                            break;
-            }
+        	if(!player.equals(exclude))
+        	{
+        		options[j++] = player.getName();
+        	}
         }
-        return this.allPlayers.get(index);
+        
+        int result = ThatsLife.getSessionJFXController().displayDecision(prompt, options);
+        Player choice = null;
+        
+        for(int i = 0; i < this.allPlayers.size(); i++)
+        	if(options[result].equals(allPlayers.get(i).getName()))
+        		choice = allPlayers.get(i);
+      
+        return choice;
     }
 
     /**

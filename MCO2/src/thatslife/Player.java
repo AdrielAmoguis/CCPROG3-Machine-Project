@@ -202,7 +202,7 @@ public class Player
      */
     public void credit(double amount, String desc)
     {
-        System.out.printf("\n[%s] You were credited $%.2f : %s\n", this.playerName, amount, desc);
+        ThatsLife.getSessionJFXController().displayPrompt(String.format("\n[%s] You were credited $%.2f : %s\n", this.playerName, amount, desc));
         this.balance += amount;
     }
 
@@ -215,11 +215,11 @@ public class Player
      */
     public void debit(double amount, String desc)
     {
-        System.out.printf("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
+    	ThatsLife.getSessionJFXController().displayPrompt(String.format("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc));
         while (this.balance < amount)
         {
             // Do a loan
-            System.out.printf("[%s] You do not have enough funds for this transaction. You loaned $20000 from the bank.\n", this.playerName);
+        	ThatsLife.getSessionJFXController().displayPrompt(String.format("[%s] You do not have enough funds for this transaction. You loaned $20000 from the bank.\n", this.playerName));
             loan();
         }
         
@@ -234,7 +234,7 @@ public class Player
      */
     public void rawDebit(double amount, String desc)
     {
-        System.out.printf("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc);
+    	ThatsLife.getSessionJFXController().displayPrompt(String.format("\n[%s] You were debited $%.2f : %s\n", this.playerName, amount, desc));
         this.balance -= amount;
     }
 
@@ -315,26 +315,26 @@ public class Player
      */
     public int move(int steps)
     {
-        System.out.printf("Moving %d spaces!\n", steps);
+        ThatsLife.getSessionJFXController().displayPrompt(String.format("Moving %d spaces!\n", steps));
         this.space.playerLeave(this);
         int moved = 0;
         for (int i = 0; i < steps; i++)
         {
             if(this.space instanceof MagentaSpace && i != 0)
             {
-                System.out.println("\n\nYou landed on a Magenta Space! You stopped moving.\n\n");
+                ThatsLife.getSessionJFXController().displayPrompt("You landed on a Magenta Space! You stopped moving.");
                 break;
             }
 
             if(this.space instanceof EndSpace)
             {
-                System.out.println("\n\nYou reached the end of your career. Welcome to retirement!\n\n");
+            	ThatsLife.getSessionJFXController().displayPrompt("You reached the end of your career. Welcome to retirement!");
                 break;
             }
             this.space = this.space.getNextSpace();
             moved = i + 1;
         }
-        System.out.printf("\nMoved %d spaces!\n", moved);
+        ThatsLife.getSessionJFXController().displayPrompt(String.format("\nMoved %d spaces!\n", moved));
         this.space.playerLand(this);
         return moved;
     }
@@ -344,30 +344,9 @@ public class Player
      * @param options : String - a String that holds the options to be prompted to the player
      * @return choice : int - a numerical value that the player enters
      */
-    public int decision(String options)
+    public int decision(String prompt, String[] options)
     {
-        int choice = 0;
-        while(true)
-        {
-            boolean valid = true;
-            System.out.print("\n\n" + options);
-            try
-            {   
-                choice = Integer.parseInt(ThatsLife.kb.nextLine(), 10);
-            }
-            catch(Exception e)
-            {
-                System.out.printf("You might have inputted an invalid string (%s). Please try again.\n", e.toString());
-                valid = false;
-            }
-            finally
-            {
-                if(valid)
-                    break;
-            }
-            
-        }
-        return choice;
+        return ThatsLife.getSessionJFXController().displayDecision(prompt, options);
     }
 
     /**
@@ -377,36 +356,10 @@ public class Player
      */
     public int spin()
     {
-        int n = 0;
-        if(ThatsLife.args.contains("norng"))
-        {
-            while(true)
-            {
-                boolean valid = true;
-                System.out.printf("[NORNG][%s] Random Number Generator Inhibited. Input custom spin number: ",  this.playerName);
-                try
-                {
-                    n = Integer.parseInt(ThatsLife.kb.nextLine(), 10);
-                }
-                catch(Exception e)
-                {
-                    System.out.printf("You might have inputted an invalid string (%s). Please try again.\n", e.toString());
-                    valid = false;
-                }
-                finally
-                {
-                    if(valid)
-                        break;
-                }
-            }
-        }
-        else
-        {
-            System.out.printf("\n[%s][Spin for a Random Number] Press [ENTER] to Spin and Continue", this.playerName);
-            ThatsLife.kb.nextLine();
-            n = ThatsLife.rollNumber();
-        }
-        System.out.printf("You got [%d]!\n", n);
+        int n = ThatsLife.rollNumber();
+        
+        ThatsLife.getSessionJFXController().displayPrompt(String.format("[Spin] Obtained the number %d!", n));
+        
         return n;
     }
 

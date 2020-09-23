@@ -81,18 +81,12 @@ public class JunctionSpace extends MagentaSpace
      */
     private void setPlayerPath(Player player)
     {
-        String options = new String();
-        options += "You have hit a junction. Choose a path:\n";
-        options += "[1] " + leftSpace.getPath().getName() + "\n";
-        options += "[2] " + rightSpace.getPath().getName() + "\n";
-        options += "Your Choice: ";
-        int choice = 0;
-        while(true)
-        {
-            choice = player.decision(options);
-            if(choice > 0 && choice <= 2)
-                break;
-        }
+    	String prompt = new String("You have hit a junction. Choose a path.");
+        String[] options = new String[2];
+        options[0] = new String("[1] " + leftSpace.getPath().getName());
+        options[1] = new String("[2] " + rightSpace.getPath().getName());
+        
+        int choice = ThatsLife.getSessionJFXController().displayDecision(prompt, options);
         
         if(choice == 1)
         {
