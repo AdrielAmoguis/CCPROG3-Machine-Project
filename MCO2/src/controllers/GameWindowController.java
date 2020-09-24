@@ -13,24 +13,30 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 public class GameWindowController implements EventHandler<Event>
 {
 	private ThatsLife activeGame;
-	private ArrayList<Rectangle> spaces;
+	private ArrayList<GridPane> spaces;
 	
 	// Player Details
-	@FXML AnchorPane playerOnePanel;
+	
+	@FXML Circle playerOneBlob;
+	@FXML AnchorPane playerOnePanel; 
 	@FXML Label playerOneName; @FXML Label playerOneBalance; @FXML Label playerOneLoan;
 	@FXML Button playerOneCareer; @FXML Button playerOneSalary; @FXML Label playerOneMarried;
 	@FXML Label playerOneHouse; @FXML Label playerOneChildren;
 	
+	@FXML Circle playerTwoBlob;
 	@FXML AnchorPane playerTwoPanel;
 	@FXML Label playerTwoName; @FXML Label playerTwoBalance; @FXML Label playerTwoLoan;
 	@FXML Button playerTwoCareer; @FXML Button playerTwoSalary; @FXML Label playerTwoMarried;
 	@FXML Label playerTwoHouse; @FXML Label playerTwoChildren;
-	
+
+	@FXML Circle playerThreeBlob;
 	@FXML AnchorPane playerThreePanel;
 	@FXML Label playerThreeName; @FXML Label playerThreeBalance; @FXML Label playerThreeLoan;
 	@FXML Button playerThreeCareer; @FXML Button playerThreeSalary; @FXML Label playerThreeMarried;
@@ -40,51 +46,98 @@ public class GameWindowController implements EventHandler<Event>
 	
 	
 	// START OF GAME SPACES
-	@FXML Rectangle space1; @FXML Rectangle space2; @FXML Rectangle space3; @FXML Rectangle space4;
-	@FXML Rectangle space5; @FXML Rectangle space6; @FXML Rectangle space7; @FXML Rectangle space8;
-	@FXML Rectangle space9;
+	@FXML GridPane space1; @FXML GridPane space2; @FXML GridPane space3; @FXML GridPane space4;
+	@FXML GridPane space5; @FXML GridPane space6; @FXML GridPane space7; @FXML GridPane space8;
+	@FXML GridPane space9;
 	
-	@FXML Rectangle space10; @FXML Rectangle space12; @FXML Rectangle space13; @FXML Rectangle space14;
-	@FXML Rectangle space15; @FXML Rectangle space16; @FXML Rectangle space17; @FXML Rectangle space18;
-	@FXML Rectangle space19; @FXML Rectangle space20;
+	@FXML GridPane space10; @FXML GridPane space12; @FXML GridPane space13; @FXML GridPane space14;
+	@FXML GridPane space15; @FXML GridPane space16; @FXML GridPane space17; @FXML GridPane space18;
+	@FXML GridPane space19; @FXML GridPane space20;
 	
-	@FXML Rectangle space21; @FXML Rectangle space22; @FXML Rectangle space23; @FXML Rectangle space24;
-	@FXML Rectangle space25; @FXML Rectangle space26; @FXML Rectangle space27; @FXML Rectangle space28;
-	@FXML Rectangle space29; @FXML Rectangle space30;
+	@FXML GridPane space21; @FXML GridPane space22; @FXML GridPane space23; @FXML GridPane space24;
+	@FXML GridPane space25; @FXML GridPane space26; @FXML GridPane space27; @FXML GridPane space28;
+	@FXML GridPane space29; @FXML GridPane space30;
 	
-	@FXML Rectangle space31; @FXML Rectangle space32; @FXML Rectangle space33; @FXML Rectangle space34;
-	@FXML Rectangle space35; @FXML Rectangle space36; @FXML Rectangle space37; @FXML Rectangle space38;
-	@FXML Rectangle space39; @FXML Rectangle space40;
+	@FXML GridPane space31; @FXML GridPane space32; @FXML GridPane space33; @FXML GridPane space34;
+	@FXML GridPane space35; @FXML GridPane space36; @FXML GridPane space37; @FXML GridPane space38;
+	@FXML GridPane space39; @FXML GridPane space40;
 	
-	@FXML Rectangle space41; @FXML Rectangle space42; @FXML Rectangle space43; @FXML Rectangle space44;
-	@FXML Rectangle space45; @FXML Rectangle space46; @FXML Rectangle space47; @FXML Rectangle space48;
-	@FXML Rectangle space49; @FXML Rectangle space50;
+	@FXML GridPane space41; @FXML GridPane space42; @FXML GridPane space43; @FXML GridPane space44;
+	@FXML GridPane space45; @FXML GridPane space46; @FXML GridPane space47; @FXML GridPane space48;
+	@FXML GridPane space49; @FXML GridPane space50;
 	
-	@FXML Rectangle space51; @FXML Rectangle space52; @FXML Rectangle space53; @FXML Rectangle space54;
-	@FXML Rectangle space55; @FXML Rectangle space56; @FXML Rectangle space57; @FXML Rectangle space58;
-	@FXML Rectangle space59; @FXML Rectangle space60;
+	@FXML GridPane space51; @FXML GridPane space52; @FXML GridPane space53; @FXML GridPane space54;
+	@FXML GridPane space55; @FXML GridPane space56; @FXML GridPane space57; @FXML GridPane space58;
+	@FXML GridPane space59; @FXML GridPane space60;
 	
-	@FXML Rectangle space61; @FXML Rectangle space62; @FXML Rectangle space63; @FXML Rectangle space64;
-	@FXML Rectangle space65; @FXML Rectangle space66; @FXML Rectangle space67; @FXML Rectangle space68;
-	@FXML Rectangle space69; @FXML Rectangle space70;
+	@FXML GridPane space61; @FXML GridPane space62; @FXML GridPane space63; @FXML GridPane space64;
+	@FXML GridPane space65; @FXML GridPane space66; @FXML GridPane space67; @FXML GridPane space68;
+	@FXML GridPane space69; @FXML GridPane space70;
 	
-	@FXML Rectangle space71; @FXML Rectangle space72; @FXML Rectangle space73; @FXML Rectangle space74;
-	@FXML Rectangle space75; @FXML Rectangle space76; @FXML Rectangle space77; @FXML Rectangle space78;
-	@FXML Rectangle space79; @FXML Rectangle space80;
+	@FXML GridPane space71; @FXML GridPane space72; @FXML GridPane space73; @FXML GridPane space74;
+	@FXML GridPane space75; @FXML GridPane space76; @FXML GridPane space77; @FXML GridPane space78;
+	@FXML GridPane space79; @FXML GridPane space80;
 	
-	@FXML Rectangle space81; @FXML Rectangle space82; @FXML Rectangle space83; @FXML Rectangle space84;
-	@FXML Rectangle space85; @FXML Rectangle space86; @FXML Rectangle space87; @FXML Rectangle space88;
-	@FXML Rectangle space89; @FXML Rectangle space90;
+	@FXML GridPane space81; @FXML GridPane space82; @FXML GridPane space83; @FXML GridPane space84;
+	@FXML GridPane space85; @FXML GridPane space86; @FXML GridPane space87; @FXML GridPane space88;
+	@FXML GridPane space89; @FXML GridPane space90;
 	
-	@FXML Rectangle space91; @FXML Rectangle space92; @FXML Rectangle space93; @FXML Rectangle space94;
-	@FXML Rectangle space95; @FXML Rectangle space96; @FXML Rectangle space97; @FXML Rectangle space98;
-	@FXML Rectangle space99; @FXML Rectangle space100;
+	@FXML GridPane space91; @FXML GridPane space92; @FXML GridPane space93; @FXML GridPane space94;
+	@FXML GridPane space95; @FXML GridPane space96; @FXML GridPane space97; @FXML GridPane space98;
+	@FXML GridPane space99; @FXML GridPane space100;
 	
-	@FXML Rectangle space101; @FXML Rectangle space102; @FXML Rectangle space103; @FXML Rectangle space104;
-	@FXML Rectangle space105; @FXML Rectangle space106; @FXML Rectangle space107; @FXML Rectangle space108;
-	@FXML Rectangle space109; @FXML Rectangle space110; @FXML Rectangle space111; @FXML Rectangle space112;
-	@FXML Rectangle space113; @FXML Rectangle space114;
+	@FXML GridPane space101; @FXML GridPane space102; @FXML GridPane space103; @FXML GridPane space104;
+	@FXML GridPane space105; @FXML GridPane space106; @FXML GridPane space107; @FXML GridPane space108;
+	@FXML GridPane space109; @FXML GridPane space110; @FXML GridPane space111; @FXML GridPane space112;
+	@FXML GridPane space113; @FXML GridPane space114;
 	
+	private void initSpaces()
+	{
+		spaces.add(space1); spaces.add(space2); spaces.add(space3); spaces.add(space4);
+		spaces.add(space5); spaces.add(space6); spaces.add(space7); spaces.add(space8);
+		spaces.add(space9);
+		
+		spaces.add(space10); spaces.add(space12); spaces.add(space13); spaces.add(space14);
+		spaces.add(space15); spaces.add(space16); spaces.add(space17); spaces.add(space18);
+		spaces.add(space19); spaces.add(space20);
+		
+		spaces.add(space21); spaces.add(space22); spaces.add(space23); spaces.add(space24);
+		spaces.add(space25); spaces.add(space26); spaces.add(space27); spaces.add(space28);
+		spaces.add(space29); spaces.add(space30);
+		
+		spaces.add(space31); spaces.add(space32); spaces.add(space33); spaces.add(space34);
+		spaces.add(space35); spaces.add(space36); spaces.add(space37); spaces.add(space38);
+		spaces.add(space39); spaces.add(space40);
+		
+		spaces.add(space41); spaces.add(space42); spaces.add(space43); spaces.add(space44);
+		spaces.add(space45); spaces.add(space46); spaces.add(space47); spaces.add(space48);
+		spaces.add(space49); spaces.add(space50);
+		
+		spaces.add(space51); spaces.add(space52); spaces.add(space53); spaces.add(space54);
+		spaces.add(space55); spaces.add(space56); spaces.add(space57); spaces.add(space58);
+		spaces.add(space59); spaces.add(space60);
+		
+		spaces.add(space61); spaces.add(space62); spaces.add(space63); spaces.add(space64);
+		spaces.add(space65); spaces.add(space66); spaces.add(space67); spaces.add(space68);
+		spaces.add(space69); spaces.add(space70);
+		
+		spaces.add(space71); spaces.add(space72); spaces.add(space73); spaces.add(space74);
+		spaces.add(space75); spaces.add(space76); spaces.add(space77); spaces.add(space78);
+		spaces.add(space79); spaces.add(space80);
+		
+		spaces.add(space81); spaces.add(space82); spaces.add(space83); spaces.add(space84);
+		spaces.add(space85); spaces.add(space86); spaces.add(space87); spaces.add(space88);
+		spaces.add(space89); spaces.add(space90);
+		
+		spaces.add(space91); spaces.add(space92); spaces.add(space93); spaces.add(space94);
+		spaces.add(space95); spaces.add(space96); spaces.add(space97); spaces.add(space98);
+		spaces.add(space99); spaces.add(space100);
+		
+		spaces.add(space101); spaces.add(space102); spaces.add(space103); spaces.add(space104);
+		spaces.add(space105); spaces.add(space106); spaces.add(space107); spaces.add(space108);
+		spaces.add(space109); spaces.add(space110); spaces.add(space111); spaces.add(space112);
+		spaces.add(space113); spaces.add(space114);
+	}
 	
 	// END OF GAME SPACES
 	
@@ -94,7 +147,7 @@ public class GameWindowController implements EventHandler<Event>
 	public GameWindowController(ThatsLife game)
 	{
 		activeGame = game;
-		spaces = new ArrayList<Rectangle>();
+		spaces = new ArrayList<GridPane>();
 	}
 	
 	public void setActiveGame(ThatsLife game)
@@ -120,11 +173,9 @@ public class GameWindowController implements EventHandler<Event>
 		
 		// Initialize the Space ArrayList
 		initSpaces();
-	}
-	
-	private void initSpaces()
-	{
 		
+		// Initialize Player Positions
+		updatePlayerPos();
 	}
 	
 	private void initPlayers()
@@ -147,6 +198,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerOneMarried.setText(info[5].equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
 					playerOneHouse.setText(info[6]);
 					playerOneChildren.setText(info[7]);
+					playerOneBlob.setOpacity(1);
 					break;
 				case 1:
 					playerTwoName.setText(info[0].toUpperCase());
@@ -155,6 +207,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerTwoMarried.setText(info[5].equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
 					playerTwoHouse.setText(info[6]);
 					playerTwoChildren.setText(info[7]);
+					playerTwoBlob.setOpacity(1);
 					break;
 				case 2:
 					playerThreeName.setText(info[0].toUpperCase());
@@ -163,21 +216,21 @@ public class GameWindowController implements EventHandler<Event>
 					playerThreeMarried.setText(info[5].equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
 					playerThreeHouse.setText(info[6]);
 					playerThreeChildren.setText(info[7]);
+					playerTwoBlob.setOpacity(1);
 					break;
 			}
-			
-			// Disable Panel 3 as Needed
-			if(activeGame.getNumPlayers() < 3)
-			{
-				playerThreePanel.setDisable(true);
-				playerThreeName.setText("===============");
-				playerThreeBalance.setText("---");
-				playerThreeLoan.setText("---");
-				playerThreeMarried.setText("---");
-				playerThreeHouse.setText("---");
-				playerThreeChildren.setText("---");
-			}
 		}
+		// Disable Panel 3 as Needed
+		if(activeGame.getNumPlayers() < 3)
+		{
+			playerThreePanel.setDisable(true);
+			playerThreeName.setText("===============");
+			playerThreeBalance.setText("---");
+			playerThreeLoan.setText("---");
+			playerThreeMarried.setText("---");
+			playerThreeHouse.setText("---");
+			playerThreeChildren.setText("---");
+					}
 	}
 	
 	@Override
@@ -189,7 +242,59 @@ public class GameWindowController implements EventHandler<Event>
 	
 	private void handle(ActionEvent ev)
 	{
-		
+		// Check for Button
+		if(ev.getSource() instanceof Button)
+		{
+			// Check for player buttons
+			if(((Button) ev.getSource()).getId().startsWith("player"))
+			{
+				Button button = (Button) ev.getSource();
+				
+				int playerIndex = -1;
+				if(button.getId().contains("One")) playerIndex = 0;
+				else if(button.getId().contains("Two")) playerIndex = 1;
+				else if(button.getId().contains("Three")) playerIndex = 2;
+				String[] playerInfo = activeGame.getPlayerString(playerIndex).split("\n");
+				
+				String type = button.getId().substring(button.getId().length() - "career".length());
+				
+				switch(type)
+				{
+					case "Career":
+						// Show player one's career
+						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Career", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Career", playerInfo[3], true);
+						break;
+					case "Salary":
+						// Show player one's career
+						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Salary", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Salary", playerInfo[4], true);
+						break;
+				}
+			}
+		}
+	}
+	
+	private void updatePlayerPos()
+	{
+		for(int i = 0; i < activeGame.getNumPlayers(); i++)
+		{
+			String[] info = activeGame.getPlayerString(i).split("\n");
+			String spaceInfo = null;
+			for(String data : info)
+			{
+				if(data.startsWith("Current Space : "))
+					spaceInfo = data.substring("Current Space : ".length());
+			}
+			spaceInfo = spaceInfo.substring(1, spaceInfo.length() - 1);
+			info = spaceInfo.split(" ");
+			int spaceID = Integer.parseInt(info[1]);
+			
+			// Update blob parent
+			switch(i)
+			{
+				case 1:
+					break;
+			}
+		}
 	}
 	
 	// CHOICE DIALOG

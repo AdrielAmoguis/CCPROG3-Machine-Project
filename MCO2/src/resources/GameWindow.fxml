@@ -7,7 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="955.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -151,19 +151,9 @@
                         <Image url="@GameMap1.png" />
                      </image>
                   </ImageView>
-                  <Rectangle fx:id="space1" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="155.0" layoutX="35.0" layoutY="23.0" stroke="TRANSPARENT" strokeType="INSIDE" width="125.0" />
-                  <Rectangle fx:id="space11" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="271.0" layoutY="38.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space2" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="271.0" layoutY="108.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space3" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="333.0" layoutY="109.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space4" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="393.0" layoutY="111.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space5" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="546.0" layoutY="110.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space6" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="920.0" layoutY="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space7" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="982.0" layoutY="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space8" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="1042.0" layoutY="70.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space9" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="1169.0" layoutY="206.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space10" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="1107.0" layoutY="207.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space11" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="973.0" layoutY="208.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
-                  <Rectangle fx:id="space12" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="56.0" layoutX="909.0" layoutY="207.0" stroke="TRANSPARENT" strokeType="INSIDE" width="56.0" />
+                  <Circle fx:id="playerThreeBlob" fill="#61ffb3" opacity="0.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="playerTwoBlob" fill="#fff861" opacity="0.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fx:id="playerOneBlob" fill="#ff6161" opacity="0.0" radius="12.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
          </content>
