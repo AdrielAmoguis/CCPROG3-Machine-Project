@@ -24,11 +24,11 @@ public class MainController implements EventHandler<Event>
 		// Check for the button string
 		String buttonText = ((Button) e.getSource()).getText();
 		
-		if(buttonText.equals("New Game"))
+		if(buttonText.equalsIgnoreCase("New Game"))
 			newGame(e);
-		else if(buttonText.equals("Load Saved Game"))
+		else if(buttonText.equalsIgnoreCase("Load Saved Game"))
 			loadGame(e);
-		else if(buttonText.equals("Settings"))
+		else if(buttonText.equalsIgnoreCase("options"))
 			settings();
 	}
 	

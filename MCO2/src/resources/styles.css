@@ -1,12 +1,11 @@
 .button
 {
     -fx-border-color: black;
-    -fx-border-width: 2;
+    -fx-border-width: 0;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-background-color: transparent;
+    -fx-background-color: #52718d;
     -fx-font-family:"Comic Sans MS", cursive, sans-serif;
-    -fx-font-size: 2em; /* 12 */
     -fx-text-fill: black;
 }
 
@@ -33,7 +32,7 @@
     -fx-border-width: 2;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-background-color: transparent;
+    -fx-background-color: rgba(82,113,141, 0.65);
     -fx-font-family:"Comic Sans MS", cursive, sans-serif;
     -fx-font-size: 2em; /* 12 */
     -fx-text-fill: black;
@@ -56,5 +55,14 @@
     -fx-border-radius: 10;
     -fx-background-radius: 10;
     -fx-border-insets: 1 1 1 1, 0;
-    -fx-background-color: rgba(255, 227, 224, 0.75);
+    -fx-background-color: rgba(82,113,141, 0.65);
+}
+
+.textarea
+{
+	-fx-background-color: rgba(255, 227, 224, 0.75);
+	-fx-border-color: black;
+	-fx-border-width: 1;
+	-fx-border-radius: 10;
+	-fx-background-radius: 10;
 }

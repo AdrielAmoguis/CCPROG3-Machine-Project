@@ -9,10 +9,237 @@ import javafx.fxml.*;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.*;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.shape.Rectangle;
 
 public class GameWindowController implements EventHandler<Event>
 {
 	private ThatsLife activeGame;
+	
+	// Player blobs
+	
+	
+	// START OF GAME SPACES
+	@FXML
+	Rectangle space1;
+	@FXML
+	Rectangle space2;
+	@FXML
+	Rectangle space3;
+	@FXML
+	Rectangle space4;
+	@FXML
+	Rectangle space5;
+	@FXML
+	Rectangle space6;
+	@FXML
+	Rectangle space7;
+	@FXML
+	Rectangle space8;
+	@FXML
+	Rectangle space9;
+	@FXML
+	Rectangle space10;
+	@FXML
+	Rectangle space11;
+	@FXML
+	Rectangle space12;
+	@FXML
+	Rectangle space13;
+	@FXML
+	Rectangle space14;
+	@FXML
+	Rectangle space15;
+	@FXML
+	Rectangle space16;
+	@FXML
+	Rectangle space17;
+	@FXML
+	Rectangle space18;
+	@FXML
+	Rectangle space19;
+	@FXML
+	Rectangle space20;
+	@FXML
+	Rectangle space21;
+	@FXML
+	Rectangle space22;
+	@FXML
+	Rectangle space23;
+	@FXML
+	Rectangle space24;
+	@FXML
+	Rectangle space25;
+	@FXML
+	Rectangle space26;
+	@FXML
+	Rectangle space27;
+	@FXML
+	Rectangle space28;
+	@FXML
+	Rectangle space29;
+	@FXML
+	Rectangle space30;
+	@FXML
+	Rectangle space31;
+	@FXML
+	Rectangle space32;
+	@FXML
+	Rectangle space33;
+	@FXML
+	Rectangle space34;
+	@FXML
+	Rectangle space35;
+	@FXML
+	Rectangle space36;
+	@FXML
+	Rectangle space37;
+	@FXML
+	Rectangle space38;
+	@FXML
+	Rectangle space39;
+	@FXML
+	Rectangle space40;
+	@FXML
+	Rectangle space41;
+	@FXML
+	Rectangle space42;
+	@FXML
+	Rectangle space43;
+	@FXML
+	Rectangle space44;
+	@FXML
+	Rectangle space45;
+	@FXML
+	Rectangle space46;
+	@FXML
+	Rectangle space47;
+	@FXML
+	Rectangle space48;
+	@FXML
+	Rectangle space49;
+	@FXML
+	Rectangle space50;
+	@FXML
+	Rectangle space51;
+	@FXML
+	Rectangle space52;
+	@FXML
+	Rectangle space53;
+	@FXML
+	Rectangle space54;
+	@FXML
+	Rectangle space55;
+	@FXML
+	Rectangle space56;
+	@FXML
+	Rectangle space57;
+	@FXML
+	Rectangle space58;
+	@FXML
+	Rectangle space59;
+	@FXML
+	Rectangle space60;
+	@FXML
+	Rectangle space61;
+	@FXML
+	Rectangle space62;
+	@FXML
+	Rectangle space63;
+	@FXML
+	Rectangle space64;
+	@FXML
+	Rectangle space65;
+	@FXML
+	Rectangle space66;
+	@FXML
+	Rectangle space67;
+	@FXML
+	Rectangle space68;
+	@FXML
+	Rectangle space69;
+	@FXML
+	Rectangle space70;
+	@FXML
+	Rectangle space71;
+	@FXML
+	Rectangle space72;
+	@FXML
+	Rectangle space73;
+	@FXML
+	Rectangle space74;
+	@FXML
+	Rectangle space75;
+	@FXML
+	Rectangle space76;
+	@FXML
+	Rectangle space77;
+	@FXML
+	Rectangle space78;
+	@FXML
+	Rectangle space79;
+	@FXML
+	Rectangle space80;
+	@FXML
+	Rectangle space81;
+	@FXML
+	Rectangle space82;
+	@FXML
+	Rectangle space83;
+	@FXML
+	Rectangle space84;
+	@FXML
+	Rectangle space85;
+	@FXML
+	Rectangle space86;
+	@FXML
+	Rectangle space87;
+	@FXML
+	Rectangle space88;
+	@FXML
+	Rectangle space89;
+	@FXML
+	Rectangle space100;
+	@FXML
+	Rectangle space101;
+	@FXML
+	Rectangle space102;
+	@FXML
+	Rectangle space103;
+	@FXML
+	Rectangle space104;
+	@FXML
+	Rectangle space105;
+	@FXML
+	Rectangle space106;
+	@FXML
+	Rectangle space107;
+	@FXML
+	Rectangle space108;
+	@FXML
+	Rectangle space109;
+	@FXML
+	Rectangle space110;
+	@FXML
+	Rectangle space111;
+	@FXML
+	Rectangle space112;
+	@FXML
+	Rectangle space113;
+	@FXML
+	Rectangle space114;
+	@FXML
+	Rectangle space115;
+	@FXML
+	Rectangle space116;
+	@FXML
+	Rectangle space117;
+	@FXML
+	Rectangle space118;
+	@FXML
+	Rectangle space119;
+	@FXML
+	Rectangle space120;
+	// END OF GAME SPACES
 	
 	@FXML
 	TextArea messagePrompt;
