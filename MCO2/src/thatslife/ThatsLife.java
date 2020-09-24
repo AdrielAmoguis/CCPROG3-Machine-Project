@@ -151,6 +151,15 @@ public class ThatsLife implements java.io.Serializable
     {
         return this.players.get(index).toString();
     }
+    
+    /**
+     * This method returns the number of players in the game.
+     * @return The number of players in the active game.
+     */
+    public int getNumPlayers()
+    {
+    	return this.players.size();
+    }
 
     /**
      * This method initiates a player's turn. It returns the player index for the next turn.
