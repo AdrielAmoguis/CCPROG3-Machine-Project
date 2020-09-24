@@ -9,11 +9,13 @@ import javafx.fxml.*;
 
 import java.util.ArrayList;
 
+import javafx.application.Platform;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
@@ -21,6 +23,12 @@ public class GameWindowController implements EventHandler<Event>
 {
 	private ThatsLife activeGame;
 	private ArrayList<GridPane> spaces;
+	
+	@FXML
+	Button spinButton;
+	
+	@FXML
+	Rectangle turnFill;
 	
 	// Player Details
 	
@@ -169,7 +177,7 @@ public class GameWindowController implements EventHandler<Event>
 		displayAlert("Welcome! - That's Life!", "Game Started!", "Have fun!", true);
 		
 		// Populate the Player details
-		initPlayers();
+		updatePlayerData();
 		
 		// Initialize the Space ArrayList
 		initSpaces();
@@ -178,7 +186,7 @@ public class GameWindowController implements EventHandler<Event>
 		updatePlayerPos();
 	}
 	
-	private void initPlayers()
+	private void updatePlayerData()
 	{
 		for(int i = 0; i < activeGame.getNumPlayers(); i++)
 		{
@@ -245,6 +253,25 @@ public class GameWindowController implements EventHandler<Event>
 		// Check for Button
 		if(ev.getSource() instanceof Button)
 		{
+			// Spin Button
+			if(((Button) ev.getSource()).getId().equalsIgnoreCase("spinButton"))
+			{
+				int nextTurn = activeGame.startTurn(ThatsLife.rollNumber());
+				updatePlayerData();
+				switch(nextTurn)
+				{
+					case 0:
+						turnFill.setFill(Paint.valueOf("#FF6161"));
+						break;
+					case 1:
+						turnFill.setFill(Paint.valueOf("#FFF861"));
+						break;
+					case 2:
+						turnFill.setFill(Paint.valueOf("#61FFB3"));
+						break;
+				}
+			}
+			
 			// Check for player buttons
 			if(((Button) ev.getSource()).getId().startsWith("player"))
 			{
@@ -348,6 +375,7 @@ public class GameWindowController implements EventHandler<Event>
 				existingText += prompt;
 				
 				messagePrompt.setText(existingText);
+				messagePrompt.positionCaret(existingText.length());
 			}
 	}
 	

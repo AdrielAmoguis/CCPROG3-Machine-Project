@@ -165,7 +165,7 @@ public class ThatsLife implements java.io.Serializable
      * This method initiates a player's turn. It returns the player index for the next turn.
      * @return nextTurn : int
      */
-    public int startTurn()
+    public int startTurn(int n)
     {
         // Get the player instance
         Player player = players.get(turn);
@@ -205,7 +205,7 @@ public class ThatsLife implements java.io.Serializable
             	ThatsLife.controller.displayPrompt("\n[NORNG] Random Number Generator Inhibited. Input custom spin number: ");
 
             // Player Spins for a Move
-            int moveSteps = rollNumber();
+            int moveSteps = n;
 
             // Move the player
             player.move(moveSteps);

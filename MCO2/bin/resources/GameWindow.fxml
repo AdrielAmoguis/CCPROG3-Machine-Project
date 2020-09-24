@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="955.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -22,12 +23,12 @@
             <Font name="Copperplate Gothic Bold" size="27.0" />
          </font>
       </Button>
-      <Button layoutX="895.0" layoutY="878.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="786.0" style="-fx-font-weight: bold; -fx-font-size: 3em;" stylesheets="@styles.css" text="SPIN FOR RANDOM NUMBER" textAlignment="CENTER" wrapText="true">
+      <Button fx:id="spinButton" layoutX="1318.0" layoutY="683.0" mnemonicParsing="false" onAction="#handle" prefHeight="263.0" prefWidth="353.0" style="-fx-font-weight: bold; -fx-font-size: 3em;" stylesheets="@styles.css" text="MOVE" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="Copperplate Gothic Bold" size="35.0" />
          </font>
       </Button>
-      <AnchorPane fx:id="playerTwoPanel" layoutX="18.0" layoutY="345.0" prefHeight="263.0" prefWidth="372.0" style="-fx-border-color: black; -fx-background-color: #FFF861;">
+      <AnchorPane fx:id="playerTwoPanel" layoutX="18.0" layoutY="279.0" prefHeight="199.0" prefWidth="372.0" style="-fx-border-color: black; -fx-background-color: #FFF861;">
          <children>
             <Label fx:id="playerTwoName" layoutX="6.0" layoutY="3.0" text="PLAYER NAME">
                <font>
@@ -44,8 +45,8 @@
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="playerTwoCareer" layoutX="16.0" layoutY="180.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW CAREER" />
-            <Button fx:id="playerTwoSalary" layoutX="195.0" layoutY="180.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW SALARY" />
+            <Button fx:id="playerTwoCareer" layoutX="16.0" layoutY="145.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW CAREER" />
+            <Button fx:id="playerTwoSalary" layoutX="195.0" layoutY="145.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW SALARY" />
             <Label fx:id="playerTwoMarried" layoutX="6.0" layoutY="70.0" text="MARRIED">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
@@ -62,7 +63,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <AnchorPane fx:id="playerThreePanel" layoutX="18.0" layoutY="619.0" prefHeight="250.0" prefWidth="372.0" style="-fx-border-color: black; -fx-background-color: #61FFB3;">
+      <AnchorPane fx:id="playerThreePanel" layoutX="18.0" layoutY="482.0" prefHeight="194.0" prefWidth="372.0" style="-fx-border-color: black; -fx-background-color: #61FFB3;">
          <children>
             <Label fx:id="playerThreeName" layoutX="6.0" layoutY="2.0" text="PLAYER NAME">
                <font>
@@ -79,8 +80,8 @@
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="playerThreeCareer" layoutX="15.0" layoutY="169.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW CAREER" />
-            <Button fx:id="playerThreeSalary" layoutX="194.0" layoutY="169.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW SALARY" />
+            <Button fx:id="playerThreeCareer" layoutX="15.0" layoutY="141.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW CAREER" />
+            <Button fx:id="playerThreeSalary" layoutX="194.0" layoutY="141.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW SALARY" />
             <Label fx:id="playerThreeMarried" layoutX="5.0" layoutY="67.0" text="MARRIED">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
@@ -97,12 +98,12 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <TextArea fx:id="messagePrompt" editable="false" layoutX="18.0" layoutY="877.0" prefHeight="74.0" prefWidth="856.0" styleClass="textarea" stylesheets="@styles.css" text="Message Prompter">
+      <TextArea fx:id="messagePrompt" editable="false" layoutX="16.0" layoutY="682.0" prefHeight="265.0" prefWidth="1100.0" styleClass="textarea" stylesheets="@styles.css" text="Message Prompter">
          <font>
             <Font name="Comic Sans MS" size="20.0" />
          </font>
       </TextArea>
-      <AnchorPane fx:id="playerOnePanel" layoutX="18.0" layoutY="76.0" prefHeight="258.0" prefWidth="373.0" style="-fx-border-color: black; -fx-background-color: #FF6161;">
+      <AnchorPane fx:id="playerOnePanel" layoutX="18.0" layoutY="76.0" prefHeight="197.0" prefWidth="373.0" style="-fx-border-color: black; -fx-background-color: #FF6161;">
          <children>
             <Label fx:id="playerOneName" layoutX="7.0" layoutY="4.0" text="PLAYER NAME">
                <font>
@@ -119,8 +120,8 @@
                   <Font name="Comic Sans MS" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="playerOneCareer" layoutX="15.0" layoutY="182.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW CAREER" />
-            <Button fx:id="playerOneSalary" layoutX="194.0" layoutY="182.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW SALARY" />
+            <Button fx:id="playerOneCareer" layoutX="15.0" layoutY="150.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW CAREER" />
+            <Button fx:id="playerOneSalary" layoutX="194.0" layoutY="150.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 1.75em;" stylesheets="@styles.css" text="VIEW SALARY" />
             <Label fx:id="playerOneMarried" layoutX="5.0" layoutY="72.0" text="MARRIED">
                <font>
                   <Font name="Comic Sans MS" size="18.0" />
@@ -137,7 +138,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <ScrollPane layoutX="399.0" layoutY="14.0" pannable="true" prefHeight="852.0" prefWidth="1277.0" style="-fx-background-color: transparent;">
+      <ScrollPane layoutX="399.0" layoutY="14.0" pannable="true" prefHeight="667.0" prefWidth="1277.0" style="-fx-background-color: transparent;">
          <content>
             <AnchorPane prefHeight="1140.0" prefWidth="1263.0">
                <children>
@@ -158,5 +159,6 @@
             </AnchorPane>
          </content>
       </ScrollPane>
+      <Rectangle fx:id="turnFill" arcHeight="5.0" arcWidth="5.0" fill="#ff6161" height="256.0" layoutX="1140.0" layoutY="687.0" stroke="BLACK" strokeType="INSIDE" width="152.0" />
    </children>
 </AnchorPane>
