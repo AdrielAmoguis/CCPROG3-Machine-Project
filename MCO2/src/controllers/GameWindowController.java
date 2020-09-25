@@ -14,6 +14,7 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -22,7 +23,7 @@ import javafx.scene.shape.Rectangle;
 public class GameWindowController implements EventHandler<Event>
 {
 	private ThatsLife activeGame;
-	private ArrayList<GridPane> spaces;
+	private ArrayList<AnchorPane> spaces;
 	
 	@FXML
 	Button spinButton;
@@ -32,19 +33,19 @@ public class GameWindowController implements EventHandler<Event>
 	
 	// Player Details
 	
-	@FXML Circle playerOneBlob;
+	Circle playerOneBlob;
 	@FXML AnchorPane playerOnePanel; 
 	@FXML Label playerOneName; @FXML Label playerOneBalance; @FXML Label playerOneLoan;
 	@FXML Button playerOneCareer; @FXML Button playerOneSalary; @FXML Label playerOneMarried;
 	@FXML Label playerOneHouse; @FXML Label playerOneChildren;
 	
-	@FXML Circle playerTwoBlob;
+	Circle playerTwoBlob;
 	@FXML AnchorPane playerTwoPanel;
 	@FXML Label playerTwoName; @FXML Label playerTwoBalance; @FXML Label playerTwoLoan;
 	@FXML Button playerTwoCareer; @FXML Button playerTwoSalary; @FXML Label playerTwoMarried;
 	@FXML Label playerTwoHouse; @FXML Label playerTwoChildren;
 
-	@FXML Circle playerThreeBlob;
+	Circle playerThreeBlob;
 	@FXML AnchorPane playerThreePanel;
 	@FXML Label playerThreeName; @FXML Label playerThreeBalance; @FXML Label playerThreeLoan;
 	@FXML Button playerThreeCareer; @FXML Button playerThreeSalary; @FXML Label playerThreeMarried;
@@ -54,50 +55,50 @@ public class GameWindowController implements EventHandler<Event>
 	
 	
 	// START OF GAME SPACES
-	@FXML GridPane space1; @FXML GridPane space2; @FXML GridPane space3; @FXML GridPane space4;
-	@FXML GridPane space5; @FXML GridPane space6; @FXML GridPane space7; @FXML GridPane space8;
-	@FXML GridPane space9;
+	@FXML AnchorPane space1; @FXML AnchorPane space2; @FXML AnchorPane space3; @FXML AnchorPane space4;
+	@FXML AnchorPane space5; @FXML AnchorPane space6; @FXML AnchorPane space7; @FXML AnchorPane space8;
+	@FXML AnchorPane space9;
 	
-	@FXML GridPane space10; @FXML GridPane space12; @FXML GridPane space13; @FXML GridPane space14;
-	@FXML GridPane space15; @FXML GridPane space16; @FXML GridPane space17; @FXML GridPane space18;
-	@FXML GridPane space19; @FXML GridPane space20;
+	@FXML AnchorPane space10; @FXML AnchorPane space12; @FXML AnchorPane space13; @FXML AnchorPane space14;
+	@FXML AnchorPane space15; @FXML AnchorPane space16; @FXML AnchorPane space17; @FXML AnchorPane space18;
+	@FXML AnchorPane space19; @FXML AnchorPane space20;
 	
-	@FXML GridPane space21; @FXML GridPane space22; @FXML GridPane space23; @FXML GridPane space24;
-	@FXML GridPane space25; @FXML GridPane space26; @FXML GridPane space27; @FXML GridPane space28;
-	@FXML GridPane space29; @FXML GridPane space30;
+	@FXML AnchorPane space21; @FXML AnchorPane space22; @FXML AnchorPane space23; @FXML AnchorPane space24;
+	@FXML AnchorPane space25; @FXML AnchorPane space26; @FXML AnchorPane space27; @FXML AnchorPane space28;
+	@FXML AnchorPane space29; @FXML AnchorPane space30;
 	
-	@FXML GridPane space31; @FXML GridPane space32; @FXML GridPane space33; @FXML GridPane space34;
-	@FXML GridPane space35; @FXML GridPane space36; @FXML GridPane space37; @FXML GridPane space38;
-	@FXML GridPane space39; @FXML GridPane space40;
+	@FXML AnchorPane space31; @FXML AnchorPane space32; @FXML AnchorPane space33; @FXML AnchorPane space34;
+	@FXML AnchorPane space35; @FXML AnchorPane space36; @FXML AnchorPane space37; @FXML AnchorPane space38;
+	@FXML AnchorPane space39; @FXML AnchorPane space40;
 	
-	@FXML GridPane space41; @FXML GridPane space42; @FXML GridPane space43; @FXML GridPane space44;
-	@FXML GridPane space45; @FXML GridPane space46; @FXML GridPane space47; @FXML GridPane space48;
-	@FXML GridPane space49; @FXML GridPane space50;
+	@FXML AnchorPane space41; @FXML AnchorPane space42; @FXML AnchorPane space43; @FXML AnchorPane space44;
+	@FXML AnchorPane space45; @FXML AnchorPane space46; @FXML AnchorPane space47; @FXML AnchorPane space48;
+	@FXML AnchorPane space49; @FXML AnchorPane space50;
 	
-	@FXML GridPane space51; @FXML GridPane space52; @FXML GridPane space53; @FXML GridPane space54;
-	@FXML GridPane space55; @FXML GridPane space56; @FXML GridPane space57; @FXML GridPane space58;
-	@FXML GridPane space59; @FXML GridPane space60;
+	@FXML AnchorPane space51; @FXML AnchorPane space52; @FXML AnchorPane space53; @FXML AnchorPane space54;
+	@FXML AnchorPane space55; @FXML AnchorPane space56; @FXML AnchorPane space57; @FXML AnchorPane space58;
+	@FXML AnchorPane space59; @FXML AnchorPane space60;
 	
-	@FXML GridPane space61; @FXML GridPane space62; @FXML GridPane space63; @FXML GridPane space64;
-	@FXML GridPane space65; @FXML GridPane space66; @FXML GridPane space67; @FXML GridPane space68;
-	@FXML GridPane space69; @FXML GridPane space70;
+	@FXML AnchorPane space61; @FXML AnchorPane space62; @FXML AnchorPane space63; @FXML AnchorPane space64;
+	@FXML AnchorPane space65; @FXML AnchorPane space66; @FXML AnchorPane space67; @FXML AnchorPane space68;
+	@FXML AnchorPane space69; @FXML AnchorPane space70;
 	
-	@FXML GridPane space71; @FXML GridPane space72; @FXML GridPane space73; @FXML GridPane space74;
-	@FXML GridPane space75; @FXML GridPane space76; @FXML GridPane space77; @FXML GridPane space78;
-	@FXML GridPane space79; @FXML GridPane space80;
+	@FXML AnchorPane space71; @FXML AnchorPane space72; @FXML AnchorPane space73; @FXML AnchorPane space74;
+	@FXML AnchorPane space75; @FXML AnchorPane space76; @FXML AnchorPane space77; @FXML AnchorPane space78;
+	@FXML AnchorPane space79; @FXML AnchorPane space80;
 	
-	@FXML GridPane space81; @FXML GridPane space82; @FXML GridPane space83; @FXML GridPane space84;
-	@FXML GridPane space85; @FXML GridPane space86; @FXML GridPane space87; @FXML GridPane space88;
-	@FXML GridPane space89; @FXML GridPane space90;
+	@FXML AnchorPane space81; @FXML AnchorPane space82; @FXML AnchorPane space83; @FXML AnchorPane space84;
+	@FXML AnchorPane space85; @FXML AnchorPane space86; @FXML AnchorPane space87; @FXML AnchorPane space88;
+	@FXML AnchorPane space89; @FXML AnchorPane space90;
 	
-	@FXML GridPane space91; @FXML GridPane space92; @FXML GridPane space93; @FXML GridPane space94;
-	@FXML GridPane space95; @FXML GridPane space96; @FXML GridPane space97; @FXML GridPane space98;
-	@FXML GridPane space99; @FXML GridPane space100;
+	@FXML AnchorPane space91; @FXML AnchorPane space92; @FXML AnchorPane space93; @FXML AnchorPane space94;
+	@FXML AnchorPane space95; @FXML AnchorPane space96; @FXML AnchorPane space97; @FXML AnchorPane space98;
+	@FXML AnchorPane space99; @FXML AnchorPane space100;
 	
-	@FXML GridPane space101; @FXML GridPane space102; @FXML GridPane space103; @FXML GridPane space104;
-	@FXML GridPane space105; @FXML GridPane space106; @FXML GridPane space107; @FXML GridPane space108;
-	@FXML GridPane space109; @FXML GridPane space110; @FXML GridPane space111; @FXML GridPane space112;
-	@FXML GridPane space113; @FXML GridPane space114;
+	@FXML AnchorPane space101; @FXML AnchorPane space102; @FXML AnchorPane space103; @FXML AnchorPane space104;
+	@FXML AnchorPane space105; @FXML AnchorPane space106; @FXML AnchorPane space107; @FXML AnchorPane space108;
+	@FXML AnchorPane space109; @FXML AnchorPane space110; @FXML AnchorPane space111; @FXML AnchorPane space112;
+	@FXML AnchorPane space113; @FXML AnchorPane space114;
 	
 	private void initSpaces()
 	{
@@ -155,7 +156,7 @@ public class GameWindowController implements EventHandler<Event>
 	public GameWindowController(ThatsLife game)
 	{
 		activeGame = game;
-		spaces = new ArrayList<GridPane>();
+		spaces = new ArrayList<AnchorPane>();
 	}
 	
 	public void setActiveGame(ThatsLife game)
@@ -166,6 +167,23 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML
 	void initialize()
 	{
+		// Create the player blobs
+		playerOneBlob = new Circle();
+		playerOneBlob.setFill(Paint.valueOf("#FF6161"));
+		playerOneBlob.setRadius(15);
+		playerOneBlob.setStroke(Paint.valueOf("black"));
+		
+		playerTwoBlob = new Circle();
+		playerTwoBlob.setFill(Paint.valueOf("#FFF861"));
+		playerTwoBlob.setRadius(15);
+		playerTwoBlob.setStroke(Paint.valueOf("black"));
+		
+		playerThreeBlob = new Circle();
+		playerThreeBlob.setFill(Paint.valueOf("#61FFB3"));
+		playerThreeBlob.setRadius(15);
+		playerThreeBlob.setStroke(Paint.valueOf("black"));
+		
+		// Initialize the game
 		initializeGame();
 	}
 	
@@ -300,25 +318,65 @@ public class GameWindowController implements EventHandler<Event>
 		}
 	}
 	
-	private void updatePlayerPos()
+	public void updatePlayerPos()
 	{
 		for(int i = 0; i < activeGame.getNumPlayers(); i++)
 		{
 			String[] info = activeGame.getPlayerString(i).split("\n");
+			System.out.println(info[0]);
 			String spaceInfo = null;
 			for(String data : info)
 			{
 				if(data.startsWith("Current Space : "))
 					spaceInfo = data.substring("Current Space : ".length());
 			}
+			System.out.println(spaceInfo);
 			spaceInfo = spaceInfo.substring(1, spaceInfo.length() - 1);
 			info = spaceInfo.split(" ");
+			System.out.println(info[1]);
 			int spaceID = Integer.parseInt(info[1]);
 			
 			// Update blob parent
+			AnchorPane newSpace, oldSpace;
 			switch(i)
 			{
+				case 0:
+					// Remove from old Space
+					oldSpace = (AnchorPane) playerOneBlob.getParent();
+					if(oldSpace != null)
+						oldSpace.getChildren().remove(playerOneBlob);
+					
+					// Add to current space
+					newSpace = spaces.get(spaceID - 1);
+					newSpace.getChildren().add(playerOneBlob);
+					AnchorPane.setTopAnchor(playerOneBlob, 5.0);
+					AnchorPane.setLeftAnchor(playerOneBlob, 5.0);
+					break;
+					
 				case 1:
+					// Remove from old Space
+					oldSpace = (AnchorPane) playerTwoBlob.getParent();
+					if(oldSpace != null)
+						oldSpace.getChildren().remove(playerTwoBlob);
+					
+					// Add to current space
+					newSpace = spaces.get(spaceID - 1);
+					newSpace.getChildren().add(playerTwoBlob);
+					AnchorPane.setBottomAnchor(playerTwoBlob, 5.0);
+					AnchorPane.setRightAnchor(playerTwoBlob, 5.0);
+					break;
+					
+				case 2:
+					// Remove from old Space
+					oldSpace = (AnchorPane) playerThreeBlob.getParent();
+					if(oldSpace != null)
+						oldSpace.getChildren().remove(playerThreeBlob);
+					
+					// Add to current space
+					newSpace = spaces.get(spaceID - 1);
+					newSpace.getChildren().add(playerThreeBlob);
+					AnchorPane.setTopAnchor(playerThreeBlob, 5.0);
+					AnchorPane.setRightAnchor(playerThreeBlob, 5.0);
 					break;
 			}
 		}

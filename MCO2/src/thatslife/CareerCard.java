@@ -41,7 +41,7 @@ public class CareerCard extends Card
      */
     public void event(Player player)
     {
-        System.out.println("\n[CareerCard] Welcome to your new Career!: " + this.NAME);
+    	ThatsLife.getSessionJFXController().displayPrompt("\n[CareerCard] Welcome to your new Career!: " + this.NAME);
     }
 
     /**

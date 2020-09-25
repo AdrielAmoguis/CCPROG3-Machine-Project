@@ -146,7 +146,7 @@ public class ActionCard extends Card
      */
     private void collectFromBank(Player player)
     {
-        System.out.printf("\n\n[You drew an Action Card!] The bank pays you %.2f for %s.\n", this.AMOUNT, this.NAME);
+        ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] The bank pays you %.2f for %s.", this.AMOUNT, this.NAME));
         player.credit(this.AMOUNT, "Action card value credited.");
     }
 
@@ -156,7 +156,7 @@ public class ActionCard extends Card
      */
     private void payTheBank(Player player)
     {
-        System.out.printf("\n\n[You drew an Action Card!] You pay the bank %.2f for %s.\n", this.AMOUNT, this.NAME);
+    	ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] You pay the bank %.2f for %s.", this.AMOUNT, this.NAME));
         player.debit(this.AMOUNT, "Action card value debited.");
     }
 
@@ -166,7 +166,7 @@ public class ActionCard extends Card
      */
     private void payThePlayer(Player player)
     {
-        System.out.printf("\n\n[You drew an Action Card!] You pay a player %.2f for %s.\n", this.AMOUNT, this.NAME);
+    	ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] You pay a player %.2f for %s.", this.AMOUNT, this.NAME));
 
         Player chosen = choosePlayer(player);
         
@@ -180,7 +180,7 @@ public class ActionCard extends Card
      */
     private void collectFromPlayer(Player player)
     {
-        System.out.printf("\n\n[You drew an Action Card!] You collect %.2f from a player for %s.\n", this.AMOUNT, this.NAME);
+    	ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] You collect %.2f from a player for %s.", this.AMOUNT, this.NAME));
 
         Player chosen = choosePlayer(player);
         

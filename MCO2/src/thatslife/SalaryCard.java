@@ -90,7 +90,7 @@ public class SalaryCard extends Card
     {
         if(this.raised <= player.getCareer().getMaxRaise())
         {
-            System.out.println("You got a Pay Raise!");
+        	ThatsLife.getSessionJFXController().displayPrompt("You got a Pay Raise!");
             this.raised++;
             this.salary += this.payRaise;
             this.taxDue += 2000;
@@ -109,7 +109,7 @@ public class SalaryCard extends Card
     public void event(Player player) 
     {
         this.player = player;
-        System.out.println("\n\n[SalaryCard] Your salary card changed! : " + this.toString());
+        ThatsLife.getSessionJFXController().displayPrompt("[SalaryCard] Your salary card changed! : " + this.toString());
     }
 
     @Override

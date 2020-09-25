@@ -357,6 +357,8 @@ public class Player
         }
         ThatsLife.getSessionJFXController().displayPrompt(String.format("\nMoved %d spaces!\n", moved));
         this.space.playerLand(this);
+        ThatsLife.getSessionJFXController().updatePlayerPos();
+        
         return moved;
     }
 

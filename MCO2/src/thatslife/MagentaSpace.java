@@ -81,7 +81,7 @@ public class MagentaSpace extends Space
         }
 
         // Roll Again
-        System.out.println("\n[Magenta Space] You can move again!\n");
+        ThatsLife.getSessionJFXController().displayPrompt("[Magenta Space] You can move again!");
         int spin = player.spin();
         player.move(spin);
     }
@@ -114,8 +114,8 @@ public class MagentaSpace extends Space
         int choice  = player.decision(prompt, options);
         
         // Lock the career and return the other one
-        player.setCareer(cCards[choice-1]);
-        if(choice-1 == 1)
+        player.setCareer(cCards[choice]);
+        if(choice == 1)
             ThatsLife.getDeck(0).returnCard(cCards[0]);
         else
             ThatsLife.getDeck(0).returnCard(cCards[1]);
@@ -131,8 +131,8 @@ public class MagentaSpace extends Space
         choice  = player.decision(prompt, options);
         
         // Lock the career and return the other one
-        player.setSalary(sCards[choice-1]);
-        if(choice-1 == 1)
+        player.setSalary(sCards[choice]);
+        if(choice == 1)
             ThatsLife.getDeck(1).returnCard(sCards[0]);
         else
             ThatsLife.getDeck(1).returnCard(sCards[1]);
@@ -152,15 +152,15 @@ public class MagentaSpace extends Space
         }
 
         // Display the Cards to the player
-        String prompt = new String("[JOB SEARCH] Accept new Career?");
+        String prompt = new String("[JOB SEARCH] Accept new Career?\n" + cCard.toString() + "\n" + sCard.toString());
         String[] options = new String[2];
-        options[0] = new String(cCard.toString());
-        options[1] = new String(sCard.toString());
+        options[0] = new String("Yes");
+        options[1] = new String("No");
 
         int choice = player.decision(prompt, options);
 
         // Lock the cards
-        if(choice == 2)
+        if(choice == 1)
         {
             // Return cards
             ThatsLife.getDeck(0).returnCard(cCard);
@@ -209,7 +209,7 @@ public class MagentaSpace extends Space
             if(choice != houseCards.size()+1)
             {
                 // Remove from the arraylist player's decision and charge the player
-                HouseCard use = houseCards.remove(choice-1);
+                HouseCard use = houseCards.remove(choice);
                 player.debit(use.BUY, "You bought a house!");
 
                 // Push to the player
@@ -230,7 +230,7 @@ public class MagentaSpace extends Space
         if(!(player.isMarried()))
         {
             player.setSpouse(true);
-            System.out.println("\n\nSpin to determine your wedding gift!\nOdd Number : Collect $5000 from each player\nEven Number : Collect $10000 from each player\n\n");
+            ThatsLife.getSessionJFXController().displayPrompt("Spin to determine your wedding gift!\nOdd Number : Collect $5000 from each player\nEven Number : Collect $10000 from each player");
             int spin = player.spin();
             if (spin % 2 == 1)
             {
@@ -252,7 +252,7 @@ public class MagentaSpace extends Space
             }
         }
         else
-            System.out.println("You're already married!");
+        	ThatsLife.getSessionJFXController().displayPrompt("You're already married!");
     }
     
     private void haveBaby(Player player)
@@ -285,7 +285,7 @@ public class MagentaSpace extends Space
 
     private void graduate(Player player)
     {
-        System.out.println("Contratulations on your graduation, " + player.getName() + "!");
+    	ThatsLife.getSessionJFXController().displayPrompt("Contratulations on your graduation, " + player.getName() + "!");
         player.setGraduate(true);
     }
 

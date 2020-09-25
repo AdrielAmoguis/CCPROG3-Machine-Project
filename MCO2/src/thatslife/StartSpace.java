@@ -56,7 +56,7 @@ public class StartSpace extends Space
         String[] options = new String[2];
         options[0] = new String("[1] Take the Career Path");
         options[1] = new String("[2] Take the College Path");
-        choice = player.decision(prompt, options) - 1;
+        choice = player.decision(prompt, options);
 
         if(choice == 0)
         {
