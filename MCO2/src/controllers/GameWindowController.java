@@ -2,23 +2,19 @@ package controllers;
 
 import thatslife.*;
 import javafx.event.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.*;
-import javafx.scene.*;
 import javafx.fxml.*;
 
 import java.util.ArrayList;
 
-import javafx.application.Platform;
-import javafx.beans.property.StringProperty;
-import javafx.beans.value.*;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class GameWindowController implements EventHandler<Event>
 {
@@ -30,6 +26,9 @@ public class GameWindowController implements EventHandler<Event>
 	
 	@FXML
 	Rectangle turnFill;
+	
+	@FXML
+	Button gameMenuButton;
 	
 	// Player Details
 	
@@ -203,6 +202,20 @@ public class GameWindowController implements EventHandler<Event>
 		playerThreeBlob.setRadius(15);
 		playerThreeBlob.setStroke(Paint.valueOf("black"));
 		
+		// The Turn Box
+		switch(activeGame.getTurn())
+		{
+			case 0:
+				turnFill.setFill(Paint.valueOf("#FF6161"));
+				break;
+			case 1:
+				turnFill.setFill(Paint.valueOf("#FFF861"));
+				break;
+			case 2:
+				turnFill.setFill(Paint.valueOf("#61FFB3"));
+				break;
+		}
+		
 		// Initialize the game
 		initializeGame();
 	}
@@ -242,7 +255,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerOneBalance.setText(info[1]);
 					playerOneLoan.setText(info[2]);
 					playerOneMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
-					playerOneHouse.setText(info[6]);
+					playerOneHouse.setText(info[6].substring("[HOUSE] ".length()));
 					playerOneChildren.setText(info[7]);
 					playerOneBlob.setOpacity(1);
 					break;
@@ -251,7 +264,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerTwoBalance.setText(info[1]);
 					playerTwoLoan.setText(info[2]);
 					playerTwoMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
-					playerTwoHouse.setText(info[6]);
+					playerTwoHouse.setText(info[6].substring("[HOUSE] ".length()));
 					playerTwoChildren.setText(info[7]);
 					playerTwoBlob.setOpacity(1);
 					break;
@@ -260,7 +273,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerThreeBalance.setText(info[1]);
 					playerThreeLoan.setText(info[2]);
 					playerThreeMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
-					playerThreeHouse.setText(info[6]);
+					playerThreeHouse.setText(info[6].substring("[HOUSE] ".length()));
 					playerThreeChildren.setText(info[7]);
 					playerTwoBlob.setOpacity(1);
 					break;
@@ -333,6 +346,31 @@ public class GameWindowController implements EventHandler<Event>
 						// Show player one's career
 						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Salary", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Salary", playerInfo[4], true);
 						break;
+				}
+			}
+			
+			// Game Menu Button
+			if(((Button) ev.getSource()).getId().equals(gameMenuButton.getId()))
+			{
+				// Open the dialog
+				try
+				{
+					Stage stage = new Stage();
+					Stage primaryStage = (Stage) ((Button) ev.getSource()).getScene().getWindow();
+					
+					FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/GameMenu.fxml"));
+					newLoader.setController(new GameMenuController(this.activeGame, primaryStage));
+					Parent root = newLoader.load();
+					stage.setTitle("Game Menu - That's Life!");
+					stage.setResizable(false);
+					stage.setScene(new Scene(root));
+					
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.showAndWait();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
 				}
 			}
 		}

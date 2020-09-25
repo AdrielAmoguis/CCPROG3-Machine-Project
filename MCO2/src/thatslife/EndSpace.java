@@ -5,6 +5,11 @@ package thatslife;
  */
 public class EndSpace extends Space
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor calls the super constructor to initialize the superclass attributes.
      * Unlike the other children of the abstract Space class, this class does not belong to a path,

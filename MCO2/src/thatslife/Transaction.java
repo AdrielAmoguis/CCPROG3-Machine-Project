@@ -1,7 +1,12 @@
 package thatslife;
 
-public class Transaction 
+public class Transaction implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
 	/**
 	 * Holds the number of transactions in the program runtime
 	 */

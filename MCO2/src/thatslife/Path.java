@@ -5,8 +5,13 @@ import java.util.*;
  * This class defines the structure blocks of the game, the paths.
  * Paths are made up of spaces.
  */
-public abstract class Path 
+public abstract class Path implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = 22552965L;
+
     /**
      * This attribute holds all of the spaces that belong to this path.
      */

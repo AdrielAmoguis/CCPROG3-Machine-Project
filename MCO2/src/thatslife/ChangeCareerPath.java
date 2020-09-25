@@ -9,6 +9,11 @@ import java.util.*;
  */
 public class ChangeCareerPath extends Path
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor calls the super constructor and initializes the instance attributes in the superclass.
      * @param origin - the first space on this path

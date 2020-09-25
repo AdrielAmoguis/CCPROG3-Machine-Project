@@ -5,6 +5,11 @@ package thatslife;
  */
 public class OrangeSpace extends Space
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor calls sthe superclass constructor, passing the path parameter.
      * @param path : Path - the path that this space belongs to

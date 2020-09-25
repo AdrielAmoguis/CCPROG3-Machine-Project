@@ -6,8 +6,13 @@ import java.util.*;
  * The game map is not randomly generated. It follows a design by the program author. Only space events
  * are randomized.
  */
-public class Map 
+public class Map implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = 22552965L;
+
     /**
      * This attribute stores all the paths for the game.
      */

@@ -3,6 +3,11 @@ import java.util.*;
 
 public class StartFamilyPath extends Path
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     public StartFamilyPath(Space origin, Space dest, ArrayList<Player> players)
     {
         super("Start a Family Path", origin, dest, players);

@@ -6,6 +6,11 @@ import java.util.*;
  */
 public class ActionDeck extends Deck
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute holds all the ActionCards before they were shuffled.
      */

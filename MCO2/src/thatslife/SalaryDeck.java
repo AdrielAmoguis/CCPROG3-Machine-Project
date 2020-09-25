@@ -7,6 +7,11 @@ import java.util.*;
  */
 public class SalaryDeck extends Deck
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute holds the initial number of cards that this deck should have.
      */

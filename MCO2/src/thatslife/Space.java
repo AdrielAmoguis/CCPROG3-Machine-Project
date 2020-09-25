@@ -4,8 +4,13 @@ import java.util.*;
 /**
  * This class defines the very building-block of the game, the Space.
  */
-public abstract class Space 
+public abstract class Space implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = 22552965L;
+
     /**
      * This attribute statically stores the count of how many spaces have been created. This is used
      * for the Space ID system.

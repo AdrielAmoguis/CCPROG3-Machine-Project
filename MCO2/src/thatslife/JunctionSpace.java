@@ -5,6 +5,11 @@ package thatslife;
  */
 public class JunctionSpace extends MagentaSpace
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute holds the leftSpace, or option 1 for the junction.
      */

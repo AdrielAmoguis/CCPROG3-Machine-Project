@@ -7,6 +7,11 @@ import java.util.*;
  */
 public class MagentaSpace extends Space
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute stores the type of MagentaSpace this instance is. Types are:
      * 0 - College Career Choice

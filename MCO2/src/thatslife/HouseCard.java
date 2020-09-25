@@ -5,6 +5,11 @@ package thatslife;
  */
 public class HouseCard extends Card
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute stores the name of the house.
      */

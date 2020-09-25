@@ -87,13 +87,8 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 						currentStage.close();
 						
 						FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/GameWindow.fxml"));
+						newLoader.setController(new GameWindowController(loadedGame));
 						Parent root = newLoader.load();
-						
-						// Submit nPlayers and playerNames to the next controller
-						GameWindowController nextController = newLoader.getController();
-
-						// Pass the game instance
-						nextController.setActiveGame(loadedGame);
 						
 						currentStage = new Stage();
 						currentStage.setTitle("Active Game - That's Life!");

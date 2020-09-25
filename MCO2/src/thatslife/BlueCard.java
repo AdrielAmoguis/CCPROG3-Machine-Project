@@ -7,6 +7,11 @@ import java.util.*;
  */
 public class BlueCard extends Card
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+
     /**
      * This attribute contains the card's name, which is defined outside of this class.
      */

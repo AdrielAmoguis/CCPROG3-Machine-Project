@@ -5,6 +5,11 @@ package thatslife;
  */
 public class CareerCard extends Card
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute holds the name of the career
      */

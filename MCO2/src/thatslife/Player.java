@@ -6,8 +6,13 @@ import java.util.ArrayList;
  * This is the Player class. All user interaction takes place in this class.
  * This player object is stored and instantiated in the ThatsLife class. References to this may also be found in some of the deck classes.
  */
-public class Player 
+public class Player implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = 22552965L;
+
     /**
      * This attribute holds the total playerIDs in the game.
      * Player ids are just used for the player equals method.

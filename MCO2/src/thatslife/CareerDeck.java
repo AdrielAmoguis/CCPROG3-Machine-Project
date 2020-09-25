@@ -8,6 +8,11 @@ import java.util.*;
  */
 public class CareerDeck extends Deck
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor calls the super constructor to initialize the name of the deck
      * and calls the method generateCards() to generate all career cards.

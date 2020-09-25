@@ -5,6 +5,11 @@ package thatslife;
  */
 public class GreenSpace extends Space
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute holds the type of GreenSpace this is.
      * 0 - Pay Day

@@ -18,7 +18,7 @@
             <Image url="@GameWindowBG.png" />
          </image>
       </ImageView>
-      <Button layoutX="16.0" layoutY="15.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="377.0" style="-fx-font-weight: bold; -fx-font-size: 2.5em;" stylesheets="@styles.css" text="GAME MENU">
+      <Button fx:id="gameMenuButton" layoutX="16.0" layoutY="15.0" mnemonicParsing="false" onAction="#handle" prefHeight="0.0" prefWidth="377.0" style="-fx-font-weight: bold; -fx-font-size: 2.5em;" stylesheets="@styles.css" text="GAME MENU">
          <font>
             <Font name="Copperplate Gothic Bold" size="27.0" />
          </font>
@@ -98,7 +98,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <TextArea fx:id="messagePrompt" editable="false" layoutX="16.0" layoutY="682.0" prefHeight="265.0" prefWidth="1100.0" styleClass="textarea" stylesheets="@styles.css" text="Message Prompter">
+      <TextArea fx:id="messagePrompt" editable="false" layoutX="16.0" layoutY="682.0" prefHeight="265.0" prefWidth="1100.0" styleClass="textarea" stylesheets="@styles.css">
          <font>
             <Font name="Comic Sans MS" size="20.0" />
          </font>

@@ -5,6 +5,11 @@ package thatslife;
  */
 public class SalaryCard extends Card
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute contains the number of times the player has done a Pay Raise.
      */

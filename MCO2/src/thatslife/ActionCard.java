@@ -5,7 +5,12 @@ import java.util.*;
  * The ActionCard is a card with an event that makes the player do something.
  */
 public class ActionCard extends Card
-{
+{	
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute contain's the player's name.
      */

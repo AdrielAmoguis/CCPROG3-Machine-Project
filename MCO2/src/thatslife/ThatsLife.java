@@ -11,15 +11,16 @@ import java.io.*;
  */
 public class ThatsLife implements java.io.Serializable
 {
+	public static final long serializeUID = 22552965L;
 	/**
 	 * This is the UID for serializing into a binary object.
 	 */
-	private static final long serialVersionUID = 22552965L;
+	private static final long serialVersionUID = serializeUID;
 
 	/**
 	 * This is the supported file extension for save games
 	 */
-	public static final String FILEEXT = ".lifesav";
+	public static final String FILEEXT = "lifesav";
 	
 	/**
 	 * The controller instance assigned to this instance of the game

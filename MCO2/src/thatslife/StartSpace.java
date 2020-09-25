@@ -5,6 +5,11 @@ package thatslife;
  */
 public class StartSpace extends Space
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This attribute contains the collegeStart space (first space in College path)
      */

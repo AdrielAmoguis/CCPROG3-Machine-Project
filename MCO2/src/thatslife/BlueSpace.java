@@ -4,6 +4,11 @@ package thatslife;
  */
 public class BlueSpace extends Space
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor calls the super constructor.
      * @param path - the path that this space is on.

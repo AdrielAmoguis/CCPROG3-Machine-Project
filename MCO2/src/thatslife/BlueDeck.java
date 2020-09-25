@@ -6,6 +6,11 @@ import java.util.*;
  */
 public class BlueDeck extends Deck
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor initializes all Blue Cards and defines the deck's name.
      * @param players : the array list of players

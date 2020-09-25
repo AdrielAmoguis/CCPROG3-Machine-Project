@@ -6,8 +6,13 @@ import java.util.*;
  * The deck is a container of any kind of game card.
  * Card generation is not done by this class, but the classes that inherits from it.
  */
-public abstract class Deck 
+public abstract class Deck implements java.io.Serializable
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = 22552965L;
+
     /**
      * This attribute contains the deck's name.
      */

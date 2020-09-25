@@ -7,6 +7,11 @@ import java.util.Collections;
  */
 public class HouseDeck extends Deck
 {
+	/**
+	 * This is the UID for serializing into a binary object.
+	 */
+	private static final long serialVersionUID = ThatsLife.serializeUID;
+	
     /**
      * This constructor calls the superclass constructor to initialize superclass attributes.
      * This constructor then calls the generateCards() method to populate the deck.
