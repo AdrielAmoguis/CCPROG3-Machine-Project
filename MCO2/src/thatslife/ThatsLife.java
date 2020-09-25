@@ -185,7 +185,7 @@ public class ThatsLife implements java.io.Serializable
             if(player.getLoan() > 0 && player.getBalance() >= player.getLoan())
             {
                // Display loan and ask player if they would like to pay
-            	String prompt = new String(String.format("You have an existing loan of $%.2f. You have enough money to pay off your loans. Would you like to pay off your loans?", player.getBalance()));
+            	String prompt = new String(String.format("You have an existing loan of $%.2f. You have enough money to pay off your loans. Would you like to pay off your loans?", player.getLoan()));
             	String[] choices = new String[2];
             	choices[0] = new String("Yes");
             	choices[1] = new String("No");

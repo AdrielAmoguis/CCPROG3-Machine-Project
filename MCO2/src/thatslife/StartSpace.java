@@ -49,7 +49,6 @@ public class StartSpace extends Space
      */
     public void event(Player player)
     {
-        System.out.println("Welcome to the game!");
         int choice = -1;
         
         String prompt = new String("Pick your initial path");
@@ -67,7 +66,7 @@ public class StartSpace extends Space
         else if(choice == 1)
         {
             player.doLoan(2);
-            System.out.println("You chose college! You loaned $40000 from the bank.");
+            ThatsLife.getSessionJFXController().displayPrompt("You chose college! You loaned $40000 from the bank.");
             this.setNextSpace(collegeStart);
             players.remove(player);
             player.move(player.spin());

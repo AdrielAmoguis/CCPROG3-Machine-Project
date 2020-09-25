@@ -101,6 +101,8 @@ public class BlueCard extends Card
      */
     private boolean isMatch(Player player)
     {
+    	if(player.getCareer() == null)
+    		return false;
         if(this.matchingCareer.equals(player.getCareer().NAME))
             return true;
         return false;

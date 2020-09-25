@@ -23,7 +23,7 @@ public class EndSpace extends Space
      */
     public void event(Player player)
     {
-        System.out.println("Congratulations on your retirement, " + player.getName() + "!");
+        ThatsLife.getSessionJFXController().displayPrompt("Congratulations on your retirement, " + player.getName() + "!");
         
         // Process Retirement
 
@@ -46,7 +46,7 @@ public class EndSpace extends Space
         }
 
         // Repay all loans
-        System.out.printf("You were debited %.2f : Your loans were paid off.\n", player.getLoan());
+        ThatsLife.getSessionJFXController().displayPrompt(String.format("You were debited %.2f : Your loans were paid off.\n", player.getLoan()));
         player.payLoan(true);
     }   
 

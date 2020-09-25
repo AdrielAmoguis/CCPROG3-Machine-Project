@@ -59,7 +59,7 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML AnchorPane space5; @FXML AnchorPane space6; @FXML AnchorPane space7; @FXML AnchorPane space8;
 	@FXML AnchorPane space9;
 	
-	@FXML AnchorPane space10; @FXML AnchorPane space12; @FXML AnchorPane space13; @FXML AnchorPane space14;
+	@FXML AnchorPane space10; @FXML AnchorPane space11; @FXML AnchorPane space12; @FXML AnchorPane space13; @FXML AnchorPane space14;
 	@FXML AnchorPane space15; @FXML AnchorPane space16; @FXML AnchorPane space17; @FXML AnchorPane space18;
 	@FXML AnchorPane space19; @FXML AnchorPane space20;
 	
@@ -100,13 +100,23 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML AnchorPane space109; @FXML AnchorPane space110; @FXML AnchorPane space111; @FXML AnchorPane space112;
 	@FXML AnchorPane space113; @FXML AnchorPane space114;
 	
+	@FXML AnchorPane space115; @FXML AnchorPane space116; @FXML AnchorPane space117; @FXML AnchorPane space118;
+	@FXML AnchorPane space119; @FXML AnchorPane space120; @FXML AnchorPane space121; @FXML AnchorPane space122;
+	@FXML AnchorPane space123; @FXML AnchorPane space124; @FXML AnchorPane space125; @FXML AnchorPane space126;
+	@FXML AnchorPane space127; @FXML AnchorPane space128;
+	
+	@FXML AnchorPane space129; @FXML AnchorPane space130; @FXML AnchorPane space131;
+	@FXML AnchorPane space132; @FXML AnchorPane space133; @FXML AnchorPane space134; @FXML AnchorPane space135;
+	@FXML AnchorPane space136; @FXML AnchorPane space137; @FXML AnchorPane space138; @FXML AnchorPane space139;
+	@FXML AnchorPane space140; @FXML AnchorPane space141;
+	
 	private void initSpaces()
 	{
 		spaces.add(space1); spaces.add(space2); spaces.add(space3); spaces.add(space4);
 		spaces.add(space5); spaces.add(space6); spaces.add(space7); spaces.add(space8);
 		spaces.add(space9);
 		
-		spaces.add(space10); spaces.add(space12); spaces.add(space13); spaces.add(space14);
+		spaces.add(space10); spaces.add(space11); spaces.add(space12); spaces.add(space13); spaces.add(space14);
 		spaces.add(space15); spaces.add(space16); spaces.add(space17); spaces.add(space18);
 		spaces.add(space19); spaces.add(space20);
 		
@@ -146,6 +156,16 @@ public class GameWindowController implements EventHandler<Event>
 		spaces.add(space105); spaces.add(space106); spaces.add(space107); spaces.add(space108);
 		spaces.add(space109); spaces.add(space110); spaces.add(space111); spaces.add(space112);
 		spaces.add(space113); spaces.add(space114);
+		
+		spaces.add(space115); spaces.add(space116); spaces.add(space117); spaces.add(space118);
+		spaces.add(space119); spaces.add(space120); spaces.add(space121); spaces.add(space122);
+		spaces.add(space123); spaces.add(space124); spaces.add(space125); 
+		spaces.add(space126); spaces.add(space127);
+		
+		spaces.add(space128); spaces.add(space129); spaces.add(space130); spaces.add(space131);
+		spaces.add(space132); spaces.add(space133); spaces.add(space134); spaces.add(space135);
+		spaces.add(space136); spaces.add(space137); spaces.add(space138); spaces.add(space139);
+		spaces.add(space140); spaces.add(space141);
 	}
 	
 	// END OF GAME SPACES
@@ -221,7 +241,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerOneName.setText(info[0].toUpperCase());
 					playerOneBalance.setText(info[1]);
 					playerOneLoan.setText(info[2]);
-					playerOneMarried.setText(info[5].equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
+					playerOneMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
 					playerOneHouse.setText(info[6]);
 					playerOneChildren.setText(info[7]);
 					playerOneBlob.setOpacity(1);
@@ -230,7 +250,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerTwoName.setText(info[0].toUpperCase());
 					playerTwoBalance.setText(info[1]);
 					playerTwoLoan.setText(info[2]);
-					playerTwoMarried.setText(info[5].equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
+					playerTwoMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
 					playerTwoHouse.setText(info[6]);
 					playerTwoChildren.setText(info[7]);
 					playerTwoBlob.setOpacity(1);
@@ -239,7 +259,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerThreeName.setText(info[0].toUpperCase());
 					playerThreeBalance.setText(info[1]);
 					playerThreeLoan.setText(info[2]);
-					playerThreeMarried.setText(info[5].equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
+					playerThreeMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
 					playerThreeHouse.setText(info[6]);
 					playerThreeChildren.setText(info[7]);
 					playerTwoBlob.setOpacity(1);
@@ -323,17 +343,14 @@ public class GameWindowController implements EventHandler<Event>
 		for(int i = 0; i < activeGame.getNumPlayers(); i++)
 		{
 			String[] info = activeGame.getPlayerString(i).split("\n");
-			System.out.println(info[0]);
 			String spaceInfo = null;
 			for(String data : info)
 			{
 				if(data.startsWith("Current Space : "))
 					spaceInfo = data.substring("Current Space : ".length());
 			}
-			System.out.println(spaceInfo);
 			spaceInfo = spaceInfo.substring(1, spaceInfo.length() - 1);
 			info = spaceInfo.split(" ");
-			System.out.println(info[1]);
 			int spaceID = Integer.parseInt(info[1]);
 			
 			// Update blob parent

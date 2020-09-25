@@ -206,7 +206,7 @@ public class MagentaSpace extends Space
 
             int choice = player.decision(prompt, options);
 
-            if(choice != houseCards.size()+1)
+            if(choice != houseCards.size())
             {
                 // Remove from the arraylist player's decision and charge the player
                 HouseCard use = houseCards.remove(choice);
@@ -307,17 +307,12 @@ public class MagentaSpace extends Space
         // Draw a Salary Card
         sCard = (SalaryCard) ThatsLife.getDeck(1).drawCard();
 
-        // Show the cards
-        System.out.println("Career Chosen: " + card.toString());
-        System.out.println("Salary Chosen: " + sCard.toString());
-
         // Return the player's existing cards (if any)
         if(player.getCareer() != null && player.getSalary() != null)
         {
             ThatsLife.getDeck(0).returnCard(player.getCareer());
             ThatsLife.getDeck(1).returnCard(player.getSalary());
         }
-
 
         // Store the Cards
         player.setCareer(card);
