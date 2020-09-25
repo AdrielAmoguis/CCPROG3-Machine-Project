@@ -30,7 +30,7 @@
          </font></TextField>
       <TextField fx:id="playerThreeName" layoutX="570.0" layoutY="531.0" prefHeight="69.0" prefWidth="406.0" styleClass="textbox" stylesheets="@styles.css">
          <font>
-            <Font size="30.0" />
+            <Font name="Comic Sans MS" size="30.0" />
          </font></TextField>
       <Button fx:id="backButton" layoutX="172.0" layoutY="403.0" mnemonicParsing="false" onAction="#handle" prefHeight="77.0" prefWidth="299.0" style="-fx-font-weight: bold; -fx-font-size: 3em;" stylesheets="@styles.css" text="BACK">
          <font>

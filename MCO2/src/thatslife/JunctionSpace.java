@@ -88,7 +88,7 @@ public class JunctionSpace extends MagentaSpace
         
         int choice = ThatsLife.getSessionJFXController().displayDecision(prompt, options);
         
-        if(choice == 1)
+        if(choice == 0)
         {
             // Left path
             // Roll again
