@@ -123,7 +123,7 @@ public class ActionCard extends Card
      */
     private Player choosePlayer(Player exclude)
     {
-        String prompt = new String("Choose a player (check message prompt for purpose)");
+        String prompt = new String("Choose a player");
         String[] options = new String[allPlayers.size() - 1];
         
         int j = 0;
@@ -151,7 +151,7 @@ public class ActionCard extends Card
      */
     private void collectFromBank(Player player)
     {
-        ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] The bank pays you %.2f for %s.", this.AMOUNT, this.NAME));
+        ThatsLife.getSessionJFXController().displayAlert("ActionCard", "ActionCard Event", String.format("[You drew an Action Card!] The bank pays you %.2f for %s.", this.AMOUNT, this.NAME), true);
         player.credit(this.AMOUNT, "Action card value credited.");
     }
 
@@ -161,7 +161,7 @@ public class ActionCard extends Card
      */
     private void payTheBank(Player player)
     {
-    	ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] You pay the bank %.2f for %s.", this.AMOUNT, this.NAME));
+        ThatsLife.getSessionJFXController().displayAlert("ActionCard", "ActionCard Event", String.format("[You drew an Action Card!] You pay the bank %.2f for %s.", this.AMOUNT, this.NAME), true);
         player.debit(this.AMOUNT, "Action card value debited.");
     }
 
@@ -171,7 +171,7 @@ public class ActionCard extends Card
      */
     private void payThePlayer(Player player)
     {
-    	ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] You pay a player %.2f for %s.", this.AMOUNT, this.NAME));
+    	ThatsLife.getSessionJFXController().displayAlert("ActionCard", "ActionCard Event", String.format("[You drew an Action Card!] You pay a player %.2f for %s.", this.AMOUNT, this.NAME), true);
 
         Player chosen = choosePlayer(player);
         
@@ -185,7 +185,7 @@ public class ActionCard extends Card
      */
     private void collectFromPlayer(Player player)
     {
-    	ThatsLife.getSessionJFXController().displayPrompt(String.format("[You drew an Action Card!] You collect %.2f from a player for %s.", this.AMOUNT, this.NAME));
+    	ThatsLife.getSessionJFXController().displayAlert("ActionCard", "ActionCard Event", String.format("[You drew an Action Card!] You collect %.2f from a player for %s.", this.AMOUNT, this.NAME), true);
 
         Player chosen = choosePlayer(player);
         

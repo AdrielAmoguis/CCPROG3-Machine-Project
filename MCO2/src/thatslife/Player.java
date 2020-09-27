@@ -214,7 +214,12 @@ public class Player implements java.io.Serializable
      */
     public Transaction[] getTransactions()
     {
-    	return (Transaction[]) this.transactions.toArray();
+    	Transaction[] transactions = new Transaction[this.transactions.size()];
+    	for(int i = 0; i < this.transactions.size(); i++)
+    	{
+    		transactions[i] = this.transactions.get(i);
+    	}
+    	return transactions;
     }
 
     // Balance operations

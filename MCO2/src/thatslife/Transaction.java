@@ -47,7 +47,7 @@ public class Transaction implements java.io.Serializable
 	public String toString()
 	{
 		return (
-			String.format("[Transaction ID %d] %s %f", this.ID, AMT >= 0 ? "Credit" : "Debit", this.AMT)
+			String.format("[Transaction ID %d] %s %f", this.ID, AMT >= 0 ? "Credit" : "Debit", this.AMT >= 0 ? this.AMT : this.AMT*(-1))
 		);
 	}
 	

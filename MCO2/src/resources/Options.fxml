@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1077.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.OptionsController">
+   <children>
+      <ImageView fitHeight="729.0" fitWidth="1077.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LoadGameBG.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="424.0" layoutY="299.0" text="SETTINGS">
+         <font>
+            <Font name="Comic Sans MS Bold" size="42.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="425.0" layoutY="590.0" mnemonicParsing="false" onAction="#handle" prefHeight="60.0" prefWidth="228.0" style="-fx-font-size: 3em;" stylesheets="@styles.css" text="BACK">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
+      <Label layoutX="390.0" layoutY="359.0" text="Number of Action Cards">
+         <font>
+            <Font name="Comic Sans MS Bold" size="25.0" />
+         </font>
+      </Label>
+      <Slider fx:id="actionCardsSlider" blockIncrement="5.0" layoutX="424.0" layoutY="401.0" min="50.0" prefHeight="29.0" prefWidth="184.0" value="30.0" />
+      <Label fx:id="numActionCards" layoutX="616.0" layoutY="395.0" text="50">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="430.0" text="Number of Salary Cards">
+         <font>
+            <Font name="Comic Sans MS Bold" size="25.0" />
+         </font>
+      </Label>
+      <Slider fx:id="salaryCardsSlider" blockIncrement="5.0" layoutX="425.0" layoutY="472.0" min="10.0" prefHeight="29.0" prefWidth="184.0" value="10.0" />
+      <Label fx:id="numSalaryCards" layoutX="617.0" layoutY="466.0" text="10">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -101,11 +101,38 @@ public class ThatsLife implements java.io.Serializable
         }
 
         // Create all decks
+        boolean found = false;
+        
         decks = new Deck[5];
+        
         decks[0] = new CareerDeck();
-        decks[1] = new SalaryDeck(10 + (new Random()).nextInt(25));
+        
+        for(String arg : args)
+        {        	
+        	if(arg.startsWith("salaryCards"))
+        	{
+        		String nCards = arg.substring("salaryCards=".length());
+        		decks[1] = new SalaryDeck(Integer.parseInt(nCards));
+        	}
+        }
+        if(!found)
+        	decks[1] = new SalaryDeck(10 + (new Random()).nextInt(25));
+        
         decks[2] = new BlueDeck(players);
-        decks[3] = new ActionDeck(players);
+        
+        // Action Card Generation from Args
+        
+        for(String arg : args)
+        {        	
+        	if(arg.startsWith("actionCards"))
+        	{
+        		String nCards = arg.substring("actionCards=".length());
+        		decks[3] = new ActionDeck(players, Integer.parseInt(nCards));
+        	}
+        }
+        if(!found)
+        	decks[3] = new ActionDeck(players, 50);
+        
         decks[4] = new HouseDeck();
 
         // Initialize Player StartSpace
@@ -151,6 +178,16 @@ public class ThatsLife implements java.io.Serializable
     public String getPlayerString(int index)
     {
         return this.players.get(index).toString();
+    }
+    
+    /**
+     * This method returns an array of the player's past transactions.
+     * @param index - The index of the player in the list of players
+     * @return Transaction[] - The array of the player's past transactions.
+     */
+    public Transaction[] getPlayerTransactions(int index)
+    {
+    	return players.get(index).getTransactions();
     }
     
     /**

@@ -29,7 +29,7 @@ public class MainController implements EventHandler<Event>
 		else if(buttonText.equalsIgnoreCase("Load Saved Game"))
 			loadGame(e);
 		else if(buttonText.equalsIgnoreCase("options"))
-			settings();
+			settings(e);
 	}
 	
 	private void newGame(ActionEvent ev)
@@ -72,8 +72,23 @@ public class MainController implements EventHandler<Event>
 		}
 	}
 	
-	private void settings()
+	private void settings(ActionEvent ev)
 	{
-		
+		// Close current window and display load game window
+		try
+		{
+			Stage currentStage = (Stage)((Button) ev.getSource()).getScene().getWindow();
+			
+			FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/Options.fxml"));
+			Parent root = newLoader.load();
+			currentStage.setTitle("Settings - That's Life!");
+			currentStage.setResizable(false);
+			currentStage.setScene(new Scene(root));
+			currentStage.show();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }

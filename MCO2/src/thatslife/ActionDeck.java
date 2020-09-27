@@ -20,10 +20,10 @@ public class ActionDeck extends Deck
      * This constructor initializes the ActionCards
      * @param players : ArrayList of Player - this list is not stored on this deck, but is just used to initialize the cards.
      */
-    public ActionDeck(ArrayList<Player> players)
+    public ActionDeck(ArrayList<Player> players, int numCards)
     {
         super("Action Deck");
-        beforeShuffle = new ActionCard[50];
+        beforeShuffle = new ActionCard[numCards];
         generateCards(players);
     }
 
@@ -38,7 +38,7 @@ public class ActionDeck extends Deck
             Generation Rules:   
             1. Generate 50 cards
         */
-        final int size = 50;
+    	final int size = beforeShuffle.length;
         for(int i = 0; i < size * 0.4; i++)
             cards.add(new ActionCard(0, players));
         
@@ -52,7 +52,7 @@ public class ActionDeck extends Deck
             cards.add(new ActionCard(3, players));
 
         // Copy the data to the beforeShuffle array before shuffling
-        for(int i = 0; i < cards.size(); i++)
+        for(int i = 0; i < size; i++)
             this.beforeShuffle[i] = (ActionCard) this.cards.get(i);
 
         Collections.shuffle(cards);

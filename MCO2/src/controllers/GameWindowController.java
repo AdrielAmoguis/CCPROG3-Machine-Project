@@ -36,19 +36,19 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML AnchorPane playerOnePanel; 
 	@FXML Label playerOneName; @FXML Label playerOneBalance; @FXML Label playerOneLoan;
 	@FXML Button playerOneCareer; @FXML Button playerOneSalary; @FXML Label playerOneMarried;
-	@FXML Label playerOneHouse; @FXML Label playerOneChildren;
+	@FXML Label playerOneHouse; @FXML Label playerOneChildren; @FXML Button playerOneTransactions;
 	
 	Circle playerTwoBlob;
 	@FXML AnchorPane playerTwoPanel;
 	@FXML Label playerTwoName; @FXML Label playerTwoBalance; @FXML Label playerTwoLoan;
 	@FXML Button playerTwoCareer; @FXML Button playerTwoSalary; @FXML Label playerTwoMarried;
-	@FXML Label playerTwoHouse; @FXML Label playerTwoChildren;
+	@FXML Label playerTwoHouse; @FXML Label playerTwoChildren; @FXML Button playerTwoTransactions;
 
 	Circle playerThreeBlob;
 	@FXML AnchorPane playerThreePanel;
 	@FXML Label playerThreeName; @FXML Label playerThreeBalance; @FXML Label playerThreeLoan;
 	@FXML Button playerThreeCareer; @FXML Button playerThreeSalary; @FXML Label playerThreeMarried;
-	@FXML Label playerThreeHouse; @FXML Label playerThreeChildren;
+	@FXML Label playerThreeHouse; @FXML Label playerThreeChildren; @FXML Button playerThreeTransactions;
 	
 	// Player blobs
 	
@@ -225,7 +225,11 @@ public class GameWindowController implements EventHandler<Event>
 		ThatsLife.setSessionJFXController(this);
 		
 		// Display Preliminary Messages
-		displayAlert("Welcome! - That's Life!", "Game Started!", "Have fun!", true);
+		String message = new String(
+			""
+		);
+		
+		displayAlert("Welcome! - That's Life!", "How to Play", message, true);
 		
 		// Populate the Player details
 		updatePlayerData();
@@ -289,7 +293,7 @@ public class GameWindowController implements EventHandler<Event>
 			playerThreeMarried.setText("---");
 			playerThreeHouse.setText("---");
 			playerThreeChildren.setText("---");
-					}
+		}
 	}
 	
 	@Override
@@ -335,16 +339,27 @@ public class GameWindowController implements EventHandler<Event>
 				String[] playerInfo = activeGame.getPlayerString(playerIndex).split("\n");
 				
 				String type = button.getId().substring(button.getId().length() - "career".length());
-				
 				switch(type)
 				{
 					case "Career":
-						// Show player one's career
 						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Career", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Career", playerInfo[3], true);
 						break;
 					case "Salary":
-						// Show player one's career
 						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Salary", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Salary", playerInfo[4], true);
+						break;
+					case "ctions":
+						Transaction[] playerTransactions = this.activeGame.getPlayerTransactions(playerIndex);
+						String transactionMessage = new String();
+						if(playerTransactions.length == 0)
+							transactionMessage += "Nothing to show";
+						else
+						{
+							for(Transaction record : playerTransactions)
+							{
+								transactionMessage += record.toString();
+							}
+						}
+						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Transactions", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Transactions", transactionMessage, true);
 						break;
 				}
 			}
