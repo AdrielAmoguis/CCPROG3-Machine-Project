@@ -186,6 +186,8 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML
 	void initialize()
 	{
+		ThatsLife.setSessionJFXController(this);
+		
 		// Create the player blobs
 		playerOneBlob = new Circle();
 		playerOneBlob.setFill(Paint.valueOf("#FF6161"));
@@ -222,8 +224,6 @@ public class GameWindowController implements EventHandler<Event>
 	
 	private void initializeGame()
 	{
-		ThatsLife.setSessionJFXController(this);
-		
 		// Display Preliminary Messages
 		String message = new String(
 			""
@@ -259,7 +259,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerOneBalance.setText(info[1]);
 					playerOneLoan.setText(info[2]);
 					playerOneMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
-					playerOneHouse.setText(info[6].substring("[HOUSE] ".length()));
+					playerOneHouse.setText(info[6].substring("[HOUSE] ".length()).equalsIgnoreCase("No House") ? "No House" : info[6].substring("[HOUSE] [HOUSE] ".length()));
 					playerOneChildren.setText(info[7]);
 					playerOneBlob.setOpacity(1);
 					break;
@@ -268,7 +268,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerTwoBalance.setText(info[1]);
 					playerTwoLoan.setText(info[2]);
 					playerTwoMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
-					playerTwoHouse.setText(info[6].substring("[HOUSE] ".length()));
+					playerTwoHouse.setText(info[6].substring("[HOUSE] ".length()).equalsIgnoreCase("No House") ? "No House" : info[6].substring("[HOUSE] [HOUSE] ".length()));
 					playerTwoChildren.setText(info[7]);
 					playerTwoBlob.setOpacity(1);
 					break;
@@ -277,7 +277,7 @@ public class GameWindowController implements EventHandler<Event>
 					playerThreeBalance.setText(info[1]);
 					playerThreeLoan.setText(info[2]);
 					playerThreeMarried.setText(info[5].substring("MARRIED : ".length()).equalsIgnoreCase("true") ? "HAPPILY MARRIED!" : "STILL SINGLE");
-					playerThreeHouse.setText(info[6].substring("[HOUSE] ".length()));
+					playerThreeHouse.setText(info[6].substring("[HOUSE] ".length()).equalsIgnoreCase("No House") ? "No House" : info[6].substring("[HOUSE] [HOUSE] ".length()));
 					playerThreeChildren.setText(info[7]);
 					playerTwoBlob.setOpacity(1);
 					break;
@@ -313,17 +313,51 @@ public class GameWindowController implements EventHandler<Event>
 			{
 				int nextTurn = activeGame.startTurn(ThatsLife.rollNumber());
 				updatePlayerData();
-				switch(nextTurn)
+				
+				// Check if game is still ongoing
+				if(activeGame.isOngoing())
 				{
-					case 0:
-						turnFill.setFill(Paint.valueOf("#FF6161"));
-						break;
-					case 1:
-						turnFill.setFill(Paint.valueOf("#FFF861"));
-						break;
-					case 2:
-						turnFill.setFill(Paint.valueOf("#61FFB3"));
-						break;
+					switch(nextTurn)
+					{
+						case 0:
+							turnFill.setFill(Paint.valueOf("#FF6161"));
+							break;
+						case 1:
+							turnFill.setFill(Paint.valueOf("#FFF861"));
+							break;
+						case 2:
+							turnFill.setFill(Paint.valueOf("#61FFB3"));
+							break;
+					}
+				}
+				else
+				{
+					// Game Finished, bring up the winners' dialog
+					String ranking = activeGame.declareRanking();
+					
+					try
+					{
+						Stage primaryStage = (Stage) ((Button) ev.getSource()).getScene().getWindow();
+						primaryStage.close();
+						
+						// Open new
+						FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/WinnerWindow.fxml"));
+						newLoader.setController(new WinnerController(ranking));
+						
+						Parent root = newLoader.load();
+						
+						primaryStage = new Stage();
+						primaryStage.setTitle("Winners - That's Life!");
+						primaryStage.setResizable(false);
+						primaryStage.setScene(new Scene(root));
+						primaryStage.show();
+						
+						ThatsLife.setSessionJFXController(null);
+					}
+					catch(Exception e)
+					{
+						e.printStackTrace();
+					}
 				}
 			}
 			
@@ -356,7 +390,7 @@ public class GameWindowController implements EventHandler<Event>
 						{
 							for(Transaction record : playerTransactions)
 							{
-								transactionMessage += record.toString();
+								transactionMessage += record.toString() + "\n";
 							}
 						}
 						displayAlert(playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Transactions", playerInfo[0].substring(1, playerInfo[0].length() - 2) + "'s Transactions", transactionMessage, true);
@@ -461,6 +495,11 @@ public class GameWindowController implements EventHandler<Event>
 		choiceDialog.setContentText(prompt);
 		choiceDialog.setHeaderText("Make a Decision - That's Life");
 		
+		// Add styles
+		DialogPane pane = choiceDialog.getDialogPane();
+		pane.getStylesheets().add(getClass().getResource("/resources/styles.css").toExternalForm());
+		pane.getStyleClass().add("alertDialog");
+		
 		try
 		{
 			// Show the dialog box
@@ -516,6 +555,11 @@ public class GameWindowController implements EventHandler<Event>
 		aBox.setContentText(prompt);
 		aBox.setTitle(title);
 		aBox.setHeaderText(header);
+	
+		// Add styles
+		DialogPane pane = aBox.getDialogPane();
+		pane.getStylesheets().add(getClass().getResource("/resources/styles.css").toExternalForm());
+		pane.getStyleClass().add("alertDialog");
 		
 		if(willWait)
 			aBox.showAndWait();

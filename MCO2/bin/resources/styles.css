@@ -66,3 +66,31 @@
 	-fx-border-radius: 10;
 	-fx-background-radius: 10;
 }
+
+.alertDialog
+{
+	-fx-background-color: #ffbd59;
+	-fx-font-family:"Comic Sans MS", cursive, sans-serif; 
+	-fx-font-size: 18px;
+}
+
+.alertDialog > *.button-bar > *.container
+{
+    -fx-background-color: #ffbd59;
+}
+
+.alertDialog > *.label.content
+{
+    -fx-font-size: 18px;
+}
+
+.alertDialog:header *.header-panel
+{
+    -fx-background-color: #ffbd59;
+}
+
+.alertDialog:header *.header-panel *.label
+{
+    -fx-font-family:"Comic Sans MS", cursive, sans-serif; 
+    -fx-font-size: 3em;
+}

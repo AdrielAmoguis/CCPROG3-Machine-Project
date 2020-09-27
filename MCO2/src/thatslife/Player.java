@@ -392,6 +392,7 @@ public class Player implements java.io.Serializable
         int n = ThatsLife.rollNumber();
         
         ThatsLife.getSessionJFXController().displayPrompt(String.format("[Spin] Obtained the number %d!", n));
+        ThatsLife.getSessionJFXController().displayAlert("Spin", "Spin Result", "You got the number [" + n + "]!", true);
         
         return n;
     }

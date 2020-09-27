@@ -51,6 +51,7 @@ public class GreenSpace extends Space
         // Pay day
         if(this.TYPE == 0)
         {
+        	ThatsLife.getSessionJFXController().displayAlert("GreenSpace", "It's PayDay!", "What day is it? It's Pay Day : $" + String.valueOf(player.getSalary().getSalary()), true);
             player.credit(player.getSalary().getSalary(), "What day is it? It's Pay Day!");
         }
         else // Pay Raise

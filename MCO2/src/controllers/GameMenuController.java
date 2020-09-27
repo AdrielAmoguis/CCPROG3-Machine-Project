@@ -64,6 +64,8 @@ public class GameMenuController implements EventHandler<Event>
 				mainMenuStage.setResizable(false);
 				mainMenuStage.setScene(scene);
 				mainMenuStage.show();
+				
+				ThatsLife.setSessionJFXController(null);
 			} 
 			catch(Exception e) 
 			{

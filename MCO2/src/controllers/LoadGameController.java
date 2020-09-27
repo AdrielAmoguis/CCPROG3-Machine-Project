@@ -87,7 +87,15 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 						currentStage.close();
 						
 						FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/GameWindow.fxml"));
-						newLoader.setController(new GameWindowController(loadedGame));
+						GameWindowController cont = new GameWindowController(loadedGame);
+						newLoader.setController(cont);
+						
+						// Set session controller
+						ThatsLife.setSessionJFXController(cont);
+						
+						// Set card decks
+						ThatsLife.setDeck(loadedGame.getDecks());
+						
 						Parent root = newLoader.load();
 						
 						currentStage = new Stage();

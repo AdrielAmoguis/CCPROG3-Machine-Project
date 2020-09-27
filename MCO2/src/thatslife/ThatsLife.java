@@ -47,7 +47,7 @@ public class ThatsLife implements java.io.Serializable
     private Map map;
 
     /**
-     * This static array contains all the instances for all deck types.
+     * This static array contains a mirror of all the instances for all deck types.
      * Index 0 - Career Card Deck
      * Index 1 - Salary Card Deck
      * Index 2 - Blue Card Deck
@@ -55,6 +55,11 @@ public class ThatsLife implements java.io.Serializable
      * Index 4 - House Card Deck
      */
     private static Deck[] decks;
+    
+    /**
+     * The actual instances of all decks
+     */
+    private Deck[] actualDecks;
 
     /**
      * This attribute holds the instances of all the players.
@@ -103,22 +108,22 @@ public class ThatsLife implements java.io.Serializable
         // Create all decks
         boolean found = false;
         
-        decks = new Deck[5];
+        actualDecks = new Deck[5];
         
-        decks[0] = new CareerDeck();
+        actualDecks[0] = new CareerDeck();
         
         for(String arg : args)
         {        	
         	if(arg.startsWith("salaryCards"))
         	{
         		String nCards = arg.substring("salaryCards=".length());
-        		decks[1] = new SalaryDeck(Integer.parseInt(nCards));
+        		actualDecks[1] = new SalaryDeck(Integer.parseInt(nCards));
         	}
         }
         if(!found)
-        	decks[1] = new SalaryDeck(10 + (new Random()).nextInt(25));
+        	actualDecks[1] = new SalaryDeck(10 + (new Random()).nextInt(25));
         
-        decks[2] = new BlueDeck(players);
+        actualDecks[2] = new BlueDeck(players);
         
         // Action Card Generation from Args
         
@@ -127,13 +132,15 @@ public class ThatsLife implements java.io.Serializable
         	if(arg.startsWith("actionCards"))
         	{
         		String nCards = arg.substring("actionCards=".length());
-        		decks[3] = new ActionDeck(players, Integer.parseInt(nCards));
+        		actualDecks[3] = new ActionDeck(players, Integer.parseInt(nCards));
         	}
         }
         if(!found)
-        	decks[3] = new ActionDeck(players, 50);
+        	actualDecks[3] = new ActionDeck(players, 50);
         
-        decks[4] = new HouseDeck();
+        actualDecks[4] = new HouseDeck();
+        
+        ThatsLife.decks = actualDecks;
 
         // Initialize Player StartSpace
         firstMove = 0;
@@ -197,6 +204,16 @@ public class ThatsLife implements java.io.Serializable
     public int getNumPlayers()
     {
     	return this.players.size();
+    }
+    
+    /**
+     * This method returns the instances for all card decks in the game.
+     * @return card decks
+     */
+    
+    public Deck[] getDecks()
+    {
+    	return this.actualDecks;
     }
 
     /**
@@ -340,6 +357,15 @@ public class ThatsLife implements java.io.Serializable
     public static Deck getDeck(int index)
     {
         return decks[index];
+    }
+    
+    /**
+     * This method sets the session deck list.
+     * @param deck : The deck set to use
+     */
+    public static void setDeck(Deck[] deck)
+    {
+    	ThatsLife.decks = deck;
     }
     
     /**

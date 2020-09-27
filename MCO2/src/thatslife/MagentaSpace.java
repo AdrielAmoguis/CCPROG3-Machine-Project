@@ -86,7 +86,7 @@ public class MagentaSpace extends Space
         }
 
         // Roll Again
-        ThatsLife.getSessionJFXController().displayPrompt("[Magenta Space] You can move again!");
+        ThatsLife.getSessionJFXController().displayAlert("MagentaSpace", "MagentaSpace Event", "You can move again!\nClose this dialog to roll brand new number!", true);
         int spin = player.spin();
         player.move(spin);
     }
@@ -235,7 +235,8 @@ public class MagentaSpace extends Space
         if(!(player.isMarried()))
         {
             player.setSpouse(true);
-            ThatsLife.getSessionJFXController().displayPrompt("Spin to determine your wedding gift!\nOdd Number : Collect $5000 from each player\nEven Number : Collect $10000 from each player");
+            ThatsLife.getSessionJFXController().displayAlert("MagentaSpace", "MagentaSpace Event - Getting Married", 
+            		"Spin to determine your wedding gift!\nOdd Number : Collect $5000 from each player\nEven Number : Collect $10000 from each player", true);
             int spin = player.spin();
             if (spin % 2 == 1)
             {
@@ -257,13 +258,15 @@ public class MagentaSpace extends Space
             }
         }
         else
-        	ThatsLife.getSessionJFXController().displayPrompt("You're already married!");
+        	ThatsLife.getSessionJFXController().displayAlert("MagentaSpace", "MagentaSpace Event - Getting Married", "You're already married!", true);
     }
     
     private void haveBaby(Player player)
     {
         if(player.isMarried())
         {
+        	ThatsLife.getSessionJFXController().displayAlert("MagentaSpace", "MagentaSpace Event - Having a Baby", 
+        			"Your child was born!", true);
             player.addChild();
             player.credit(5000*(allPlayers.size()-1), "Your child was born! Everyone gives you $5000 as a gift.");
             for (Player otherPlayer : allPlayers) 
@@ -278,6 +281,8 @@ public class MagentaSpace extends Space
     {
         if(player.isMarried())
         {
+        	ThatsLife.getSessionJFXController().displayAlert("MagentaSpace", "MagentaSpace Event - Having a Baby", 
+        			"Your twins were born!", true);
             player.addChild(); player.addChild();
             player.credit(10000*(allPlayers.size()-1), "Your twins were born! Everyone gives you $10000 as a gift.");
             for (Player otherPlayer : allPlayers) 
@@ -290,7 +295,8 @@ public class MagentaSpace extends Space
 
     private void graduate(Player player)
     {
-    	ThatsLife.getSessionJFXController().displayPrompt("Contratulations on your graduation, " + player.getName() + "!");
+    	ThatsLife.getSessionJFXController().displayAlert("MagentaSpace", "MagentaSpace Event - Graduation Day", 
+    			"Contratulations on your graduation, " + player.getName() + "!", true);
         player.setGraduate(true);
     }
 
