@@ -111,6 +111,8 @@ public class GameWindowController implements EventHandler<Event>
 	
 	private void initSpaces()
 	{
+		spaces.clear();
+		
 		spaces.add(space1); spaces.add(space2); spaces.add(space3); spaces.add(space4);
 		spaces.add(space5); spaces.add(space6); spaces.add(space7); spaces.add(space8);
 		spaces.add(space9);
@@ -225,8 +227,14 @@ public class GameWindowController implements EventHandler<Event>
 	private void initializeGame()
 	{
 		// Display Preliminary Messages
-		String message = new String(
-			""
+		final String message = new String(
+			"Welcome to That's Life! The Digital Boardgame\n\n" +
+			"This game mirrors life events from people going to college, having a career, raising a family, investing, buying a hose, working, and retiring.\n\n" +
+			"The goal of this game is for the players to reach retirement as early as possible with the most savings on hand.\n" +
+			"The player decides what kind of life he wants to experience during the game. At the start of each round, the player presses for a randomly generated number [1-10].\n" +
+			"This determines the number of spaces he will advance on the board. Several events may take place, depending on which spaces on the board the player lands on.\n\n" +
+			"Unlike the usual board games, where there is only one path from start to end, That's Life!, at some areas along the way, present players with two options: to continue moving forward\n" +
+			"or to take a shorter (or maybe longer) route to reach another space on the board.\n\n"
 		);
 		
 		displayAlert("Welcome! - That's Life!", "How to Play", message, true);
@@ -334,6 +342,7 @@ public class GameWindowController implements EventHandler<Event>
 				{
 					// Game Finished, bring up the winners' dialog
 					String ranking = activeGame.declareRanking();
+					double[] balances = activeGame.getFinalBalance();
 					
 					try
 					{
@@ -342,7 +351,7 @@ public class GameWindowController implements EventHandler<Event>
 						
 						// Open new
 						FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/WinnerWindow.fxml"));
-						newLoader.setController(new WinnerController(ranking));
+						newLoader.setController(new WinnerController(ranking, balances));
 						
 						Parent root = newLoader.load();
 						

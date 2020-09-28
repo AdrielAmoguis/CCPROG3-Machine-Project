@@ -13,10 +13,12 @@ import javafx.fxml.*;
 public class WinnerController implements EventHandler<Event> 
 {
 	private ArrayList<String> results;
+	private double[] balances;
 	
-	public WinnerController(String ranking)
+	public WinnerController(String ranking, double[] balances)
 	{
 		results = new ArrayList<String>();
+		this.balances = balances;
 		
 		// Process Winnings
 		
@@ -57,7 +59,7 @@ public class WinnerController implements EventHandler<Event>
 		{
 			Label label = labels.get(i);
 			
-			label.setText(String.format("[%d] %s", i+1, results.get(i)));
+			label.setText(String.format("[%d] %s", i+1, results.get(i)) + " | Balance = $" + balances[i]);
 		}
 		
 		// Disable 3rd label if 2 players only
@@ -84,17 +86,6 @@ public class WinnerController implements EventHandler<Event>
 			{
 				Stage primaryStage = (Stage) ((Button) ev.getSource()).getScene().getWindow();
 				primaryStage.close();
-				
-				// Open new
-				FXMLLoader newLoader = new FXMLLoader(getClass().getResource("/resources/MainMenu.fxml"));
-				
-				Parent root = newLoader.load();
-				
-				primaryStage = new Stage();
-				primaryStage.setTitle("Main Menu - That's Life!");
-				primaryStage.setResizable(false);
-				primaryStage.setScene(new Scene(root));
-				primaryStage.show();
 			}
 			catch(Exception e)
 			{

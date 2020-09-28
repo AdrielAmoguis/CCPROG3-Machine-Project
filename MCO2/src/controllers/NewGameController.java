@@ -117,6 +117,8 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 					for(int i = 0; i < nPlayers; i++)
 						names.add(playerNames[i]);
 					
+					ThatsLife.setSessionJFXController(null);
+					
 					newLoader.setController(new GameWindowController(new ThatsLife(names)));
 					
 					Parent root = newLoader.load();

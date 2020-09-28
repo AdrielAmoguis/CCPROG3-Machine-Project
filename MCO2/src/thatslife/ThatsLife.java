@@ -326,6 +326,45 @@ public class ThatsLife implements java.io.Serializable
     }
     
     /**
+     * This method returns the final balances of all players when the game is over, in the order prescribed by the declareRanking() method.
+     * @return Balances : double[]
+     */
+    public double[] getFinalBalance()
+    {
+    	if(isOngoing())
+    		return null;
+    	
+    	Player[] finalRank = map.getEndSpace().getPlayers();
+
+        // Sort the player ranking (sort by balance) - using Insertion Sort
+        // Insertion sort by Rajat Mishra. Reference: https://www.geeksforgeeks.org/insertion-sort/
+        int n = finalRank.length; 
+        for (int i = 1; i < n; ++i) 
+        { 
+            Player key = finalRank[i]; 
+            int j = i - 1; 
+  
+            /* Move elements of arr[0..i-1], that are 
+               greater than key, to one position ahead 
+               of their current position */
+            while (j >= 0 && finalRank[j].getBalance() < key.getBalance()) 
+            { 
+                finalRank[j + 1] = finalRank[j]; 
+                j = j - 1; 
+            } 
+            finalRank[j + 1] = key; 
+        }
+        
+        double[] balances = new double[finalRank.length];
+        for(int i = 0; i < balances.length; i++)
+        {
+        	balances[i] = finalRank[i].getBalance();
+        }
+        
+        return balances;
+    }
+    
+    /**
      * This method adds arguments to the game's static arguments class variable.
      * These arguments are used to inhibit/customize certain game behaviors.
      * @param arg : String - argument to add.

@@ -8,19 +8,22 @@ That's Life! - A Mirror of the Boardgame, "The Game of Life"
 ## MCO2 Tracker
 - [COMPLETE] Update UML Class Diagram (corrects & extra features)
 - [COMPLETE] Develop Extra Features
-- [INCOMPLETE] Have the MVC Architecture for GUI Implementation
-    - [INCOMPLETE] Develop the View
+- [COMPLETE] Have the MVC Architecture for GUI Implementation
+    - [COMPLETE] Develop the View
         - [COMPLETE] Main Menu
         - [COMPLETE] Game Menu
-        - [INCOMPLETE] Main Playing Window
-        - [INCOMPLETE] Game Elements
-    - [INCOMPLETE] Develop/Debug the Model
-        - [INCOMPLETE] Verify all Classes and Specs are Correct
-    - [INCOMPLETE] Develop the Controllers
-        - [INCOMPLETE] Button Controllers
-    - [INCOMPLETE] Integrate the View and Controllers to the Model
+        - [COMPLETE] Main Playing Window
+        - [COMPLETE] Game Elements
+    - [COMPLETE] Develop/Debug the Model
+        - [COMPLETE] Verify all Classes and Specs are Correct
+    - [COMPLETE] Develop the Controllers
+        - [COMPLETE] Button Controllers
+    - [COMPLETE] Integrate the View and Controllers to the Model
 - [INCOMPLETE] Exhaustive Testing
 - [INCOMPLETE] Javadoc Documentation
+
+### Compiling the GUI Game
+
 
 ### Starting Up the Game (CLI)
 - The Main driver class takes some arguments when starting the game.
