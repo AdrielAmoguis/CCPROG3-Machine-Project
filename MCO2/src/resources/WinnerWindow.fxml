@@ -41,7 +41,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="mainMenu" layoutX="484.0" layoutY="636.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 3em;" stylesheets="@styles.css" text="EXIT" />
+      <Button fx:id="mainMenu" layoutX="417.0" layoutY="634.0" mnemonicParsing="false" onAction="#handle" style="-fx-font-size: 3em;" stylesheets="@styles.css" text="MAIN MENU" />
       <Label layoutX="402.0" layoutY="309.0" text="FINAL RANKING">
          <font>
             <Font name="Comic Sans MS Bold" size="34.0" />

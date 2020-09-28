@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="1076.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewGameController">
+   <children>
+      <ImageView fitHeight="718.0" fitWidth="1111.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@NewGameBG.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="playerCombo" layoutX="570.0" layoutY="106.0" onAction="#handle" prefHeight="47.0" prefWidth="406.0" promptText="Select Number of Players" styleClass="combobox" stylesheets="@styles.css" />
+      <Button fx:id="createGame" layoutX="172.0" layoutY="311.0" mnemonicParsing="false" onAction="#handle" prefHeight="77.0" prefWidth="299.0" style="-fx-font-weight: bold; -fx-font-size: 3em;" stylesheets="@styles.css" text="CREATE GAME">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="16.0" />
+         </font></Button>
+      <TextField fx:id="playerOneName" layoutX="570.0" layoutY="245.0" prefHeight="66.0" prefWidth="406.0" styleClass="textbox" stylesheets="@styles.css">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font></TextField>
+      <TextField fx:id="playerTwoName" layoutX="570.0" layoutY="384.0" prefHeight="66.0" prefWidth="406.0" styleClass="textbox" stylesheets="@styles.css">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font></TextField>
+      <TextField fx:id="playerThreeName" layoutX="570.0" layoutY="531.0" prefHeight="69.0" prefWidth="406.0" styleClass="textbox" stylesheets="@styles.css">
+         <font>
+            <Font name="Comic Sans MS" size="30.0" />
+         </font></TextField>
+      <Button fx:id="backButton" layoutX="172.0" layoutY="403.0" mnemonicParsing="false" onAction="#handle" prefHeight="77.0" prefWidth="299.0" style="-fx-font-weight: bold; -fx-font-size: 3em;" stylesheets="@styles.css" text="BACK">
+         <font>
+            <Font name="Copperplate Gothic Light" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
