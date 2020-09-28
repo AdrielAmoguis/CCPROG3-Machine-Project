@@ -375,6 +375,7 @@ public class Player implements java.io.Serializable
     /**
      * This method prompts the user to make a decision, based on a string as parameter.
      * @param options : String - a String that holds the options to be prompted to the player
+     * @param prompt : String - the prompt to display for the user.
      * @return choice : int - a numerical value that the player enters
      */
     public int decision(String prompt, String[] options)

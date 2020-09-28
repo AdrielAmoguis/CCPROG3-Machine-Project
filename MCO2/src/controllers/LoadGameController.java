@@ -12,8 +12,17 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import javafx.beans.value.*;
 
+/**
+ * This class is a controller designed for ThatsLife! game, from CCPROG3 - DLSU CCS.
+ * This controller controls the view for the load game menu, which loads serialized instances of the game.
+ * 
+ * @author Adriel Isaiah V. Amoguis
+ */
 public class LoadGameController implements EventHandler<Event>, ChangeListener<String>
 {
+	/**
+	 * This attribute holds the current selected file for loading.
+	 */
 	private File currentFile;
 	
 	@FXML
@@ -28,11 +37,17 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 	@FXML
 	Button backButton;
 	
+	/**
+	 * This constructor sets default values to this instance's attributes.
+	 */
 	public LoadGameController()
 	{
 		currentFile = null;
 	}
 	
+	/**
+	 * This method initializes JavaFX components in the Stage.
+	 */
 	@FXML
 	void initialize()
 	{
@@ -41,6 +56,10 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 		pathField.textProperty().addListener(this::changed);
 	}
 
+	/**
+	 * This method redirects ActionEvents to the ActionEvent handler.
+	 * @param ev : Event
+	 */
 	@Override
 	public void handle(Event ev) 
 	{
@@ -48,7 +67,11 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 			handle((ActionEvent) ev);
 	}
 	
-	public void handle(ActionEvent ev)
+	/**
+	 * This event handler handles all action events in the stage.
+	 * @param ev : ActionEvent to handle
+	 */
+	private void handle(ActionEvent ev)
 	{
 		if(ev.getSource() instanceof Button)
 		{
@@ -133,6 +156,12 @@ public class LoadGameController implements EventHandler<Event>, ChangeListener<S
 		}
 	}
 
+	/**
+	 * This method listens and handles for changes in the textbox in the JavaFX stage. It updates the the currentFile attribute.
+	 * @param observed : ObservableValue given by the change caller.
+	 * @param oldString : The old value of the textbox.
+	 * @param newString : The new value of the textbox.
+	 */
 	@Override
 	public void changed(ObservableValue<? extends String> observed, String oldString, String newString) 
 	{

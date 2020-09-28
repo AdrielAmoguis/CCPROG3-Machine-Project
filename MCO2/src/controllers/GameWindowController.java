@@ -16,9 +16,24 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * This class is a controller designed for ThatsLife! game, from CCPROG3 - DLSU CCS.
+ * This controller controls the main game window, given the ThatsLife instance model.
+ * 
+ * @author Adriel Isaiah V. Amoguis
+ *
+ */
 public class GameWindowController implements EventHandler<Event>
 {
+	/**
+	 * The instance of the game currently being played.
+	 */
 	private ThatsLife activeGame;
+	
+	/**
+	 * An ArrayList that contains all spaces as described in the View's board graphic.
+	 * This ArrayList is aligned with the spaces in the model.
+	 */
 	private ArrayList<AnchorPane> spaces;
 	
 	@FXML
@@ -109,6 +124,9 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML AnchorPane space136; @FXML AnchorPane space137; @FXML AnchorPane space138; @FXML AnchorPane space139;
 	@FXML AnchorPane space140; @FXML AnchorPane space141;
 	
+	/**
+	 * This method adds all the FXML instances of AnchorPane for the space into a singular ArrayList for indexing purposes.
+	 */
 	private void initSpaces()
 	{
 		spaces.clear();
@@ -174,17 +192,28 @@ public class GameWindowController implements EventHandler<Event>
 	@FXML
 	TextArea messagePrompt;
 	
+	/**
+	 * This constructor creates an instance of the controller using the game parameter as its active game.
+	 * @param game : ThatsLife - the active game model to be played.
+	 */
 	public GameWindowController(ThatsLife game)
 	{
 		activeGame = game;
 		spaces = new ArrayList<AnchorPane>();
 	}
 	
+	/**
+	 * This method sets the game model to control.
+	 * @param game : ThatsLife - game model to control.
+	 */
 	public void setActiveGame(ThatsLife game)
 	{
 		this.activeGame = game;
 	}
 	
+	/**
+	 * This method is used by the FXML Loader to instantiate several elements found in the view.
+	 */
 	@FXML
 	void initialize()
 	{
@@ -224,6 +253,9 @@ public class GameWindowController implements EventHandler<Event>
 		initializeGame();
 	}
 	
+	/**
+	 * This method performs a sequence of events that initializes the view according to initial data in the model.
+	 */
 	private void initializeGame()
 	{
 		// Display Preliminary Messages
@@ -249,6 +281,9 @@ public class GameWindowController implements EventHandler<Event>
 		updatePlayerPos();
 	}
 	
+	/**
+	 * This method updates the sidebar with new player data. It is called every after turn.
+	 */
 	private void updatePlayerData()
 	{
 		for(int i = 0; i < activeGame.getNumPlayers(); i++)
@@ -304,6 +339,10 @@ public class GameWindowController implements EventHandler<Event>
 		}
 	}
 	
+	/**
+	 * This event handler passes ActionEvents to the ActionEvent handler.
+	 * @param ev : Event
+	 */
 	@Override
 	public void handle(Event ev) 
 	{
@@ -311,6 +350,10 @@ public class GameWindowController implements EventHandler<Event>
 			handle((ActionEvent) ev);
 	}
 	
+	/**
+	 * This event handler handles all ActionEvents in the entire game window.
+	 * @param ev : ActionEvent - the event to handle
+	 */
 	private void handle(ActionEvent ev)
 	{
 		// Check for Button
@@ -434,6 +477,11 @@ public class GameWindowController implements EventHandler<Event>
 		}
 	}
 	
+	/**
+	 * This method updates the view with the current player positions at the time of calling.
+	 * This method relies heavily on the the ThatsLife class' getPlayerString() method. It tokenizes
+	 * and parses the string to extract the player's current space ID.
+	 */
 	public void updatePlayerPos()
 	{
 		for(int i = 0; i < activeGame.getNumPlayers(); i++)
@@ -496,6 +544,12 @@ public class GameWindowController implements EventHandler<Event>
 	}
 	
 	// CHOICE DIALOG
+	/**
+	 * This method shows an alert box that prompts the user to make a choice via a drop-down menu.
+	 * @param prompt : The prompt string to present to the user.
+	 * @param choices : The String array that presents all the choices the user can make.
+	 * @return An integer that is aligned with the index of the choices array that the player chose.
+	 */
 	public int displayDecision(String prompt, String[] choices)
 	{
 		int decision = -1;
@@ -540,6 +594,10 @@ public class GameWindowController implements EventHandler<Event>
 	}
 	
 	// Prompt Box
+	/**
+	 * This method shows a prompt message to the user by printing it to the message prompter textfield.
+	 * @param prompt : Message to print
+	 */
 	public void displayPrompt(String prompt)
 	{
 		if(prompt != null)
@@ -557,6 +615,13 @@ public class GameWindowController implements EventHandler<Event>
 	
 	
 	// Alert Box
+	/**
+	 * This method displays an alert box based on the given parameters.
+	 * @param title : String - the title of the alert box. 
+	 * @param header : String - the header of the alert box.
+	 * @param prompt : String - the content text of the alert box.
+	 * @param willWait : boolean - Determined if the alert box should freeze the game until it is dismissed or not.
+	 */
 	public void displayAlert(String title, String header, String prompt, boolean willWait)
 	{
 		Alert aBox = new Alert(Alert.AlertType.INFORMATION);

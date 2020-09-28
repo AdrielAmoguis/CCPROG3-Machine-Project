@@ -1,5 +1,9 @@
 package thatslife;
 
+/**
+ * This class defines the structure for a transaction that will be done and recorded by each instance of player.
+ * @author Adriel Isaiah V. Amoguis
+ */
 public class Transaction implements java.io.Serializable
 {
 	/**

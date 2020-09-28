@@ -6,11 +6,24 @@ import javafx.stage.*;
 import javafx.scene.*;
 import javafx.fxml.*;
 
+/**
+ * This class is a controller designed for ThatsLife! game, from CCPROG3 - DLSU CCS.
+ * This is the main JavaFX controller for the GUIMain class.
+ * @author Adriel Isaiah V. Amoguis
+ *
+ */
 public class MainController implements EventHandler<Event>
 {	
+	/**
+	 * Empty implementation of the FXML initialize() method.
+	 */
 	@FXML
 	void initialize() {}
 	
+	/**
+	 * This method redirects ActionEventst to the ActionEvent handler.
+	 * @param e : Event
+	 */
 	@Override
 	public void handle(Event e)
 	{
@@ -19,7 +32,11 @@ public class MainController implements EventHandler<Event>
 			handle((ActionEvent) e);
 	}
 	
-	public void handle(ActionEvent e)
+	/**
+	 * This method handles the ActionEvents given by the buttons.
+	 * @param e : The ActionEvent to handle
+	 */
+	private void handle(ActionEvent e)
 	{
 		// Check for the button string
 		String buttonText = ((Button) e.getSource()).getText();
@@ -32,6 +49,10 @@ public class MainController implements EventHandler<Event>
 			settings(e);
 	}
 	
+	/**
+	 * Method to be called when ActionEvent is the new game button.
+	 * @param ev : A copy of the instance of the action event. This is used to get the stage.
+	 */
 	private void newGame(ActionEvent ev)
 	{
 		// Close current window and display new game window
@@ -52,6 +73,10 @@ public class MainController implements EventHandler<Event>
 		}
 	}
 	
+	/**
+	 * Method to be called when ActionEvent is the load game button.
+	 * @param ev : A copy of the instance of the action event. This is used to get the stage.
+	 */
 	private void loadGame(ActionEvent ev)
 	{
 		// Close current window and display load game window
@@ -72,6 +97,10 @@ public class MainController implements EventHandler<Event>
 		}
 	}
 	
+	/**
+	 * Method to be called when ActionEvent is the settings button.
+	 * @param ev : A copy of the instance of the action event. This is used to get the stage.
+	 */
 	private void settings(ActionEvent ev)
 	{
 		// Close current window and display load game window

@@ -10,6 +10,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import java.lang.Math;
 
+/**
+ * This class is a controller designed for ThatsLife! game, from CCPROG3 - DLSU CCS.
+ * This controller controls the view for the settings window, and updates the static arguments for the ThatsLife game.
+ * @author Adriel Isaiah V. Amoguis
+ */
 public class OptionsController implements EventHandler<Event>
 {
 	@FXML Button backButton;
@@ -18,6 +23,9 @@ public class OptionsController implements EventHandler<Event>
 	@FXML Label numActionCards;
 	@FXML Label numSalaryCards;
 	
+	/**
+	 * This method initializes all JavaFX components in the stage. The change listeners for the sliders are also defined in this method.
+	 */
 	@FXML
 	void initialize()
 	{
@@ -60,6 +68,10 @@ public class OptionsController implements EventHandler<Event>
         }
 	}
 	
+	/**
+	 * This method redirects all ActionEvents to the ActionEvent handler.
+	 * @param ev : Event
+	 */
 	@Override
 	public void handle(Event ev) 
 	{
@@ -67,6 +79,10 @@ public class OptionsController implements EventHandler<Event>
 			handle((ActionEvent) ev);
 	}
 	
+	/**
+	 * This method handles all ActionEvents. For this view, a single button.
+	 * @param ev : ActionEvent to be handled.
+	 */
 	private void handle(ActionEvent ev)
 	{
 		// Buttons

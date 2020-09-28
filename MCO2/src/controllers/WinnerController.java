@@ -3,18 +3,35 @@ package controllers;
 import java.util.ArrayList;
 
 import javafx.event.*;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.fxml.*;
 
+/**
+ * This class is a controller designed for ThatsLife! game, from CCPROG3 - DLSU CCS.
+ * This controller controls the winner dialog, which simply displays the final ranking of players upon the game is completed.
+ * @author Adriel Isaiah V. Amoguis
+ *
+ */
 public class WinnerController implements EventHandler<Event> 
 {
+	/**
+	 * This attribute holds the ordered list of player names according to rank.
+	 */
 	private ArrayList<String> results;
+	
+	/**
+	 * This attribute holds the ordered list of double values that correspond to the players' balances.
+	 * This follows the same order as the results ArrayList attribute.
+	 */
 	private double[] balances;
 	
+	/**
+	 * This constructor instantiates this controller, tokenizes, and calculates for the rank String to be displayed in the view.
+	 * @param ranking : String - the raw Ranking string given by the model
+	 * @param balances : double[] - The list of balances of the players.
+	 */
 	public WinnerController(String ranking, double[] balances)
 	{
 		results = new ArrayList<String>();
@@ -46,6 +63,9 @@ public class WinnerController implements EventHandler<Event>
 	@FXML AnchorPane thirdPlace; @FXML Label labelThirdPlace;
 	@FXML Button mainMenu;
 	
+	/**
+	 * This method initializes the JavaFX components on the stage with their appropriate values as given by the results of the game.
+	 */
 	@FXML
 	void initialize()
 	{
@@ -71,6 +91,10 @@ public class WinnerController implements EventHandler<Event>
 		}
 	}
 
+	/**
+	 * This event handler redirects ActionEvents to the ActionEvent handler.
+	 * @param ev : Event
+	 */
 	@Override
 	public void handle(Event ev) 
 	{
@@ -78,6 +102,10 @@ public class WinnerController implements EventHandler<Event>
 			handle((ActionEvent)ev);
 	}
 	
+	/**
+	 * This ActionEvent handler handles the operations for the Exit Game button.
+	 * @param ev : ActionEvent
+	 */
 	private void handle(ActionEvent ev)
 	{
 		if(ev.getSource() instanceof Button)

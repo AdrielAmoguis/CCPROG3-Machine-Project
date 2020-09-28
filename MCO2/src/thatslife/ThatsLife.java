@@ -218,6 +218,7 @@ public class ThatsLife implements java.io.Serializable
 
     /**
      * This method initiates a player's turn. It returns the player index for the next turn.
+     * @param n : The number of spaces to move.
      * @return nextTurn : int
      */
     public int startTurn(int n)
@@ -437,6 +438,7 @@ public class ThatsLife implements java.io.Serializable
     /**
      * This method allows the user to load a serialized instance of a game and continue playing it.
      * @param filepath The filepath for the saved game binary file.
+     * @throws Exception : General exception
      * @return Returns the instance of the ThatsLife game.
      */
     public static ThatsLife loadGame(String filepath) throws Exception

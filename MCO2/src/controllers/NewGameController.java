@@ -10,13 +10,32 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.*;
 import java.util.ArrayList;
 
+/**
+ * This class is a controller designed for ThatsLife! game, from CCPROG3 - DLSU CCS.
+ * This controller controls the view for creating a brand new instance of a game.
+ * @author Adriel Isaiah V. Amoguis
+ *
+ */
 public class NewGameController implements EventHandler<Event>, ChangeListener<String>
 {
+	/**
+	 * This attribute holds the instance of the JavaFX combobox component.
+	 */
 	private String comboState;
+	
+	/**
+	 * This attribute holds the number of players that the combobox is selected to.
+	 */
 	private int nPlayers;
 	
-	String[] playerNames;
+	/**
+	 * This attribute holds all the player names entered by the JavaFX textbox component.
+	 */
+	private String[] playerNames;
 	
+	/**
+	 * This constructor creates an instance of this controller and sets all attributes to their default values.
+	 */
 	public NewGameController()
 	{
 		comboState = null;
@@ -46,6 +65,9 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 	@FXML
 	Button backButton;
 	
+	/**
+	 * This method initializes all JavaFX components that need to be initialized.
+	 */
 	@FXML
 	void initialize()
 	{
@@ -65,6 +87,10 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 		playerThreeName.setDisable(true);
 	}
 
+	/**
+	 * This method redirects all ActionEvent to the ActionEvent handler.
+	 * @param ev : Event
+	 */
 	@Override
 	public void handle(Event ev)
 	{
@@ -72,7 +98,11 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 			handle((ActionEvent) ev);
 	}
 	
-	public void handle(ActionEvent ev)
+	/**
+	 * This method is the event handler for all ActionEvents such as buttons in the Stage.
+	 * @param ev : ActionEvent - ActionEvent to handle.
+	 */
+	private void handle(ActionEvent ev)
 	{
 		if(ev.getSource() instanceof ComboBox)
 		{
@@ -156,6 +186,12 @@ public class NewGameController implements EventHandler<Event>, ChangeListener<St
 		}
 	}
 
+	/**
+	 * This change listener detects changes in the text boxes and updates the player names accordingly.
+	 * @param observable - The object that changed.
+	 * @param oldString - The old value of the object.
+	 * @param newString - The new value of the object.
+	 */
 	@Override
 	public void changed(ObservableValue<? extends String> observable, String oldString, String newString) 
 	{

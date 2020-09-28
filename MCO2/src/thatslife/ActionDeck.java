@@ -19,6 +19,7 @@ public class ActionDeck extends Deck
     /**
      * This constructor initializes the ActionCards
      * @param players : ArrayList of Player - this list is not stored on this deck, but is just used to initialize the cards.
+     * @param numCards : The number of cards to generate.
      */
     public ActionDeck(ArrayList<Player> players, int numCards)
     {
